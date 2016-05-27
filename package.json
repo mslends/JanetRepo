@@ -1,0 +1,27 @@
+{
+  "name": "janet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.13.4",
+    "body-parser": "^1.15.1",
+    "mongoose": "^4.4.19",
+    "express-session": "^1.13.0",
+    "passport": "^0.3.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/operationUnicorn/JanetRepo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/operationUnicorn/JanetRepo/issues"
+  },
+  "homepage": "https://github.com/operationUnicorn/JanetRepo#readme"
+}
