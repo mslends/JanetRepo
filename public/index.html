@@ -1,21 +1,46 @@
 <!DOCTYPE html>
-<html ng-app="app">
+
+<html ng-app="janet">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
-    <link rel="stylesheet" href="styles/style.css">
+    <title>Janet</title>
     <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/style.css">
   </head>
-  <body ng-controller="mainCtrl">
+
+  <body>
     <main>
 
     </main>
+
+
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
-    <script src="app/app.js"></script>
-    <script src="app/controllers/mainCtrl.js"></script>
-    <script src="app/services/mainService.js"></script>
+
+    <!-- controllers -->
+    <script src="./app.js"></script>
+    <script src="./admin/controllers/adminCtrl.js"></script>
+    <script src="./customers/controllers/cartCtrl.js"></script>
+    <script src="./customers/controllers/homeCtrl.js"></script>
+    <script src="./customers/controllers/loginSignupCtrl.js"></script>
+    <script src="./customers/controllers/productDetailsCtrl.js"></script>
+
+    <!-- services -->
+    <script src="./admin/services/adminService.js"></script>
+    <script src="./customers/services/cartService.js"></script>
+    <script src="./customers/services/customerService.js"></script>
+    <script src="./customers/services/productsService.js"></script>
+
+    <!-- directives -->
+    <script src="./customers/directives/footerDirective.js"></script>
+    <script src="./customers/directives/loginSignupDirective.js"></script>
+    <script src="./customers/directives/navDirective.js"></script>
+    <script src="./customers/directives/productDetailsDirective.js"></script>
+
+
   </body>
 </html>

@@ -1,0 +1,58 @@
+var express = require("express");
+var bodyParser = require("body-parser");
+var session = require("express-session");
+var mongoose = require("mongoose");
+var passport = require("passport");
+
+var productsCtrl = require("./backControllers/productsCtrl.js");
+var userCtrl = require("./backControllers/userCtrl.js");
+var cartCtrl = require("./backControllers/cartCtrl.js");
+
+
+//CONFIG//
+var config = require("./server_config.js");
+
+//EXPRESS//
+var app = express();
+
+app.use(express.static(__dirname + "../public"));
+
+app.use(bodyParser.json());
+app.use(session({
+  secret: config.SESSION_SECRET,
+  saveUninitialized: false,
+  resave: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
+//GET, POST, PUT, DELETE//
+
+//PRODUCTS//
+app.get("/api/products", productsCtrl.getProducts);
+app.get("/api/products/:id", productsCtrl.getSingleProduct);
+app.post("/api/products", productsCtrl.createProduct);
+app.put("/api/products/:id", productsCtrl.updateSingleProduct);
+app.delete("/api/products/:id", productsCtrl.deleteSingleProduct);
+
+
+
+
+//CONNECTIONS//
+var mongoURI = config.MONGO_URI;
+var port = config.PORT;
+
+mongoose.set("debug", true);
+mongoose.connect(mongoURI, function(err){
+  if(err){
+    console.log(err);
+  } else{
+    console.log("mongoose is ready");
+  }
+});
+mongoose.connection.once("open", function(){
+  console.log("Connected to MongoDB at", mongoURI);
+  app.listen(port, function(){
+    console.log("Easy listening on port " + port + ": The Breeze");
+  });
+});
