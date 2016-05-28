@@ -1,7 +1,6 @@
 {
   "name": "janet",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "dependencies": {
     "express": "^4.13.4",
@@ -23,5 +22,6 @@
   "bugs": {
     "url": "https://github.com/operationUnicorn/JanetRepo/issues"
   },
-  "homepage": "https://github.com/operationUnicorn/JanetRepo#readme"
+  "homepage": "https://github.com/operationUnicorn/JanetRepo#readme",
+  "description": ""
 }

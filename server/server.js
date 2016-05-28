@@ -9,6 +9,8 @@ var userCtrl = require("./backControllers/userCtrl.js");
 var cartCtrl = require("./backControllers/cartCtrl.js");
 
 
+
+
 //CONFIG//
 var config = require("./server_config.js");
 
@@ -16,15 +18,36 @@ var config = require("./server_config.js");
 var app = express();
 
 app.use(express.static(__dirname + "../public"));
-
 app.use(bodyParser.json());
-app.use(session({
-  secret: config.SESSION_SECRET,
-  saveUninitialized: false,
-  resave: false
-}));
+
+
+
+
+// LOCAL AUTH
+
+var sessionKeys = require('./sessionKeys.js');
+
+require('./config/passport.js')(passport);
+
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use(session({
+  secret: sessionKeys.secret,
+  resave: true,
+  saveUninitialized: true
+}));
+
+app.post('/auth', function(req, res, next){
+
+  next();
+}, passport.authenticate('local-signup'), function(req, res){
+  res.send({login: true, user: req.user});
+})
+
+
+
+
 
 //GET, POST, PUT, DELETE//
 
