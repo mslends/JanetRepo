@@ -20,7 +20,7 @@ angular.module('janet').service('adminService', function($http){
   };
 
   this.updateSingleProduct = function(product){
-    return $htpp({
+    return $http({
       method: "PUT",
       url: "/api/products/:id",
       data: {
