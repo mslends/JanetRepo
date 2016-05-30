@@ -17,7 +17,12 @@ const config = require("./server_config.js");
 //EXPRESS//
 const app = express();
 
+<<<<<<< HEAD
 app.use(express.static(__dirname + "../public"));
+=======
+app.use(express.static(__dirname + "./../public"));
+
+>>>>>>> master
 app.use(bodyParser.json());
 
 

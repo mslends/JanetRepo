@@ -10,7 +10,17 @@
     "passport": "^0.3.2"
   },
   "devDependencies": {
+<<<<<<< HEAD
     "gulp": "^3.9.1",
+=======
+    "babel": "^6.5.2",
+    "babel-core": "^6.9.1",
+    "gulp": "^3.9.1",
+    "gulp-6to5": "^3.0.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-sass": "^2.3.1",
+    "gulp-sourcemaps": "^1.6.0",
+>>>>>>> master
     "gulp-watch": "^4.3.6"
   },
   "scripts": {
