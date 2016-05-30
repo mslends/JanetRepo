@@ -38,7 +38,6 @@ app.use(session({
 }));
 
 app.post('/auth', function(req, res, next){
-
   next();
 }, passport.authenticate('local-signup'), function(req, res){
   res.send({login: true, user: req.user});

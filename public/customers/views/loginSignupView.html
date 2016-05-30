@@ -1,0 +1,17 @@
+<div class="modal" ng-show='modalShown'>
+  <div class="overlay" ng-click='toggleModal()'></div>
+  <div class="dialog">
+        <div class='loginSection'>
+          <input type="email" placeholder=" Email Address" ng-model="user.email">
+          <input type="password" placeholder=" Password" ng-model="user.password"><br>
+          <button type="button" ng-click="login(user)">Login</button><br><br>
+        </div>
+
+        <div class='signupSection'>
+          <input type="text" placeholder="  Full Name" ng-model="user.name"><br>
+          <input type="email" placeholder="  Email Address" ng-model="user.email"><br>
+          <input type="password" placeholder="  Choose a password" ng-model="user.password"><br>
+          <button type="button" ng-click="createUser(user)">Sign Up</button>
+        </div>
+  </div>
+</div>
