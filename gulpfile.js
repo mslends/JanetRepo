@@ -6,15 +6,16 @@ const concat = require('gulp-concat');
 const to5 = require('gulp-6to5');
 
 const paths = {
-    sassSource: ['./public/styles/**.sass'],
-    jsSource: ['**.js']
+
+    sassSource: ['./public/styles/**/*.sass'],
+    jsSource: ['./public/**/*.js', '!./public/bundle.js']
 };
 
 gulp.task('sass', function() {
     return gulp.src(paths.sassSource)
         .pipe(sass())
         .pipe(concat('style.css'))
-        .pipe(gulp.dest('.public/newStyles'));
+        .pipe(gulp.dest('./public/newStyles'));
 });
 gulp.task('js', function() {
  return gulp.src(paths.jsSource)
