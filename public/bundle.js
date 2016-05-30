@@ -1,25 +1,49 @@
 "use strict";
-var gulp = require("gulp");
-var sass = require("gulp-sass");
-var watch = require("gulp-watch");
-var concat = require("gulp-concat");
-var to5 = require("gulp-6to5");
 
-var paths = {
-    sassSource: ["./public/styles/**.scss"],
-    jsSource: ["**.js"]
-};
+angular.module("janet", ["ui.router"]).config(function ($stateProvider, $urlRouterProvider) {});
 
-gulp.task("sass", function () {
-    return gulp.src(paths.sassSource).pipe(sass()).pipe(concat("style.css")).pipe(gulp.dest(".public/newStyles"));
+angular.module("janet").controller("adminCtrl", function ($scope) {});
+
+angular.module("janet").service("adminService", function ($http) {});
+
+angular.module("janet").controller("cartCtrl", function ($scope) {});
+
+angular.module("janet").controller("homeCtrl", function ($scope) {});
+
+angular.module("janet").controller("loginSignupCtrl", function ($scope) {});
+
+angular.module("janet").controller("productDetailsCtrl", function ($scope) {});
+
+angular.module("janet").directive("footerDirective", function () {
+  return {
+    restrict: "E",
+    templateUrl: "./customers/views/footerView.html"
+  };
 });
-gulp.task("js", function () {
-    return gulp.src(paths.jsSource).pipe(concat("bundle.js")).pipe(to5()).pipe(gulp.dest("./public"));
+
+angular.module("janet").directive("loginSignupDirective", function () {
+  return {
+    restrict: "E",
+    templateUrl: "./customers/views/loginSignupView.html"
+  };
 });
 
-gulp.task("watch", function () {
-    gulp.watch(paths.sassSource, ["sass"]);
-    gulp.watch(paths.jsSource, ["js"]);
+angular.module("janet").directive("navDirective", function () {
+  return {
+    restrict: "E",
+    templateUrl: "./customers/views/navView.html"
+  };
 });
 
-gulp.task("default", ["sass", "watch", "js"]);
+angular.module("janet").directive("productDetailsDirective", function () {
+  return {
+    restrict: "E",
+    templateUrl: "./customers/views/productDetailsView.html"
+  };
+});
+
+angular.module("janet").service("cartService", function ($http) {});
+
+angular.module("janet").service("customerService", function ($http) {});
+
+angular.module("janet").service("productsService", function ($http) {});
