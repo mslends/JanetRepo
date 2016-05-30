@@ -10,6 +10,7 @@ module.exports = {
         }
       });
     },
+
     getUser: function(req, res, next){
       User.findById(req.params.id).exec(function(err, response){
         if(err){
@@ -30,6 +31,7 @@ module.exports = {
         }
       });
     },
+
     updateUser: function(req, res, next){
       User.findByIdAndUpdate(req.params.id, req.body, function(err, response){
         if(err){
@@ -39,6 +41,7 @@ module.exports = {
         }
       });
     },
+
     deleteUser: function(req, res, next){
       User.findByIdAndRemove(req.params.id, function(err, response){
         if(err){
@@ -47,7 +50,27 @@ module.exports = {
           res.status(200).json(response);
         }
       });
-    }
+    },
+
+    login: function(req, res, next){
+      User.findOne(req.body, function(err, response){
+        if(err){
+          res.status(500).json(err);
+        } else {
+          if(response){
+            res.status(200).json({login: true, user: response});
+          } else {
+            res.status(200).json({login: false});
+          }
+        }
+      })
+    },
+
+    logout: function(req, res, next){
+      req.logout();
+      console.log("logout", req.user)
+      return res.status(200).send('logged out');
+  }
 
 
 

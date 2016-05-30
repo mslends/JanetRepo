@@ -5,7 +5,7 @@ var userSchema = new Schema({
     name: {type: String, required: true},
     email: {type: String, required: true},
     password: {type: String, required: true},
-    admin: {type: Boolean},
+    admin: {type: Boolean, default: false},
     phone: {type: String},
     billingAddress: {
         street: {type: String},

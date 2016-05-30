@@ -23,8 +23,7 @@ app.use(bodyParser.json());
 
 
 
-// LOCAL AUTH
-
+//LOCAL AUTH//
 var sessionKeys = require('./sessionKeys.js');
 
 require('./config/passport.js')(passport);
@@ -59,14 +58,14 @@ app.put("/api/products/:id", productsCtrl.updateSingleProduct);
 app.delete("/api/products/:id", productsCtrl.deleteSingleProduct);
 
 
-// USERS =======================================
+//USERS//
 app.get("/api/users", userCtrl.getUsers);
 app.get("/api/users/:id", userCtrl.getUser);
 app.post("/api/users", userCtrl.createUser);
 app.put("/api/users/:id", userCtrl.updateUser);
 app.delete("/api/users/:id", userCtrl.deleteUser);
-
-
+app.post("/api/users/login", userCtrl.login);
+app.post("/api/users/logout", userCtrl.logout);
 
 
 //CONNECTIONS//
