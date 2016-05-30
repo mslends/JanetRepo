@@ -36,6 +36,14 @@ app.put("/api/products/:id", productsCtrl.updateSingleProduct);
 app.delete("/api/products/:id", productsCtrl.deleteSingleProduct);
 
 
+// USERS =======================================
+app.get("/api/users", userCtrl.getUsers);
+app.get("/api/users/:id", userCtrl.getUser);
+app.post("/api/users", userCtrl.createUser);
+app.put("/api/users/:id", userCtrl.updateUser);
+app.delete("/api/users/:id", userCtrl.deleteUser);
+
+
 
 
 //CONNECTIONS//
