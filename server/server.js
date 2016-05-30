@@ -1,21 +1,21 @@
-var express = require("express");
-var bodyParser = require("body-parser");
-var session = require("express-session");
-var mongoose = require("mongoose");
-var passport = require("passport");
+const express = require("express");
+const bodyParser = require("body-parser");
+const session = require("express-session");
+const mongoose = require("mongoose");
+const passport = require("passport");
 
-var productsCtrl = require("./backControllers/productsCtrl.js");
-var userCtrl = require("./backControllers/userCtrl.js");
-var cartCtrl = require("./backControllers/cartCtrl.js");
+const productsCtrl = require("./backControllers/productsCtrl.js");
+const userCtrl = require("./backControllers/userCtrl.js");
+const cartCtrl = require("./backControllers/cartCtrl.js");
 
 
 
 
 //CONFIG//
-var config = require("./server_config.js");
+const config = require("./server_config.js");
 
 //EXPRESS//
-var app = express();
+const app = express();
 
 app.use(express.static(__dirname + "../public"));
 app.use(bodyParser.json());
@@ -24,7 +24,7 @@ app.use(bodyParser.json());
 
 
 //LOCAL AUTH//
-var sessionKeys = require('./sessionKeys.js');
+const sessionKeys = require('./sessionKeys.js');
 
 require('./config/passport.js')(passport);
 
@@ -37,9 +37,9 @@ app.use(session({
   saveUninitialized: true
 }));
 
-app.post('/auth', function(req, res, next){
+app.post('/auth', (req, res, next)=>{
   next();
-}, passport.authenticate('local-signup'), function(req, res){
+}, passport.authenticate('local-signup'), (req, res)=>{
   res.send({login: true, user: req.user});
 })
 
@@ -64,24 +64,24 @@ app.post("/api/users", userCtrl.createUser);
 app.put("/api/users/:id", userCtrl.updateUser);
 app.delete("/api/users/:id", userCtrl.deleteUser);
 app.post("/api/users/login", userCtrl.login);
-app.post("/api/users/logout", userCtrl.logout);
+app.get("/api/users/logout", userCtrl.logout);
 
 
 //CONNECTIONS//
-var mongoURI = config.MONGO_URI;
-var port = config.PORT;
+const mongoURI = config.MONGO_URI;
+const port = config.PORT;
 
 mongoose.set("debug", true);
-mongoose.connect(mongoURI, function(err){
+mongoose.connect(mongoURI, (err)=>{
   if(err){
     console.log(err);
   } else{
     console.log("mongoose is ready");
   }
 });
-mongoose.connection.once("open", function(){
+mongoose.connection.once("open", ()=>{
   console.log("Connected to MongoDB at", mongoURI);
-  app.listen(port, function(){
+  app.listen(port, ()=>{
     console.log("Easy listening on port " + port + ": The Breeze");
   });
 });

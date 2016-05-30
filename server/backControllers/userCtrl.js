@@ -1,8 +1,8 @@
-var User = require("../models/userModel.js");
+const User = require("../models/userModel.js");
 
 module.exports = {
-    getUsers: function(req, res, next){
-      User.find().exec(function(err, response){
+    getUsers: (req, res, next)=>{
+      User.find().exec((err, response)=>{
         if(err){
           res.status(500).json(err);
         } else{
@@ -11,8 +11,8 @@ module.exports = {
       });
     },
 
-    getUser: function(req, res, next){
-      User.findById(req.params.id).exec(function(err, response){
+    getUser: (req, res, next)=>{
+      User.findById(req.params.id).exec((err, response)=>{
         if(err){
           res.status(500).json(err);
         } else{
@@ -21,9 +21,9 @@ module.exports = {
       });
     },
 
-    createUser: function(req, res, next){
+    createUser: (req, res, next)=>{
       var newUser = new User(req.body);
-      newUser.save(function(err, response){
+      newUser.save((err, response)=>{
         if(err){
           res.status(500).json(err);
         } else{
@@ -32,8 +32,8 @@ module.exports = {
       });
     },
 
-    updateUser: function(req, res, next){
-      User.findByIdAndUpdate(req.params.id, req.body, function(err, response){
+    updateUser: (req, res, next)=>{
+      User.findByIdAndUpdate(req.params.id, req.body, (err, response)=>{
         if(err){
           res.status(500).json(err);
         } else{
@@ -42,8 +42,8 @@ module.exports = {
       });
     },
 
-    deleteUser: function(req, res, next){
-      User.findByIdAndRemove(req.params.id, function(err, response){
+    deleteUser: (req, res, next)=>{
+      User.findByIdAndRemove(req.params.id, (err, response)=>{
         if(err){
           res.status(500).json(err);
         } else{
@@ -52,8 +52,8 @@ module.exports = {
       });
     },
 
-    login: function(req, res, next){
-      User.findOne(req.body, function(err, response){
+    login: (req, res, next)=>{
+      User.findOne(req.body, (err, response)=>{
         if(err){
           res.status(500).json(err);
         } else {
@@ -66,7 +66,7 @@ module.exports = {
       })
     },
 
-    logout: function(req, res, next){
+    logout: (req, res, next)=>{
       req.logout();
       console.log("logout", req.user)
       return res.status(200).send('logged out');

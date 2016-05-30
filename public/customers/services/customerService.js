@@ -1,58 +1,58 @@
-angular.module('janet').service('customerService', function($http){
+angular.module('janet').service('customerService', ($http)=>{
 
-  this.createUser = function(user){
+  this.createUser = (user)=>{
     return $http({
       method: 'POST',
-      url: '/auth',
+      url: '/api/users',
       data: user
-    }).then(function(response){
+    }).then((response)=>{
       return response.data;
     });
   };
 
-this.getUsers = function(){
+this.getUsers = ()=>{
   return $http({
     method: 'GET',
     url: '/api/users'
-  }).then(function(response){
+  }).then((response)=>{
     return response.data;
   });
 };
 
-this.getOneUser = function(user._id){
+this.getOneUser = (user._id)=>{
   return $http({
     method: 'GET',
     url: '/api/users/' + user._id
-  }).then(function(response){
+  }).then((response)=>{
     return response.data;
   });
 };
 
-this.updateUser = function(user._id, user){
+this.updateUser = (user._id, user)=>{
   return $http({
     method: 'PUT',
     url: '/api/users/' + user._id,
     data: user
-  }).then(function(response){
+  }).then((response)=>{
     return response.data;
   })
 };
 
-this.login = function(user){
+this.login = (user)=>{
   return $http({
     method: 'POST',
-    url: '/auth',
+    url: '/api/users/login',
     data: user
-  }).then(function(response){
+  }).then((response)=>{
     return response.data;
   });
 };
 
-this.logout = function(){
+this.logout = ()=>{
     return $http({
       method: 'GET',
       url: '/api/users/logout'
-    }).then(function(response){
+    }).then((response)=>{
       return response.data;
     });
   };
