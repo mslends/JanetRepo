@@ -9,6 +9,7 @@
     </div>
 
     <h3>Current Products</h3>
+    <button type="button">Add New Product</button>
     <div class="product-list" ng-repeat="product in products track by $index">
         <div class="product-image">
             {{product.images}}
@@ -23,8 +24,8 @@
         </div>
 
         <div class="product-options">
-            <button type="button" ng-click="updateProduct(product)">Edit</button>
-            <button type="button" ng-click="deleteProduct()">Delete</button>
+            <button type="button" ng-click="editProduct(product)">Edit</button>
+            <button type="button" ng-click="deleteProduct(id)">Delete</button>
         </div>
 
     </div>
