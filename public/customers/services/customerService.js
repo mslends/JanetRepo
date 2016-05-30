@@ -19,19 +19,19 @@ this.getUsers = ()=>{
   });
 };
 
-this.getOneUser = (user._id)=>{
+this.getOneUser = function(userId){
   return $http({
     method: 'GET',
-    url: '/api/users/' + user._id
-  }).then((response)=>{
+    url: '/api/users/' + userId
+  }).then(function(response){
     return response.data;
   });
 };
 
-this.updateUser = (user._id, user)=>{
+this.updateUser = (userId, user)=>{
   return $http({
     method: 'PUT',
-    url: '/api/users/' + user._id,
+    url: '/api/users/' + userId,
     data: user
   }).then((response)=>{
     return response.data;

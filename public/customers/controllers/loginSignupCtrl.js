@@ -8,22 +8,22 @@ angular.module('janet').controller('loginSignupCtrl', ($scope, customerService, 
   };
 ////////////////////////////
 
-  $scope.createUser = (user)=>{
-    customerService.createUser(user).then(response){
+  $scope.createUser = function(user){
+    customerService.createUser(user).then(function(response){
       $scope.newUser = response;
-    };
+    });
   };
 
   $scope.getUser = ()=>{
-    customerService.getUser().then(response){
+    customerService.getUser().then(function(response){
       $scope.users = response;
-    };
+    });
   };
 
   $scope.getOneUser = ()=>{
-    customerService.getOneUser($scope.user._id).then(response){
+    customerService.getOneUser($scope.user._id).then(function(response){
       $scope.user = response;
-    };
+    });
   };
 
   $scope.updateUser = (user)=>{
