@@ -6,7 +6,7 @@ var concat = require("gulp-concat");
 var to5 = require("gulp-6to5");
 
 var paths = {
-    sassSource: ["./public/styles/**.scss"],
+    sassSource: ["./public/styles/**.sass"],
     jsSource: ["**.js"]
 };
 
