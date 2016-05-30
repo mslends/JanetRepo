@@ -1,7 +1,7 @@
-angular.module('janet').controller('loginSignupCtrl', ($scope, customerService)=>{
+angular.module('janet').controller('loginSignupCtrl', ($scope, customerService, $state)=>{
 
 
-// Login and Sign up modal
+// Login and Sign up modal show and hide
   $scope.modalShown = false;
   $scope.toggleModal = ()=>{
     $scope.modalShown != $scope.modalShown;
@@ -37,9 +37,7 @@ angular.module('janet').controller('loginSignupCtrl', ($scope, customerService)=
       if(response.login){
         customerService.getOneUser(response.user._id).then((response)=>{
           $scope.user = response;
-          //$state.go('home');
-          //once state has been all set up we can inject $state
-          //to the function and send logged out users to homepage
+          $state.go('home');
         });
       };
     });
@@ -47,10 +45,8 @@ angular.module('janet').controller('loginSignupCtrl', ($scope, customerService)=
 
   $scope.logout = ()=>{
       customerService.logout().then((response)=>{
-        // alert('You are successfully logged out!')
-        // $state.go('home');
-        //once state has been all set up we can inject $state
-        //to the function and send logged out users to homepage
+        alert('You are successfully logged out!')
+        $state.go('home');
       });
     };
 
