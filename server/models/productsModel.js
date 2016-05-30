@@ -12,8 +12,6 @@ var productSchema = new Schema({
   color: {type: String},
   size: {type: String},
   material: {type: String},
-  reviews: [{type: String}],
-  ratings: [{type: Number, min: 1, max: 5}],
   category: {type: String},
   favorites: {type: Number},
   amntSold: {type: Number},
