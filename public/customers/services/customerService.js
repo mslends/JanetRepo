@@ -1,13 +1,13 @@
-angular.module('janet').service('customerService', ($http)=>{
+angular.module('janet').service('customerService', function($http){
 
   this.createUser = (user)=>{
     return $http({
       method: 'POST',
-      url: '/api/users',
+      url: '/auth',
       data: user
     }).then((response)=>{
       return response.data;
-    });
+    })
   };
 
 this.getUsers = ()=>{
@@ -19,7 +19,7 @@ this.getUsers = ()=>{
   });
 };
 
-this.getOneUser = function(userId){
+this.getOneUser = (userId)=>{
   return $http({
     method: 'GET',
     url: '/api/users/' + userId
@@ -41,7 +41,7 @@ this.updateUser = (userId, user)=>{
 this.login = (user)=>{
   return $http({
     method: 'POST',
-    url: '/api/users/login',
+    url: 'auth',
     data: user
   }).then((response)=>{
     return response.data;

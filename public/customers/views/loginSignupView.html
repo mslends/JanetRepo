@@ -2,16 +2,18 @@
   <div class="overlay" ng-click='toggleModal()'></div>
   <div class="dialog">
         <div class='loginSection'>
-          <input type="email" placeholder=" Email Address" ng-model="user.email">
-          <input type="password" placeholder=" Password" ng-model="user.password"><br>
-          <button type="button" ng-click="login(user)">Login</button><br><br>
+          <h2>Login</h2>
+          <input type="email" placeholder=" Email Address" ng-model="info.email"><br>
+          <input type="password" placeholder=" Password" ng-model="info.password"><br>
+          <button type="button" ng-click="login(info)">Login</button><br><br>
         </div>
 
         <div class='signupSection'>
-          <input type="text" placeholder="  Full Name" ng-model="user.name"><br>
-          <input type="email" placeholder="  Email Address" ng-model="user.email"><br>
-          <input type="password" placeholder="  Choose a password" ng-model="user.password"><br>
-          <button type="button" ng-click="createUser(user)">Sign Up</button>
+          <h2>Sign Up</h2>
+          <input type="text" placeholder="  Full Name" ng-model="signUp.name"><br>
+          <input type="email" placeholder="  Email Address" ng-model="signUp.email"><br>
+          <input type="password" placeholder="  Choose a password" ng-model="signUp.password"><br>
+          <button type="button" ng-click="createUser(signUp)">Sign Up</button>
         </div>
   </div>
 </div>

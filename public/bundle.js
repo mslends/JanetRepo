@@ -30,7 +30,6 @@ angular.module("janet", ["ui.router"]).config(function ($stateProvider, $urlRout
     templateUrl: "./admin/adminProductView.html",
     controller: "adminCtrl"
   });
-
 });
 
 angular.module("janet").controller("adminCtrl", function ($scope, adminService) {
@@ -119,15 +118,93 @@ angular.module("janet").service("adminService", function ($http) {
 
 angular.module("janet").controller("cartCtrl", function ($scope) {});
 
-angular.module("janet").controller("homeCtrl", function ($scope) {
+angular.module("janet").controller("homeCtrl", function ($scope, customerService, $state) {
   console.log("testing");
+  $scope.modalShown = false;
+  $scope.toggleModal = function () {
+    $scope.modalShown = !$scope.modalShown;
+  };
+
+  $scope.getOneUser = function () {
+    customerService.getOneUser($scope.user._id).then(function (response) {
+      $scope.user = response;
+    });
+  };
+
+  $scope.logout = function () {
+    customerService.logout().then(function (response) {
+      alert("You are successfully logged out!");
+      $state.go("home");
+    });
+  };
 });
 
-angular.module("janet").controller("loginSignupCtrl", function ($scope) {});
+angular.module("janet").controller("loginSignupCtrl", function ($scope, customerService, $state) {
+  // Login and Sign up modal show and hide
+  $scope.modalShown = false;
+  $scope.toggleModal = function () {
+    $scope.modalShown = !$scope.modalShown;
+  };
+  ////////////////////////////
+
+  $scope.createUser = function (user) {
+    customerService.createUser(user).then(function (response) {
+      $scope.newUser = response;
+      alert("You are successfully signed up! Please login to continue.");
+      $state.go("home");
+      $scope.toggleModal();
+    });
+  };
+
+  $scope.getUser = function () {
+    customerService.getUser().then(function (response) {
+      $scope.users = response;
+    });
+  };
+
+  $scope.getOneUser = function () {
+    customerService.getOneUser($scope.user._id).then(function (response) {
+      $scope.user = response;
+    });
+  };
+
+  $scope.updateUser = function (user) {
+    customerService.updateUser(user._id, user).then(function (response) {
+      $scope.updatedUser = response;
+    });
+  };
+
+  $scope.login = function (user) {
+    customerService.login(user).then(function (response) {
+      if (response.login) {
+        customerService.getOneUser(response.user._id).then(function (response) {
+          $scope.user = response;
+          $state.go("home");
+          $scope.toggleModal();
+        });
+      };
+    });
+  };
+
+
+});
 
 angular.module("janet").controller("productDetailsCtrl", function ($scope) {});
 
-angular.module("janet").controller("settingsCtrl", function ($scope) {});
+angular.module("janet").controller("settingsCtrl", function ($scope, customerService) {
+  $scope.getOneUser = function () {
+    customerService.getOneUser($scope.user._id).then(function (response) {
+      $scope.user = response;
+    });
+  };
+
+  $scope.updateUser = function (user) {
+    customerService.updateUser(user._id, user).then(function (response) {
+      $scope.updatedUser = response;
+    });
+  };
+
+});
 
 angular.module("janet").directive("footerDirective", function () {
   return {
@@ -139,7 +216,8 @@ angular.module("janet").directive("footerDirective", function () {
 angular.module("janet").directive("loginSignupDirective", function () {
   return {
     restrict: "E",
-    templateUrl: "./customers/views/loginSignupView.html"
+    templateUrl: "./customers/views/loginSignupView.html",
+    controller: "loginSignupCtrl"
   };
 });
 
@@ -159,6 +237,65 @@ angular.module("janet").directive("productDetailsDirective", function () {
 
 angular.module("janet").service("cartService", function ($http) {});
 
-angular.module("janet").service("customerService", function ($http) {});
+angular.module("janet").service("customerService", function ($http) {
+  this.createUser = function (user) {
+    return $http({
+      method: "POST",
+      url: "/auth",
+      data: user
+    }).then(function (response) {
+      return response.data;
+    });
+  };
+
+  this.getUsers = function () {
+    return $http({
+      method: "GET",
+      url: "/api/users"
+    }).then(function (response) {
+      return response.data;
+    });
+  };
+
+  this.getOneUser = function (userId) {
+    return $http({
+      method: "GET",
+      url: "/api/users/" + userId
+    }).then(function (response) {
+      return response.data;
+    });
+  };
+
+  this.updateUser = function (userId, user) {
+    return $http({
+      method: "PUT",
+      url: "/api/users/" + userId,
+      data: user
+    }).then(function (response) {
+      return response.data;
+    });
+  };
+
+  this.login = function (user) {
+    return $http({
+      method: "POST",
+      url: "auth",
+      data: user
+    }).then(function (response) {
+      return response.data;
+    });
+  };
+
+  this.logout = function () {
+    return $http({
+      method: "GET",
+      url: "/api/users/logout"
+    }).then(function (response) {
+      return response.data;
+    });
+  };
+
+
+});
 
 angular.module("janet").service("productsService", function ($http) {});

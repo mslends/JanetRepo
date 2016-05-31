@@ -1,33 +1,35 @@
-angular.module('janet').controller('loginSignupCtrl', ($scope, customerService, $state)=>{
-
+angular.module('janet').controller('loginSignupCtrl', function($scope, customerService, $state){
 
 // Login and Sign up modal show and hide
   $scope.modalShown = false;
   $scope.toggleModal = ()=>{
-    $scope.modalShown != $scope.modalShown;
+    $scope.modalShown = !$scope.modalShown;
   };
 ////////////////////////////
 
-  $scope.createUser = function(user){
-    customerService.createUser(user).then(function(response){
-      $scope.newUser = response;
-    });
-  };
+$scope.createUser = function(user){
+  customerService.createUser(user).then(function(response){
+    $scope.newUser = response;
+    alert('You are successfully signed up! Please login to continue.');
+    $state.go('home');
+    $scope.toggleModal();
+  })
+}
 
   $scope.getUser = ()=>{
-    customerService.getUser().then(function(response){
+    customerService.getUser().then((response)=>{
       $scope.users = response;
     });
   };
 
   $scope.getOneUser = ()=>{
-    customerService.getOneUser($scope.user._id).then(function(response){
+    customerService.getOneUser($scope.user._id).then((response)=>{
       $scope.user = response;
     });
   };
 
   $scope.updateUser = (user)=>{
-    mainService.updateUser(user._id, user).then((response)=>{
+    customerService.updateUser(user._id, user).then((response)=>{
     $scope.updatedUser = response;
   });
   };
@@ -38,17 +40,12 @@ angular.module('janet').controller('loginSignupCtrl', ($scope, customerService, 
         customerService.getOneUser(response.user._id).then((response)=>{
           $scope.user = response;
           $state.go('home');
+          $scope.toggleModal();
         });
       };
     });
   };
 
-  $scope.logout = ()=>{
-      customerService.logout().then((response)=>{
-        alert('You are successfully logged out!')
-        $state.go('home');
-      });
-    };
 
 
 })

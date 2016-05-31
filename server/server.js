@@ -17,21 +17,23 @@ const config = require("./server_config.js");
 //EXPRESS//
 const app = express();
 
-<<<<<<< HEAD
-app.use(express.static(__dirname + "../public"));
-=======
+
+const sessionKeys = require('./sessionKeys.js');
+
+require('./config/passport.js')(passport);
+
+
+
 app.use(express.static(__dirname + "./../public"));
 
->>>>>>> master
+
 app.use(bodyParser.json());
 
 
 
 
 //LOCAL AUTH//
-const sessionKeys = require('./sessionKeys.js');
 
-require('./config/passport.js')(passport);
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -65,10 +67,10 @@ app.delete("/api/products/:id", productsCtrl.deleteSingleProduct);
 //USERS//
 app.get("/api/users", userCtrl.getUsers);
 app.get("/api/users/:id", userCtrl.getUser);
-app.post("/api/users", userCtrl.createUser);
+// app.post("/api/users", userCtrl.createUser);
 app.put("/api/users/:id", userCtrl.updateUser);
 app.delete("/api/users/:id", userCtrl.deleteUser);
-app.post("/api/users/login", userCtrl.login);
+// app.post("/api/users/login", userCtrl.login);
 app.get("/api/users/logout", userCtrl.logout);
 
 

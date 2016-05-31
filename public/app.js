@@ -9,8 +9,6 @@ angular.module('janet', ['ui.router'])
                 controller: 'homeCtrl'
             })
 
-<<<<<<< HEAD
-=======
             .state('productDetails', {
                 url: '/productDetails',
                 templateUrl: './customers/views/productDetailsView.html',
@@ -42,6 +40,4 @@ angular.module('janet', ['ui.router'])
                 controller: 'adminCtrl'
             });
 
-
->>>>>>> master
   });
