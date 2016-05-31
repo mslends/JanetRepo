@@ -191,20 +191,7 @@ angular.module("janet").controller("loginSignupCtrl", function ($scope, customer
 
 angular.module("janet").controller("productDetailsCtrl", function ($scope) {});
 
-angular.module("janet").controller("settingsCtrl", function ($scope, customerService) {
-  $scope.getOneUser = function () {
-    customerService.getOneUser($scope.user._id).then(function (response) {
-      $scope.user = response;
-    });
-  };
-
-  $scope.updateUser = function (user) {
-    customerService.updateUser(user._id, user).then(function (response) {
-      $scope.updatedUser = response;
-    });
-  };
-
-});
+angular.module("janet").controller("settingsCtrl", function ($scope, customerService) {});
 
 angular.module("janet").directive("footerDirective", function () {
   return {
