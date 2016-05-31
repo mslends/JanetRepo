@@ -1,21 +1,32 @@
 <main>
     <section class="topNavHeader">
 
-        <div class="hamburger">
+      <div class="leftNav">
 
-        </div>
-        <div class="searchGlass">
+        <i class="hamburger fa fa-2x fa-bars" aria-hidden="true" ng-click="isVisible = !isVisible"></i>
 
-        </div>
-        <div class="janetIcon">
+        <i class="glass fa fa-2x fa-search" aria-hidden="true"></i>
+      </div>
 
-        </div>
-        <div class="bagIcon">
+        <div class="janetIcon" ui-sref="home"></div>
 
-        </div>
+        <i class="shopping fa fa-2x fa-shopping-bag" aria-hidden="true" ui-sref="cart"></i>
 
     </section>
 
 
+    <div class="navMenu" ng-hide="!isVisible">
+      <div class="loginButton">
+        Login
+      </div>
+      <div class="optionBox">
 
+        <div class="navOption">All Deals</div>
+        <div class="navOption">Order History</div>
+        <div class="navOption">View Account</div>
+        <div class="navOption">Shop By Category</div>
+      </div>
+
+
+    </div>
 </main>

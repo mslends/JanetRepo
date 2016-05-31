@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module("janet", ["ui.router"]).config(function ($stateProvider, $urlRouterProvider) {
+angular.module("janet", ["ui.router", "ngAnimate"]).config(function ($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise("/home");
   $stateProvider.state("home", {
     url: "/home",
