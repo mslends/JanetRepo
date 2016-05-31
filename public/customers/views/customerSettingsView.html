@@ -1,0 +1,19 @@
+<button type="button" name="button" ng-click="toggleModal()" ng-show="!user">LOGIN</button>
+<button type="button" name="button" ng-click="logout()" ng-show="user">LOGOUT</button>
+<login-signup-directive></login-signup-directive>
+{{user.name}}
+<h1>Account Setting</h1>
+<input type="text" ng-model="user.name" placeholder="Name">
+<input type="email" ng-model="user.email" placeholder="email">
+<h3>Shipping Address</h3><br>
+<input type="text" ng-model="user.shippingAddress.street" placeholder="Street">
+<input type="text" ng-model="user.shippingAddress.city" placeholder="city">
+<input type="text" ng-model="user.shippingAddress.state" placeholder="state">
+<input type="text" ng-model="user.shippingAddress.zip" placeholder="zip">
+<h3>Phone Number</h3>
+<input type="text" ng-model="user.phone" placeholder="Phone"><br>
+<button type="button" ng-click="updateUser(user)">Update Information</button>
+<h3>Order History</h3>
+<br>
+<br>
+<h3>Favorites</h3>

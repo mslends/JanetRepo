@@ -116,10 +116,38 @@ angular.module("janet").service("adminService", function ($http) {
 
 });
 
+angular.module("janet").directive("footerDirective", function () {
+  return {
+    restrict: "E",
+    templateUrl: "./customers/views/footerView.html"
+  };
+});
+
+angular.module("janet").directive("loginSignupDirective", function () {
+  return {
+    restrict: "E",
+    templateUrl: "./customers/views/loginSignupView.html",
+    controller: "loginSignupCtrl"
+  };
+});
+
+angular.module("janet").directive("navDirective", function () {
+  return {
+    restrict: "E",
+    templateUrl: "./customers/views/navView.html"
+  };
+});
+
+angular.module("janet").directive("productDetailsDirective", function () {
+  return {
+    restrict: "E",
+    templateUrl: "./customers/views/productDetailsView.html"
+  };
+});
+
 angular.module("janet").controller("cartCtrl", function ($scope) {});
 
 angular.module("janet").controller("homeCtrl", function ($scope, customerService, $state) {
-  console.log("testing");
   $scope.modalShown = false;
   $scope.toggleModal = function () {
     $scope.modalShown = !$scope.modalShown;
@@ -131,12 +159,6 @@ angular.module("janet").controller("homeCtrl", function ($scope, customerService
     });
   };
 
-  $scope.logout = function () {
-    customerService.logout().then(function (response) {
-      alert("You are successfully logged out!");
-      $state.go("home");
-    });
-  };
 });
 
 angular.module("janet").controller("loginSignupCtrl", function ($scope, customerService, $state) {
@@ -151,7 +173,6 @@ angular.module("janet").controller("loginSignupCtrl", function ($scope, customer
     customerService.createUser(user).then(function (response) {
       $scope.newUser = response;
       alert("You are successfully signed up! Please login to continue.");
-      $state.go("home");
       $scope.toggleModal();
     });
   };
@@ -179,7 +200,6 @@ angular.module("janet").controller("loginSignupCtrl", function ($scope, customer
       if (response.login) {
         customerService.getOneUser(response.user._id).then(function (response) {
           $scope.user = response;
-          $state.go("home");
           $scope.toggleModal();
         });
       };
@@ -191,34 +211,17 @@ angular.module("janet").controller("loginSignupCtrl", function ($scope, customer
 
 angular.module("janet").controller("productDetailsCtrl", function ($scope) {});
 
-angular.module("janet").controller("settingsCtrl", function ($scope, customerService) {});
-
-angular.module("janet").directive("footerDirective", function () {
-  return {
-    restrict: "E",
-    templateUrl: "./customers/views/footerView.html"
+angular.module("janet").controller("settingsCtrl", function ($scope, customerService) {
+  $scope.updateUser = function (user) {
+    customerService.updateUser(user._id, user).then(function (response) {
+      $scope.updatedUser = response;
+    });
   };
-});
 
-angular.module("janet").directive("loginSignupDirective", function () {
-  return {
-    restrict: "E",
-    templateUrl: "./customers/views/loginSignupView.html",
-    controller: "loginSignupCtrl"
-  };
-});
-
-angular.module("janet").directive("navDirective", function () {
-  return {
-    restrict: "E",
-    templateUrl: "./customers/views/navView.html"
-  };
-});
-
-angular.module("janet").directive("productDetailsDirective", function () {
-  return {
-    restrict: "E",
-    templateUrl: "./customers/views/productDetailsView.html"
+  $scope.getOneUser = function () {
+    customerService.getOneUser($scope.user._id).then(function (response) {
+      $scope.user = response;
+    });
   };
 });
 

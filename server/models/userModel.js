@@ -13,13 +13,13 @@ var userSchema = new Schema({
         street: {type: String},
         city: {type: String},
         state: {type: String},
-        zip: {type: String}
+        zip: {type: Number}
     },
     shippingAddress: {
         street: {type: String},
         city: {type: String},
         state: {type: String},
-        zip: {type: String}
+        zip: {type: Number}
     },
     wishlist: [{
         type: Schema.Types.ObjectId, ref: 'Product'

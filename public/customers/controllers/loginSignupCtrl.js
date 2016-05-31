@@ -11,7 +11,6 @@ $scope.createUser = function(user){
   customerService.createUser(user).then(function(response){
     $scope.newUser = response;
     alert('You are successfully signed up! Please login to continue.');
-    $state.go('home');
     $scope.toggleModal();
   })
 }
@@ -39,7 +38,6 @@ $scope.createUser = function(user){
       if(response.login){
         customerService.getOneUser(response.user._id).then((response)=>{
           $scope.user = response;
-          $state.go('home');
           $scope.toggleModal();
         });
       };
