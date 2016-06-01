@@ -17,11 +17,10 @@
   background-image: url("../janetLogo.png")
   background-repeat: no-repeat
   background-size: contain
-  // margin: auto
+  margin-right: 10%
 
   margin-top: 12px
   cursor: pointer
-
 
 .leftNav
   margin-left: 20px
@@ -58,7 +57,7 @@
 
 .navMenu
   height: 600px
-  width: 250px
+  width: 100%
   border: 1px solid lightgrey
   border-radius: 3px
   font-family: sans-serif
@@ -68,7 +67,6 @@
   transition: all linear 0.3s
 .ng-hide
   margin-left: -300px
-
 
 .loginButton
   border: 2px solid $janetGreen
@@ -88,7 +86,6 @@
 .optionBox
   margin-top: 50px
 
-
 .navOption
   margin: 20px
   cursor: pointer
@@ -99,3 +96,67 @@
   &:active
     background: $janetGreen
     color: $janetGray
+
+.navXButton
+  cursor: pointer
+  width: 15px
+  float: right
+  margin-top: 35px
+  margin-right: 35px
+  font-size: 26px
+
+.searchSlideBox
+  height: 100px
+  width: 100%
+  border: 1px solid lightgrey
+  border-radius: 4px
+  font-family: sans-serif
+  color: gray
+  margin-left: 0px
+  transition: all linear 0.3s
+.ng-hide
+  margin-left: -300px
+
+#searchBar
+  background: $janetGray
+  border: none
+  border-radius: 2px
+  color: gray
+  height: 30px
+  width: 260px
+  font-size: 18px
+  margin-top: 35px
+  margin-left: 15px
+
+#topSearchBar
+  background: $janetGray
+  border: none
+  border-radius: 2px
+  color: gray
+  height: 30px
+  width: 200px
+  font-size: 18px
+  margin-top: -25px
+  margin-left: 50px
+  display: none
+
+@media (min-width: 700px)
+  #topSearchBar
+    display: block
+
+  .glass
+    visibility: hidden
+
+  .janetIcon
+    margin-right: 20%
+
+  .navMenu
+    width: 250px
+
+.cancelButton
+  float: right
+  margin-right: 15px
+  margin-top: 42px
+  cursor: pointer
+  &:hover
+    color: $janetGreen
