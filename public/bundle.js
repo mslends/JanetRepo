@@ -12,6 +12,7 @@ angular.module("janet", ["ui.router", "ngAnimate"]).config(function ($stateProvi
           return response;
         })["catch"](function (err) {
           console.log(err);
+          return "no user found";
         });
       }
     }
@@ -201,8 +202,32 @@ angular.module("janet").controller("loginSignupCtrl", function ($scope, customer
         customerService.getOneUser(response.user._id).then(function (response) {
           $scope.user = response;
           $scope.toggleModal();
+          location.reload();
         });
       };
+    });
+  };
+
+
+});
+
+angular.module("janet").controller("navCtrl", function ($scope, customerService, $state) {
+  $scope.currentUser = (function () {
+    customerService.currentUser().then(function (response) {
+      $scope.user = response;
+    });
+  })();
+
+  $scope.modalShown = false;
+  $scope.toggleModal = function () {
+    $scope.modalShown = !$scope.modalShown;
+    location.reload();
+  };
+
+  $scope.logout = function () {
+    customerService.logout().then(function (response) {
+      alert("you are logged out!!");
+      location.reload();
     });
   };
 
@@ -226,41 +251,12 @@ angular.module("janet").controller("settingsCtrl", function ($scope, customerSer
     });
   };
 
-  $scope.logout = function () {
-    customerService.logout().then(function (response) {
-      alert("you are logged out!");
-      location.reload();
-    });
-  };
-});
-
-angular.module("janet").directive("footerDirective", function () {
-  return {
-    restrict: "E",
-    templateUrl: "./customers/views/footerView.html"
-  };
-});
-
-angular.module("janet").directive("loginSignupDirective", function () {
-  return {
-    restrict: "E",
-    templateUrl: "./customers/views/loginSignupView.html",
-    controller: "loginSignupCtrl"
-  };
-});
-
-angular.module("janet").directive("navDirective", function () {
-  return {
-    restrict: "E",
-    templateUrl: "./customers/views/navView.html"
-  };
-});
-
-angular.module("janet").directive("productDetailsDirective", function () {
-  return {
-    restrict: "E",
-    templateUrl: "./customers/views/productDetailsView.html"
-  };
+  // $scope.logout = function(){
+  //   customerService.logout().then(function(response){
+  //     alert('you are logged out!')
+  //     location.reload();
+  //   });
+  // };
 });
 
 angular.module("janet").service("cartService", function ($http) {});
@@ -336,3 +332,33 @@ angular.module("janet").service("customerService", function ($http) {
 });
 
 angular.module("janet").service("productsService", function ($http) {});
+
+angular.module("janet").directive("footerDirective", function () {
+  return {
+    restrict: "E",
+    templateUrl: "./customers/views/footerView.html"
+  };
+});
+
+angular.module("janet").directive("loginSignupDirective", function () {
+  return {
+    restrict: "E",
+    templateUrl: "./customers/views/loginSignupView.html",
+    controller: "loginSignupCtrl"
+  };
+});
+
+angular.module("janet").directive("navDirective", function () {
+  return {
+    restrict: "E",
+    templateUrl: "./customers/views/navView.html",
+    controller: "navCtrl"
+  };
+});
+
+angular.module("janet").directive("productDetailsDirective", function () {
+  return {
+    restrict: "E",
+    templateUrl: "./customers/views/productDetailsView.html"
+  };
+});

@@ -13,6 +13,7 @@ angular.module('janet', ['ui.router', 'ngAnimate'])
                             return response;
                           }).catch(function(err) {
                             console.log(err);
+                            return "no user found";
                           })
                         }
                   }

@@ -16,18 +16,25 @@
 
 
     <div class="navMenu" ng-hide="!isVisible">
-      <div class="loginButton">
+      <div class="loginButton" ng-click="toggleModal()" ng-hide="user">
         Login
       </div>
+
+      <div class="loginButton" ng-click="logout()" ng-hide="!user">
+        Logout
+      </div>
+
       <div class="optionBox">
 
         <div class="navOption">All Deals</div>
         <div class="navOption"></i>Shop By Category</div>
         <div class="navOption"><i class="fa fa-clock-o" aria-hidden="true"></i>   Order History</div>
-        
-        <div class="navOption"><i class="fa fa-cog" aria-hidden="true"></i>   Account Settings</div>
+
+        <div class="navOption" ui-sref="settings"><i class="fa fa-cog" aria-hidden="true"></i>   Account Settings</div>
       </div>
 
 
     </div>
 </main>
+
+<login-signup-directive></login-signup-directive>

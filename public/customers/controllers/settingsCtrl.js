@@ -14,11 +14,11 @@ angular.module('janet').controller('settingsCtrl', function($scope, customerServ
     });
   };
 
-  $scope.logout = function(){
-    customerService.logout().then(function(response){
-      alert('you are logged out!')
-      location.reload();
-    });
-  };
+  // $scope.logout = function(){
+  //   customerService.logout().then(function(response){
+  //     alert('you are logged out!')
+  //     location.reload();
+  //   });
+  // };
 
 });
