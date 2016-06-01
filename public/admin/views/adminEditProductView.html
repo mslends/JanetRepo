@@ -5,32 +5,32 @@
       <h3>Edit Product</h3>
       <div class="new-product-input">
         <div class="new-product-column-1">
-            <input type="text" placeholder="Product Name">
+            <input type="text" ng-model="productData.name" placeholder="Product Name">
             <br>
 
-            <input type="text" ng-model="product.seller" placeholder="Seller">
+            <input type="text" ng-model="productData.seller" placeholder="Seller">
             <br>
             <div class="edit-product-short-inputs">
-            <input type="text" id="qty-input" ng-model="product.retailPrice" placeholder="Retail $">
-            <input type="text" ng-model="product.discountPrice" placeholder="Discount $">
+            <input type="text" id="qty-input" ng-model="productData.retailPrice" placeholder="Retail $">
+            <input type="text" ng-model="productData.discountPrice" placeholder="Discount $">
             <br>
           </div>
             <div class="edit-product-short-inputs">
-            <input type="number" id="qty-input" ng-model="product.qty" placeholder="Qty">
-            <input type="text" ng-model="product.size" placeholder="Size"><br>
+            <input type="number" id="qty-input" ng-model="productData.qty" placeholder="Qty">
+            <input type="text" ng-model="productData.size" placeholder="Size"><br>
           </div>
-          <input type="text" ng-model="product.color" placeholder="Color"><br>
-          <input type="text" ng-model="product.material" placeholder="Material">
+          <input type="text" ng-model="productData.color" placeholder="Color"><br>
+          <input type="text" ng-model="productData.material" placeholder="Material">
         </div>
         <div class="edit-product-column-2">
-          <input type="text" ng-model="product.category" placeholder="Category"><br>
-          <input type="text" ng-model="product.parent" placeholder="Parent Product"><br>
-          <input type="url" ng-model="product.images" placeholder="Image"><br>
-          <textarea type="text" ng-model="product.description" placeholder="Brief Description" rows="4"></textarea>
+          <input type="text" ng-model="productData.category" placeholder="Category"><br>
+          <input type="text" ng-model="productData.parent" placeholder="Parent Product"><br>
+          <input type="url" ng-model="productData.images" placeholder="Image"><br>
+          <textarea type="text" ng-model="productData.description" placeholder="Brief Description" rows="4"></textarea>
         </div>
       </div>
       <div class="save-changes-button">
-      <button type="button" ng-click="editProduct(product)">Save Changes</button>
+      <button type="button" ng-click="editProduct(productData)">Save Changes</button>
     </div>
     </div>
 </div>

@@ -2,7 +2,7 @@
     <div class="admin-profile-settings">
         <h3>Admin Profile Settings</h3>
         <label>Email:</label>
-        <input type="text" ng-model="user.email">
+        <input type="text" ng-model="user.email"><br>
         <label>Password:</label>
         <input type="password" ng-model="user.password"><br><br>
         <button type="button" ng-click="updateAdminProfileSettings(user)">Save Changes</button>
@@ -22,13 +22,14 @@
         </div>
 
         <div class="product-info">
-            <h4>{{product.name}} | {{product.seller}}</h4>
+            <h4>{{product.name}}</h4><hr width="90%"></hr>
+            <h4>{{product.seller}}</h4>
             <p>{{product.category}} | Qty: {{product.qty}}</p>
         </div>
 
         <div class="product-options">
-            <button type="button" ng-click="toggleEditProductModal()">Edit</button>
-            <button type="button" ng-click="deleteProduct(id)">Delete</button>
+            <button type="button" ng-click="toggleEditProductModal(product)">Edit</button><br>
+            <button type="button" ng-click="deleteProduct(product)">Delete</button>
         </div>
       </div>
       <hr width="80%"></hr>

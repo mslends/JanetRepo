@@ -30,11 +30,8 @@ angular.module("janet", ["ui.router", "ngAnimate"]).config(function ($stateProvi
 
 });
 
-angular.module("janet").controller("adminCtrl", function ($scope, adminService) {
-  $scope.editProductModalShown = false;
-  $scope.toggleEditProductModal = function () {
-    $scope.editProductModalShown = !$scope.editProductModalShown;
-  };
+angular.module("janet").controller("adminCtrl", function ($scope, $stateParams, adminService) {
+  console.log("adminCtrl working");
 
   $scope.showProducts = function () {
     adminService.getProducts().then(function (response) {
@@ -46,9 +43,11 @@ angular.module("janet").controller("adminCtrl", function ($scope, adminService) 
   $scope.showProducts();
 
   $scope.getSingleProduct = function () {
-    adminService.getSingleProduct().then(function (response) {
+    adminService.getSingleProduct($stateParams._id).then(function (response) {
+      console.log("frontend controller working");
       $scope.products = response[0];
       $scope.editProduct = {
+        id: response[0]._id,
         name: response[0].name,
         description: response[0].description,
         seller: response[0].seller,
@@ -72,37 +71,40 @@ angular.module("janet").controller("adminCtrl", function ($scope, adminService) 
     adminService.createProduct(newProduct).then(function (response) {
       $scope.showProducts();
       $scope.newProduct = response;
+      $scope.newProduct = {};
     });
   };
 
-  $scope.editProduct = function (product) {
-    adminService.updateSingleProduct(product).then(function () {
+  $scope.deleteProduct = function (product) {
+    adminService.deleteSingleProduct(product).then(function () {
       $scope.showProducts();
     });
   };
-
-
-  //
-  // $scope.id = product._id;
-  //
-  // $scope.deleteProduct = function(id){
-  //   adminService.deleteProduct(id).then(function(){
-  //     $scope.showProducts();
-  //   });
-  // };
 });
 
 angular.module("janet").controller("adminModalCtrl", function ($scope, adminService) {
-  console.log("test");
+  console.log("adminModalCtrl working");
 
   $scope.newProductModalShown = false;
   $scope.toggleNewProductModal = function () {
     $scope.newProductModalShown = !$scope.newProductModalShown;
   };
+});
+
+angular.module("janet").controller("editProductModalCtrl", function ($scope, adminService) {
+  console.log("editProductModalCtrl working");
 
   $scope.editProductModalShown = false;
-  $scope.toggleEditProductModal = function () {
+  $scope.toggleEditProductModal = function (product) {
+    $scope.productData = product;
     $scope.editProductModalShown = !$scope.editProductModalShown;
+  };
+
+  $scope.editProduct = function (product) {
+    adminService.updateSingleProduct(product).then(function () {
+      $scope.showProducts();
+      $scope.editProductModalShown = !$scope.editProductModalShown;
+    });
   };
 });
 
@@ -110,7 +112,10 @@ angular.module("janet").directive("editProductModalDirective", function () {
   return {
     restrict: "E",
     templateUrl: "./admin/views/adminEditProductView.html",
-    controller: "adminCtrl"
+    // scope: {
+    //   productData: "="
+    // },
+    controller: "editProductModalCtrl"
   };
 });
 
@@ -150,34 +155,22 @@ angular.module("janet").service("adminService", function ($http) {
   };
 
   this.updateSingleProduct = function (product) {
+    console.log("service working");
     return $http({
       method: "PUT",
-      url: "/api/products/:id",
-      data: {
-        name: product.name,
-        description: product.description,
-        seller: product.seller,
-        retailPrice: product.retailPrice,
-        discountPrice: product.discountPrice,
-        qty: product.qty,
-        images: product.images,
-        color: product.color,
-        size: product.size,
-        material: product.material,
-        category: product.category,
-        parent: product.parent
-      }
+      url: "/api/products/" + product._id,
+      data: product
     }).then(function (response) {
       return response.data;
     });
   };
 
-  // this.deleteSingleProduct = function(id){
-  //   return $http({
-  //     method: "DELETE",
-  //     url: "/api/products/" + product._id
-  //   });
-  // };
+  this.deleteSingleProduct = function (product) {
+    return $http({
+      method: "DELETE",
+      url: "/api/products/" + product._id
+    });
+  };
 
 
 });

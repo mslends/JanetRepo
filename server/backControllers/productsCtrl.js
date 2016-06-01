@@ -12,7 +12,7 @@ module.exports = {
   },
 
   getSingleProduct: function(req, res, next){
-    Product.findById(req.params.id).populate("Products").exec(function(err, response){
+    Product.findById(req.params.id).populate("Product").exec(function(err, response){
       if(err){
         res.status(500).json(err);
       } else{
@@ -33,6 +33,7 @@ module.exports = {
   },
 
   updateSingleProduct: function(req, res, next){
+    console.log("backend controller working");
     Product.findByIdAndUpdate(req.params.id, req.body, function(err, response){
       if(err){
         res.status(500).json(err);

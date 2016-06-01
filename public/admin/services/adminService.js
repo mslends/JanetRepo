@@ -29,34 +29,22 @@ angular.module('janet').service('adminService', function($http){
   };
 
   this.updateSingleProduct = function(product){
+    console.log("service working");
     return $http({
       method: "PUT",
-      url: "/api/products/:id",
-      data: {
-        name: product.name,
-        description: product.description,
-        seller: product.seller,
-        retailPrice: product.retailPrice,
-        discountPrice: product.discountPrice,
-        qty: product.qty,
-        images: product.images,
-        color: product.color,
-        size: product.size,
-        material: product.material,
-        category: product.category,
-        parent: product.parent
-      }
+      url: "/api/products/" + product._id,
+      data: product
     }).then(function(response){
       return response.data;
     });
   };
 
-// this.deleteSingleProduct = function(id){
-//   return $http({
-//     method: "DELETE",
-//     url: "/api/products/" + product._id
-//   });
-// };
+this.deleteSingleProduct = function(product){
+  return $http({
+    method: "DELETE",
+    url: "/api/products/" + product._id
+  });
+};
 
 
 

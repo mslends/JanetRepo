@@ -5,8 +5,11 @@ input
   padding: 3px
 
 textarea
-  margin: 5px 15px 5px 15px
+  margin-top: 5px
   padding: 3px
+  border-radius: 5px
+  border: 2px solid $janetGreen
+  text-decoration: none
 
 .dialog h3
   text-align: center
@@ -35,30 +38,32 @@ textarea
 
 .dialog
   position: fixed
-  width: 70%
+  overflow: auto
+  width: 80%
   height: 80%
   top: 50%
   left: 50%
   transform: translateY(-50%) translateX(-50%)
-  background-color: $janetGray
+  background-color: white
   border: 2px solid $janetGray
   border-radius: 10px
   z-index: 3
-  justify-content: center
+  text-align: center
 
 .new-product-input
   display: flex
-  justify-content: space-around
+  justify-content: center
+  flex-direction: column
 
-.new-product-short-inputs input
-  margin-left: 2px
-  margin-right: 2px
-  display:flex
-  justify-content: space-between
-  width: 20%
+.new-product-column-1
+  text-align: center
+
+.new-product-column-2
+  text-align: center
 
 #qty-input
-  margin-left: 15px
+  // margin-left: 15px
 
 .submit-button
   text-align: center
+  margin-bottom: 10px

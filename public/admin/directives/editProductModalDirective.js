@@ -3,7 +3,10 @@ angular.module('janet')
     return{
       restrict: "E",
       templateUrl: "./admin/views/adminEditProductView.html",
-      controller: "adminCtrl"
+      // scope: {
+      //   productData: "="
+      // },
+      controller: "editProductModalCtrl"
     }
 
   });
