@@ -156,7 +156,7 @@ angular.module("janet").controller("homeCtrl", function ($scope, customerService
       location.reload();
     });
   };
-  // logout function must be in navbar ctrl once done pulling code from master
+
 
 });
 
@@ -232,7 +232,35 @@ angular.module("janet").controller("settingsCtrl", function ($scope, customerSer
       location.reload();
     });
   };
-  // logout function must be in navbar ctrl once done pulling code from master
+});
+
+angular.module("janet").directive("footerDirective", function () {
+  return {
+    restrict: "E",
+    templateUrl: "./customers/views/footerView.html"
+  };
+});
+
+angular.module("janet").directive("loginSignupDirective", function () {
+  return {
+    restrict: "E",
+    templateUrl: "./customers/views/loginSignupView.html",
+    controller: "loginSignupCtrl"
+  };
+});
+
+angular.module("janet").directive("navDirective", function () {
+  return {
+    restrict: "E",
+    templateUrl: "./customers/views/navView.html"
+  };
+});
+
+angular.module("janet").directive("productDetailsDirective", function () {
+  return {
+    restrict: "E",
+    templateUrl: "./customers/views/productDetailsView.html"
+  };
 });
 
 angular.module("janet").service("cartService", function ($http) {});
@@ -308,32 +336,3 @@ angular.module("janet").service("customerService", function ($http) {
 });
 
 angular.module("janet").service("productsService", function ($http) {});
-
-angular.module("janet").directive("footerDirective", function () {
-  return {
-    restrict: "E",
-    templateUrl: "./customers/views/footerView.html"
-  };
-});
-
-angular.module("janet").directive("loginSignupDirective", function () {
-  return {
-    restrict: "E",
-    templateUrl: "./customers/views/loginSignupView.html",
-    controller: "loginSignupCtrl"
-  };
-});
-
-angular.module("janet").directive("navDirective", function () {
-  return {
-    restrict: "E",
-    templateUrl: "./customers/views/navView.html"
-  };
-});
-
-angular.module("janet").directive("productDetailsDirective", function () {
-  return {
-    restrict: "E",
-    templateUrl: "./customers/views/productDetailsView.html"
-  };
-});

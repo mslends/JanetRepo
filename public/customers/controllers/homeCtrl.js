@@ -19,7 +19,7 @@ angular.module('janet').controller('homeCtrl', function($scope, customerService,
       location.reload();
     });
   };
-  // logout function must be in navbar ctrl once done pulling code from master
+
 
 
 });

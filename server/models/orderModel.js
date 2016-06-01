@@ -8,7 +8,6 @@ var orderSchema = new Schema({
     qty: {type: Number, min: 1}
   }],
   totalPrice: {type: String}
-
 });
 
 module.exports = mongoose.model("Order", orderSchema);
