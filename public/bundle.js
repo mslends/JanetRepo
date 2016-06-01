@@ -23,17 +23,19 @@ angular.module("janet", ["ui.router"]).config(function ($stateProvider, $urlRout
   // ADMIN SIDE VIEWS =============================
   .state("admin", {
     url: "/admin",
-    templateUrl: "./admin/adminView.html",
-    controller: "adminCtrl"
-  }).state("adminProductView", {
-    url: "/adminProductView",
-    templateUrl: "./admin/adminProductView.html",
+    templateUrl: "./admin/views/adminView.html",
     controller: "adminCtrl"
   });
+
 
 });
 
 angular.module("janet").controller("adminCtrl", function ($scope, adminService) {
+  $scope.editProductModalShown = false;
+  $scope.toggleEditProductModal = function () {
+    $scope.editProductModalShown = !$scope.editProductModalShown;
+  };
+
   $scope.showProducts = function () {
     adminService.getProducts().then(function (response) {
       console.log(response);
@@ -42,6 +44,29 @@ angular.module("janet").controller("adminCtrl", function ($scope, adminService) 
   };
 
   $scope.showProducts();
+
+  $scope.getSingleProduct = function () {
+    adminService.getSingleProduct().then(function (response) {
+      $scope.products = response[0];
+      $scope.editProduct = {
+        name: response[0].name,
+        description: response[0].description,
+        seller: response[0].seller,
+        retailPrice: response[0].retailPrice,
+        discountPrice: response[0].discountPrice,
+        qty: response[0].qty,
+        images: response[0].images,
+        color: response[0].color,
+        size: response[0].size,
+        material: response[0].material,
+        category: response[0].category,
+        parent: response[0].parent
+      };
+      $scope.products = response[0].products;
+      console.log(response);
+    });
+  };
+
 
   $scope.addNewProduct = function (newProduct) {
     adminService.createProduct(newProduct).then(function (response) {
@@ -56,12 +81,44 @@ angular.module("janet").controller("adminCtrl", function ($scope, adminService) 
     });
   };
 
-  $scope.id = product._id;
 
-  $scope.deleteProduct = function (id) {
-    adminService.deleteProduct(id).then(function () {
-      $scope.showProducts();
-    });
+  //
+  // $scope.id = product._id;
+  //
+  // $scope.deleteProduct = function(id){
+  //   adminService.deleteProduct(id).then(function(){
+  //     $scope.showProducts();
+  //   });
+  // };
+});
+
+angular.module("janet").controller("adminModalCtrl", function ($scope, adminService) {
+  console.log("test");
+
+  $scope.newProductModalShown = false;
+  $scope.toggleNewProductModal = function () {
+    $scope.newProductModalShown = !$scope.newProductModalShown;
+  };
+
+  $scope.editProductModalShown = false;
+  $scope.toggleEditProductModal = function () {
+    $scope.editProductModalShown = !$scope.editProductModalShown;
+  };
+});
+
+angular.module("janet").directive("editProductModalDirective", function () {
+  return {
+    restrict: "E",
+    templateUrl: "./admin/views/adminEditProductView.html",
+    controller: "adminCtrl"
+  };
+});
+
+angular.module("janet").directive("newProductModalDirective", function () {
+  return {
+    restrict: "E",
+    templateUrl: "./admin/views/adminNewProductView.html",
+    controller: "adminModalCtrl"
   };
 });
 
@@ -70,6 +127,14 @@ angular.module("janet").service("adminService", function ($http) {
     return $http({
       method: "GET",
       url: "/api/products" }).then(function (response) {
+      return response.data;
+    });
+  };
+
+  this.getSingleProduct = function () {
+    return $http({
+      method: "GET",
+      url: "/api/products/:id" }).then(function (response) {
       return response.data;
     });
   };
@@ -107,12 +172,12 @@ angular.module("janet").service("adminService", function ($http) {
     });
   };
 
-  this.deleteSingleProduct = function (id) {
-    return $http({
-      method: "DELETE",
-      url: "/api/products/" + product._id
-    });
-  };
+  // this.deleteSingleProduct = function(id){
+  //   return $http({
+  //     method: "DELETE",
+  //     url: "/api/products/" + product._id
+  //   });
+  // };
 
 
 });

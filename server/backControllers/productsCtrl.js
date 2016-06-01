@@ -12,7 +12,7 @@ module.exports = {
   },
 
   getSingleProduct: function(req, res, next){
-    Product.findById(req.params.id).exec(function(err, response){
+    Product.findById(req.params.id).populate("Products").exec(function(err, response){
       if(err){
         res.status(500).json(err);
       } else{

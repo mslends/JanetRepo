@@ -4,28 +4,35 @@
         <label>Email:</label>
         <input type="text" ng-model="user.email">
         <label>Password:</label>
-        <input type="password" ng-model="user.password">
+        <input type="password" ng-model="user.password"><br><br>
         <button type="button" ng-click="updateAdminProfileSettings(user)">Save Changes</button>
     </div>
-
-    <h3>Current Products</h3>
-    <button type="button">Add New Product</button>
+    <hr width="80%"></hr>
+    <div class="admin-product-list-top">
+      <div class="add-new-product-button">
+        <button type="button" ng-click="toggleNewProductModal()" >Add New Product</button>
+      </div>
+        <h4 class="product-list-title">Current Products</h4>
+    </div>
+    <hr width="80%"></hr>
     <div class="product-list" ng-repeat="product in products track by $index">
+      <div class="single-product">
         <div class="product-image">
-            {{product.images}}
+            <img src="{{product.images}}">
         </div>
 
         <div class="product-info">
-            <h4>{{product.name}}</h4>
-            <p>{{product.seller}}</p>
-            <p>{{product.category}}</p>
-            <label>Qty: </label><p>{{product.qty}}</p>
+            <h4>{{product.name}} | {{product.seller}}</h4>
+            <p>{{product.category}} | Qty: {{product.qty}}</p>
         </div>
 
         <div class="product-options">
-            <button type="button" ng-click="editProduct(product)">Edit</button>
+            <button type="button" ng-click="toggleEditProductModal()">Edit</button>
             <button type="button" ng-click="deleteProduct(id)">Delete</button>
         </div>
-
+      </div>
+      <hr width="80%"></hr>
     </div>
 </section>
+<new-product-modal-directive></new-product-modal-directive>
+<edit-product-modal-directive></edit-product-modal-directive>

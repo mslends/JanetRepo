@@ -1,0 +1,36 @@
+<div class="modal" ng-show="newProductModalShown">
+    <div class="overlay" ng-click="toggleNewProductModal()"></div>
+
+    <div class="dialog">
+      <h3>Add a New Product</h3>
+      <div class="new-product-input">
+        <div class="new-product-column-1">
+            <input type="text" ng-model="newProduct.name" placeholder="Product Name">
+            <br>
+
+            <input type="text" ng-model="newProduct.seller" placeholder="Seller">
+            <br>
+            <div class="new-product-short-inputs">
+            <input type="text" id="qty-input" ng-model="newProduct.retailPrice" placeholder="Retail $">
+            <input type="text" ng-model="newProduct.discountPrice" placeholder="Discount $">
+            <br>
+          </div>
+            <div class="new-product-short-inputs">
+            <input type="number" id="qty-input" ng-model="newProduct.qty" placeholder="Qty">
+            <input type="text" ng-model="newProduct.size" placeholder="Size"><br>
+          </div>
+          <input type="text" ng-model="newProduct.color" placeholder="Color"><br>
+          <input type="text" ng-model="newProduct.material" placeholder="Material">
+        </div>
+        <div class="new-product-column-2">
+          <input type="text" ng-model="newProduct.category" placeholder="Category"><br>
+          <input type="text" ng-model="newProduct.parent" placeholder="Parent Product"><br>
+          <input type="url" ng-model="newProduct.images" placeholder="Image"><br>
+          <textarea type="text" ng-model="newProduct.description" placeholder="Brief Description" rows="4"></textarea>
+        </div>
+      </div>
+      <div class="submit-button">
+      <button type="button" ng-click="addNewProduct(newProduct)">Submit</button>
+    </div>
+    </div>
+</div>

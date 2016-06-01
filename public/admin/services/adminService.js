@@ -9,6 +9,15 @@ angular.module('janet').service('adminService', function($http){
     });
   };
 
+  this.getSingleProduct = () => {
+    return $http({
+      method: "GET",
+      url: "/api/products/:id",
+    }).then(function(response){
+      return response.data;
+    });
+  };
+
   this.createProduct = function(newProduct){
     return $http({
       method: "POST",
@@ -42,12 +51,12 @@ angular.module('janet').service('adminService', function($http){
     });
   };
 
-this.deleteSingleProduct = function(id){
-  return $http({
-    method: "DELETE",
-    url: "/api/products/" + product._id
-  });
-};
+// this.deleteSingleProduct = function(id){
+//   return $http({
+//     method: "DELETE",
+//     url: "/api/products/" + product._id
+//   });
+// };
 
 
 
