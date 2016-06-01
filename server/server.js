@@ -61,8 +61,8 @@ app.post('/auth', passport.authenticate('local-signup', {}), (req, res)=>{
 
 //PRODUCTS//
 app.get("/api/products", productsCtrl.getProducts);
-app.get("/api/products/:id", productsCtrl.getSingleProduct);
 app.post("/api/products", productsCtrl.createProduct);
+app.get("/api/products/:id", productsCtrl.getSingleProduct);
 app.put("/api/products/:id", productsCtrl.updateSingleProduct);
 app.delete("/api/products/:id", productsCtrl.deleteSingleProduct);
 
