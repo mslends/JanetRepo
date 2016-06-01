@@ -2,29 +2,33 @@
     <div class="overlay" ng-click="toggleNewProductModal()"></div>
 
     <div class="dialog">
+      <div class="exit-modal">
+      <i class="fa fa-times" ng-click="toggleNewProductModal()"></i>
+    </div><br>
       <h3>Add a New Product</h3>
       <div class="new-product-input">
-        <div class="new-product-column-1">
+
             <input type="text" ng-model="newProduct.name" placeholder="Product Name">
             <br>
 
             <input type="text" ng-model="newProduct.seller" placeholder="Seller">
             <br>
 
-            <input type="text" id="qty-input" ng-model="newProduct.retailPrice" placeholder="Retail $">
+            <input type="text" ng-model="newProduct.category" placeholder="Category"><hr width="20%"></hr>
+            <input type="text" id="qty-input" ng-model="newProduct.retailPrice" placeholder="Retail $"><br>
             <input type="text" ng-model="newProduct.discountPrice" placeholder="Discount $">
-            <br>
-            <input type="number" id="qty-input" ng-model="newProduct.qty" placeholder="Qty">
+            <hr width="20%"></hr>
+            <input type="number" id="qty-input" ng-model="newProduct.qty" placeholder="Qty"><br>
             <input type="text" ng-model="newProduct.size" placeholder="Size"><br>
           <input type="text" ng-model="newProduct.color" placeholder="Color"><br>
-          <input type="text" ng-model="newProduct.material" placeholder="Material">
-        </div>
-        <div class="new-product-column-2">
-          <input type="text" ng-model="newProduct.category" placeholder="Category"><br>
+          <input type="text" ng-model="newProduct.material" placeholder="Material"><hr width="20%"></hr>
+
+
+
           <input type="text" ng-model="newProduct.parent" placeholder="Parent Product"><br>
           <input type="url" ng-model="newProduct.images" placeholder="Image"><br>
           <textarea type="text" ng-model="newProduct.description" placeholder="Brief Description" rows="4"></textarea>
-        </div>
+
       </div>
       <div class="submit-button">
       <button type="button" ng-click="addNewProduct(newProduct)">Submit</button>

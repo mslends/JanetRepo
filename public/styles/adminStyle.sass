@@ -1,5 +1,8 @@
 @import "_colors"
 
+body
+  font-family: 'Lato', sans-serif
+
 button
   border-radius: 5px
   background-color: $janetPurple
@@ -31,11 +34,13 @@ input
   padding: 15px 10px 25px 10px
   text-align: center
 
-.admin-profile-settings h3
+.admin-profile-settings h1
+  font-size: 18px
+  font-weight: bolder
   margin-bottom: 15px
 
-.admin-profile-settings input
-  margin-right: 25px
+.admin-profile-settings h3
+  margin-top: 10px
 
 .admin-product-list-top
   display: flex
@@ -51,16 +56,23 @@ input
   text-align: center
 
 .product-list-title
-  margin-top: 15px
+  margin-top: 30px
+  font-size: 16px
+  font-weight: bold
 
 .single-product
   display: flex
   justify-content: center
 
-.product-image img
-  width: 80px
+.product-image
+  width: 90px
   height: 70px
   margin-left: 10px
+
+.product-image img
+  width: 100%
+  height: 100%
+  background-size: cover
 
 .product-info
   margin-left: 10px
