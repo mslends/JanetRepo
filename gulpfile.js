@@ -29,4 +29,4 @@ gulp.task('watch', function() {
     gulp.watch(paths.jsSource, ['js']);
 })
 
-gulp.task('default', ['sass', 'watch', 'js'])
+gulp.task('default', ['sass', 'watch', 'js']);

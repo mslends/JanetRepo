@@ -1,4 +1,4 @@
-angular.module('janet', ['ui.router'])
+angular.module('janet', ['ui.router', 'ngAnimate'])
   .config(function($stateProvider, $urlRouterProvider){
 
       $urlRouterProvider.otherwise('/home');
