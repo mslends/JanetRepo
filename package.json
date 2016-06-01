@@ -1,14 +1,15 @@
 {
   "name": "janet",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "dependencies": {
-    "express": "^4.13.4",
+    "bcrypt": "^0.8.6",
     "body-parser": "^1.15.1",
-    "mongoose": "^4.4.19",
+    "express": "^4.13.4",
     "express-session": "^1.13.0",
-    "passport": "^0.3.2"
+    "mongoose": "^4.4.19",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0"
   },
   "devDependencies": {
     "babel": "^6.5.2",
@@ -32,5 +33,6 @@
   "bugs": {
     "url": "https://github.com/operationUnicorn/JanetRepo/issues"
   },
-  "homepage": "https://github.com/operationUnicorn/JanetRepo#readme"
+  "homepage": "https://github.com/operationUnicorn/JanetRepo#readme",
+  "description": ""
 }
