@@ -7,6 +7,8 @@ const passport = require("passport");
 const productsCtrl = require("./backControllers/productsCtrl.js");
 const userCtrl = require("./backControllers/userCtrl.js");
 const cartCtrl = require("./backControllers/cartCtrl.js");
+const orderCtrl = require("./backControllers/orderCtrl.js");
+
 
 
 
@@ -33,22 +35,23 @@ app.use(bodyParser.json());
 
 
 //LOCAL AUTH//
-
-
-app.use(passport.initialize());
-app.use(passport.session());
-
 app.use(session({
   secret: sessionKeys.secret,
   resave: true,
   saveUninitialized: true
 }));
 
-app.post('/auth', (req, res, next)=>{
-  next();
-}, passport.authenticate('local-signup'), (req, res)=>{
+app.use(passport.initialize());
+
+
+app.use(passport.session());
+
+
+
+app.post('/auth', passport.authenticate('local-signup', {}), (req, res)=>{
+  console.log(req.user);
   res.send({login: true, user: req.user});
-})
+});
 
 
 
@@ -66,12 +69,14 @@ app.delete("/api/products/:id", productsCtrl.deleteSingleProduct);
 
 //USERS//
 app.get("/api/users", userCtrl.getUsers);
+app.get("/api/users/currentUser", userCtrl.currentUser);
+app.get("/api/users/logout", userCtrl.logout);
 app.get("/api/users/:id", userCtrl.getUser);
 // app.post("/api/users", userCtrl.createUser);
 app.put("/api/users/:id", userCtrl.updateUser);
 app.delete("/api/users/:id", userCtrl.deleteUser);
 // app.post("/api/users/login", userCtrl.login);
-app.get("/api/users/logout", userCtrl.logout);
+
 
 
 //CONNECTIONS//

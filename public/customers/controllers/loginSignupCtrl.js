@@ -7,6 +7,7 @@ angular.module('janet').controller('loginSignupCtrl', function($scope, customerS
   };
 ////////////////////////////
 
+
 $scope.createUser = function(user){
   customerService.createUser(user).then(function(response){
     $scope.newUser = response;

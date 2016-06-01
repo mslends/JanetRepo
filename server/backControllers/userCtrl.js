@@ -21,6 +21,12 @@ module.exports = {
       });
     },
 
+    currentUser: (req, res, next)=>{
+      console.log(req.user, 'current user');
+      if(!req.user) res.status(401).json('User not found');
+      res.send(req.user);
+    },
+
     createUser: (req, res, next)=>{
       var newUser = new User(req.body);
       newUser.save((err, response)=>{

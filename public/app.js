@@ -6,7 +6,16 @@ angular.module('janet', ['ui.router'])
             .state('home', {
                 url: '/home',
                 templateUrl: './customers/views/homeView.html',
-                controller: 'homeCtrl'
+                controller: 'homeCtrl',
+                resolve: {
+                  user: function(customerService, $state){
+                          return customerService.currentUser().then(function(response){
+                            return response;
+                          }).catch(function(err) {
+                            console.log(err);
+                          })
+                        }
+                  }
             })
 
             .state('productDetails', {
@@ -24,7 +33,16 @@ angular.module('janet', ['ui.router'])
             .state('settings', {
                 url: '/settings',
                 templateUrl: './customers/views/customerSettingsView.html',
-                controller: 'settingsCtrl'
+                controller: 'settingsCtrl',
+                resolve: {
+                  user: function(customerService, $state){
+                          return customerService.currentUser().then(function(response){
+                            return response;
+                          }).catch(function(err) {
+                            console.log(err);
+                          })
+                        }
+                  }
             })
 
 // ADMIN SIDE VIEWS =============================

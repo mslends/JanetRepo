@@ -5,7 +5,16 @@ angular.module("janet", ["ui.router"]).config(function ($stateProvider, $urlRout
   $stateProvider.state("home", {
     url: "/home",
     templateUrl: "./customers/views/homeView.html",
-    controller: "homeCtrl"
+    controller: "homeCtrl",
+    resolve: {
+      user: function (customerService, $state) {
+        return customerService.currentUser().then(function (response) {
+          return response;
+        })["catch"](function (err) {
+          console.log(err);
+        });
+      }
+    }
   }).state("productDetails", {
     url: "/productDetails",
     templateUrl: "./customers/views/productDetailsView.html",
@@ -17,7 +26,16 @@ angular.module("janet", ["ui.router"]).config(function ($stateProvider, $urlRout
   }).state("settings", {
     url: "/settings",
     templateUrl: "./customers/views/customerSettingsView.html",
-    controller: "settingsCtrl"
+    controller: "settingsCtrl",
+    resolve: {
+      user: function (customerService, $state) {
+        return customerService.currentUser().then(function (response) {
+          return response;
+        })["catch"](function (err) {
+          console.log(err);
+        });
+      }
+    }
   })
 
   // ADMIN SIDE VIEWS =============================
@@ -116,48 +134,29 @@ angular.module("janet").service("adminService", function ($http) {
 
 });
 
-angular.module("janet").directive("footerDirective", function () {
-  return {
-    restrict: "E",
-    templateUrl: "./customers/views/footerView.html"
-  };
-});
-
-angular.module("janet").directive("loginSignupDirective", function () {
-  return {
-    restrict: "E",
-    templateUrl: "./customers/views/loginSignupView.html",
-    controller: "loginSignupCtrl"
-  };
-});
-
-angular.module("janet").directive("navDirective", function () {
-  return {
-    restrict: "E",
-    templateUrl: "./customers/views/navView.html"
-  };
-});
-
-angular.module("janet").directive("productDetailsDirective", function () {
-  return {
-    restrict: "E",
-    templateUrl: "./customers/views/productDetailsView.html"
-  };
-});
-
 angular.module("janet").controller("cartCtrl", function ($scope) {});
 
-angular.module("janet").controller("homeCtrl", function ($scope, customerService, $state) {
+angular.module("janet").controller("homeCtrl", function ($scope, customerService, $state, user) {
+  $scope.user = user;
+
   $scope.modalShown = false;
   $scope.toggleModal = function () {
     $scope.modalShown = !$scope.modalShown;
   };
 
-  $scope.getOneUser = function () {
-    customerService.getOneUser($scope.user._id).then(function (response) {
-      $scope.user = response;
+  // $scope.getOneUser = ()=>{
+  //   customerService.getOneUser($scope.user._id).then((response)=>{
+  //     $scope.user = response;
+  //   });
+  // };
+
+  $scope.logout = function () {
+    customerService.logout().then(function (response) {
+      alert("you are logged out!");
+      location.reload();
     });
   };
+  // logout function must be in navbar ctrl once done pulling code from master
 
 });
 
@@ -168,6 +167,7 @@ angular.module("janet").controller("loginSignupCtrl", function ($scope, customer
     $scope.modalShown = !$scope.modalShown;
   };
   ////////////////////////////
+
 
   $scope.createUser = function (user) {
     customerService.createUser(user).then(function (response) {
@@ -211,7 +211,9 @@ angular.module("janet").controller("loginSignupCtrl", function ($scope, customer
 
 angular.module("janet").controller("productDetailsCtrl", function ($scope) {});
 
-angular.module("janet").controller("settingsCtrl", function ($scope, customerService) {
+angular.module("janet").controller("settingsCtrl", function ($scope, customerService, user, $state) {
+  $scope.user = user;
+
   $scope.updateUser = function (user) {
     customerService.updateUser(user._id, user).then(function (response) {
       $scope.updatedUser = response;
@@ -223,6 +225,14 @@ angular.module("janet").controller("settingsCtrl", function ($scope, customerSer
       $scope.user = response;
     });
   };
+
+  $scope.logout = function () {
+    customerService.logout().then(function (response) {
+      alert("you are logged out!");
+      location.reload();
+    });
+  };
+  // logout function must be in navbar ctrl once done pulling code from master
 });
 
 angular.module("janet").service("cartService", function ($http) {});
@@ -256,6 +266,15 @@ angular.module("janet").service("customerService", function ($http) {
     });
   };
 
+  this.currentUser = function () {
+    return $http({
+      method: "GET",
+      url: "/api/users/currentUser"
+    }).then(function (response) {
+      return response.data;
+    });
+  };
+
   this.updateUser = function (userId, user) {
     return $http({
       method: "PUT",
@@ -269,7 +288,7 @@ angular.module("janet").service("customerService", function ($http) {
   this.login = function (user) {
     return $http({
       method: "POST",
-      url: "auth",
+      url: "/auth",
       data: user
     }).then(function (response) {
       return response.data;
@@ -289,3 +308,32 @@ angular.module("janet").service("customerService", function ($http) {
 });
 
 angular.module("janet").service("productsService", function ($http) {});
+
+angular.module("janet").directive("footerDirective", function () {
+  return {
+    restrict: "E",
+    templateUrl: "./customers/views/footerView.html"
+  };
+});
+
+angular.module("janet").directive("loginSignupDirective", function () {
+  return {
+    restrict: "E",
+    templateUrl: "./customers/views/loginSignupView.html",
+    controller: "loginSignupCtrl"
+  };
+});
+
+angular.module("janet").directive("navDirective", function () {
+  return {
+    restrict: "E",
+    templateUrl: "./customers/views/navView.html"
+  };
+});
+
+angular.module("janet").directive("productDetailsDirective", function () {
+  return {
+    restrict: "E",
+    templateUrl: "./customers/views/productDetailsView.html"
+  };
+});

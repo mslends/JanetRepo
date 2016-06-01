@@ -1,4 +1,6 @@
-angular.module('janet').controller('settingsCtrl', function($scope, customerService) {
+angular.module('janet').controller('settingsCtrl', function($scope, customerService, user, $state) {
+
+  $scope.user = user;
 
   $scope.updateUser = (user)=>{
     customerService.updateUser(user._id, user).then((response)=>{
@@ -12,4 +14,11 @@ angular.module('janet').controller('settingsCtrl', function($scope, customerServ
     });
   };
 
+  $scope.logout = function(){
+    customerService.logout().then(function(response){
+      alert('you are logged out!')
+      location.reload();
+    });
+  };
+    // logout function must be in navbar ctrl once done pulling code from master
 });

@@ -23,7 +23,16 @@ this.getOneUser = (userId)=>{
   return $http({
     method: 'GET',
     url: '/api/users/' + userId
-  }).then(function(response){
+  }).then((response)=>{
+    return response.data;
+  });
+};
+
+this.currentUser = ()=>{
+  return $http({
+    method: 'GET',
+    url: '/api/users/currentUser'
+  }).then((response)=>{
     return response.data;
   });
 };
@@ -41,7 +50,7 @@ this.updateUser = (userId, user)=>{
 this.login = (user)=>{
   return $http({
     method: 'POST',
-    url: 'auth',
+    url: '/auth',
     data: user
   }).then((response)=>{
     return response.data;
