@@ -3,6 +3,7 @@ var Schema = mongoose.Schema;
 
 var orderSchema = new Schema({
   user: {type: Schema.Types.ObjectId, ref: 'User'},
+  orderDate: {type: Date},
   productsOrdered: [{
     product: {type: Schema.Types.ObjectId, ref: 'Product'},
     qty: {type: Number, min: 1}

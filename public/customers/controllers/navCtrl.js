@@ -15,7 +15,7 @@ angular.module('janet').controller('navCtrl', function($scope, customerService, 
   $scope.logout = function(){
     customerService.logout().then(function(response){
       alert('you are logged out!!')
-      location.reload();
+      $state.go('home');
     });
   };
 
