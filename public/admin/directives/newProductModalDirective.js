@@ -3,7 +3,7 @@ angular.module('janet')
     return{
       restrict: "E",
       templateUrl: "./admin/views/adminNewProductView.html",
-      controller: "adminModalCtrl"
+      controller: "newProductModalCtrl"
     }
 
   });

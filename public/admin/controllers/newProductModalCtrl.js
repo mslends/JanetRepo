@@ -1,7 +1,7 @@
 angular.module('janet')
-  .controller('adminModalCtrl', function($scope, adminService){
+  .controller('newProductModalCtrl', function($scope, adminService){
 
-    console.log("adminModalCtrl working");
+    console.log("newProductModalCtrl working");
 
     $scope.newProductModalShown = false;
     $scope.toggleNewProductModal = function(){

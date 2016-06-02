@@ -2,34 +2,66 @@
     <div class="overlay" ng-click="toggleEditProductModal()"></div>
 
     <div class="dialog">
-      <div class="exit-modal">
-      <i class="fa fa-times" ng-click="toggleEditProductModal()"></i>
-    </div><br>
-      <h3>Edit Product</h3>
-      <div class="edit-product-input">
-            <input type="text" ng-model="productData.name" placeholder="Product Name"><br>
+        <div class="admin-exit-modal">
+            <i class="fa fa-times" ng-click="toggleEditProductModal()"></i>
+        </div>
+        <br>
+        <h3>Edit Product</h3>
+        <div class="admin-edit-product-input">
 
-            <input type="text" ng-model="productData.seller" placeholder="Seller"><br>
-            <input type="text" ng-model="productData.category" placeholder="Category">
+            <div class="admin-edit-product-input-group-1">
+                <p>Name</p>
+                <input type="text" ng-model="productData.name" placeholder="Product Name">
+                <br>
+                <p>Seller</p>
+                <input type="text" ng-model="productData.seller" placeholder="Seller">
+                <br>
+                <p>Category</p>
+                <input type="text" ng-model="productData.category" placeholder="Category">
+            </div>
+
             <hr width="20%"></hr>
 
-            <input type="text" id="qty-input" ng-model="productData.retailPrice" placeholder="Retail $"><br>
-            <input type="text" ng-model="productData.discountPrice" placeholder="Discount $"><br>
-            <input type="number" id="qty-input" ng-model="productData.qty" placeholder="Qty">
+            <div class="admin-edit-product-input-group-2">
+                <p>Retail Price</p>
+                <input type="text" id="qty-input" ng-model="productData.retailPrice" placeholder="Retail $">
+                <br>
+                <p>Discount Price</p>
+                <input type="text" ng-model="productData.discountPrice" placeholder="Discount $">
+                <br>
+                <p>Qty</p>
+                <input type="number" id="qty-input" ng-model="productData.qty" placeholder="Qty">
+            </div>
+
             <hr width="20%"></hr>
 
-          <input type="text" ng-model="productData.size" placeholder="Size"><br>
-          <input type="text" ng-model="productData.color" placeholder="Color"><br>
-          <input type="text" ng-model="productData.material" placeholder="Material">
-          <hr width="20%"></hr>
+            <div class="admin-edit-product-input-group-3">
+                <p>Size</p>
+                <input type="text" ng-model="productData.size" placeholder="Size">
+                <br>
+                <p>Color</p>
+                <input type="text" ng-model="productData.color" placeholder="Color">
+                <br>
+                <p>Material</p>
+                <input type="text" ng-model="productData.material" placeholder="Material">
+            </div>
 
-          <input type="text" ng-model="productData.parent" placeholder="Parent Product"><br>
-          <input type="url" ng-model="productData.images" placeholder="Image"><br>
-          <textarea type="text" ng-model="productData.description" placeholder="Brief Description" rows="4"></textarea>
+            <hr width="20%"></hr>
 
-      </div>
-      <div class="save-changes-button">
-      <button type="button" ng-click="editProduct(productData)">Save Changes</button>
-    </div>
+            <div class="admin-edit-product-input-group-4">
+                <p>Parent Product</p>
+                <input type="text" ng-model="productData.parent" placeholder="Parent Product">
+                <br>
+                <p>Image</p>
+                <input type="url" ng-model="productData.images" placeholder="Image">
+                <br>
+                <p>Description</p>
+                <textarea type="text" ng-model="productData.description" placeholder="Brief Description" rows="4"></textarea>
+            </div>
+
+        </div>
+        <div class="admin-save-changes-button">
+            <button type="button" ng-click="editProduct(productData)">Save Changes</button>
+        </div>
     </div>
 </div>
