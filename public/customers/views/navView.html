@@ -6,7 +6,7 @@
             <i class="hamburger fa fa-2x fa-bars" aria-hidden="true" ng-click="isVisible = !isVisible"></i>
 
             <i class="glass fa fa-2x fa-search" aria-hidden="true" ng-click="searchIsVisible = !searchIsVisible"></i>
-            
+
             <input id="topSearchBar" type="text" name="name" placeholder="   Search...">
 
         </div>
@@ -19,12 +19,16 @@
 
 
     <div class="navMenu" ng-hide="!isVisible">
+
         <div class="navXButton" ng-click="isVisible = !isVisible">
             X
         </div>
 
-        <div class="loginButton">
+        <div class="loginButton" ng-click=toggleModal() ng-hide="user">
             Login
+        </div>
+        <div class="loginButton" ng-click=logout() ng-hide="!user">
+            Logout
         </div>
 
         <div class="optionBox">
@@ -34,7 +38,7 @@
                 </i>Shop By Category</div>
             <div class="navOption"><i class="fa fa-clock-o" aria-hidden="true"></i> Order History</div>
 
-            <div class="navOption"><i class="fa fa-cog" aria-hidden="true"></i> Account Settings</div>
+            <div class="navOption" ui-sref="settings"><i class="fa fa-cog" aria-hidden="true"></i> Account Settings</div>
         </div>
 
 
@@ -47,5 +51,8 @@
         <input id="searchBar" type="text" name="name" placeholder="   Search...">
 
 
+
     </div>
 </main>
+
+<login-signup-directive></login-signup-directive>
