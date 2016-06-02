@@ -49,13 +49,7 @@ angular.module('janet', ['ui.router', 'ngAnimate'])
 // ADMIN SIDE VIEWS =============================
             .state('admin', {
                 url: '/admin',
-                templateUrl: './admin/adminView.html',
-                controller: 'adminCtrl'
-            })
-
-            .state('adminProductView', {
-                url: '/adminProductView',
-                templateUrl: './admin/adminProductView.html',
+                templateUrl: './admin/views/adminView.html',
                 controller: 'adminCtrl'
             });
 

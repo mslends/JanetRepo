@@ -1,0 +1,77 @@
+@import "_colors"
+
+input
+  margin-top: 2px
+  margin-bottom: 2px
+  padding: 3px
+  font-family: 'Lato', sans-serif
+
+textarea
+  margin-top: 5px
+  padding: 3px
+  border-radius: 5px
+  border: 2px solid $janetGreen
+  text-decoration: none
+  font-family: 'Lato', sans-serif
+
+.dialog h3
+  text-align: center
+  margin: 10px 0px 20px 0px
+
+.dialog button
+  margin-top: 40px
+  padding: 10px 20px 10px 20px
+  text-align: center
+  justify-content: center
+
+.modal
+  height: 80%
+  margin-top: 30px
+  padding: 30px
+  text-align: center
+
+.overlay
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background-color: #000
+  opacity: 0.8
+  z-index: 2
+
+.dialog
+  text-align: center
+  position: fixed
+  overflow: auto
+  width: 80%
+  height: 80%
+  top: 50%
+  left: 50%
+  transform: translateY(-50%) translateX(-50%)
+  background-color: white
+  border: 2px solid $janetGray
+  border-radius: 10px
+  z-index: 3
+
+
+.admin-new-product-input
+  display: flex
+  justify-content: center
+  flex-direction: column
+  text-align: center
+  // margin-left: 25px
+  // margin-right: 25px
+
+
+.admin-new-product-input hr
+  margin-top: 20px
+  margin-bottom: 20px
+
+.admin-submit-button
+  text-align: center
+  margin-bottom: 10px
+
+@media (min-width: 500px)
+  .admin-new-product-input hr
+    width: 85px
