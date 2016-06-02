@@ -12,7 +12,7 @@ var productSchema = new Schema({
   color: {type: String},
   size: {type: String},
   material: {type: String},
-  userReviews: [{type: Schema.Types.ObjectId, ref: 'User'}],
+  // userReviews: [{type: Schema.Types.ObjectId, ref: 'User'}],
   category: {type: String},
   favorites: {type: Number},
   amntSold: {type: Number},

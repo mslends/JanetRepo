@@ -12,7 +12,7 @@ module.exports = {
   },
 
   getOrder: (req, res, next)=>{
-    order.findById(req.params.id).exec((err, response)=>{
+    Order.findById(req.params.id).populate('user productsOrdered').exec((err, response)=>{
       if(err){
         res.status(500).json(err);
       } else{
