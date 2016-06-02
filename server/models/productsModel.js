@@ -8,7 +8,7 @@ var productSchema = new Schema({
   retailPrice: {type: String},
   discountPrice: {type: String},
   qty: {type: Number},
-  images: [{type: String}],
+  images: {type: String},
   color: {type: String},
   size: {type: String},
   material: {type: String},

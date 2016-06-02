@@ -33,12 +33,14 @@
 
         <div class="optionBox">
 
-            <div class="navOption">All Deals</div>
-            <div class="navOption">
+            <div class="navOption"  ng-click="isVisible = !isVisible">All Deals</div>
+            <div class="navOption" ng-click="isVisible = !isVisible">
                 </i>Shop By Category</div>
-            <div class="navOption"><i class="fa fa-clock-o" aria-hidden="true"></i> Order History</div>
+            <div class="navOption"  ng-click="isVisible = !isVisible"><i class="fa fa-clock-o" aria-hidden="true"></i> Order History</div>
 
-            <div class="navOption" ui-sref="settings"><i class="fa fa-cog" aria-hidden="true"></i> Account Settings</div>
+
+            <div class="navOption"  ng-click="isVisible = !isVisible"><i class="fa fa-cog" aria-hidden="true"></i> Account Settings</div>
+
         </div>
 
 

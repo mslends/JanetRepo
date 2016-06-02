@@ -1,32 +1,39 @@
 <section class="admin-page">
     <div class="admin-profile-settings">
-        <h3>Admin Profile Settings</h3>
-        <label>Email:</label>
-        <input type="text" ng-model="user.email">
-        <label>Password:</label>
-        <input type="password" ng-model="user.password">
+        <h1>Admin Profile Settings</h1>
+        <h3>Email</h3>
+        <input type="text" ng-model="user.email"><br>
+        <h3>Password</h3>
+        <input type="password" ng-model="user.password"><br><br>
         <button type="button" ng-click="updateAdminProfileSettings(user)">Save Changes</button>
     </div>
-
-    <h3>Current Products</h3>
-    <button type="button">Add New Product</button>
-    <div class="product-list" ng-repeat="product in products track by $index">
-        <div class="product-image">
-            {{product.images}}
+    <hr width="80%"></hr>
+    <div class="admin-product-list-top">
+      <div class="admin-add-new-product-button">
+        <button type="button" ng-click="toggleNewProductModal()" >Add New Product</button>
+      </div>
+        <h4 class="admin-product-list-title">Current Products</h4>
+    </div>
+    <hr width="80%"></hr>
+    <div class="admin-product-list" ng-repeat="product in products track by $index">
+      <div class="admin-single-product">
+        <div class="admin-product-image">
+            <img src="{{product.images}}">
         </div>
 
-        <div class="product-info">
-            <h6>{{product.name}}</h6>
-            <p>{{product.seller}}</p>
-            <p>{{product.category}}</p>
-            <label>Qty: </label>
-            <p>{{product.qty}}</p>
+        <div class="admin-product-info">
+            <h4>{{product.name}}</h4><hr width="90%"></hr>
+            <h4>{{product.seller}}</h4>
+            <p>{{product.category}} | Qty: {{product.qty}}</p>
         </div>
 
-        <div class="product-options">
-            <button type="button" ng-click="editProduct(product)">Edit</button>
-            <button type="button" ng-click="deleteProduct(id)">Delete</button>
+        <div class="admin-product-options">
+            <button type="button" ng-click="toggleEditProductModal(product)">Edit</button><br>
+            <button type="button" ng-click="deleteProduct(product)">Delete</button>
         </div>
-
+      </div>
+      <hr width="80%"></hr>
     </div>
 </section>
+<new-product-modal-directive></new-product-modal-directive>
+<edit-product-modal-directive></edit-product-modal-directive>
