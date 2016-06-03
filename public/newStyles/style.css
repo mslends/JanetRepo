@@ -304,15 +304,30 @@
 
 .product-details-countdown {
   width: 33%;
-  height: 80px;
+  height: 60px;
   background-color: none;
-  text-align: center; }
+  text-align: center;
+  padding-top: 20px;
+  font-size: 20px; }
 
 .product-details-amount-sold {
   width: 33%;
   height: 80px;
   background-color: none;
   text-align: center; }
+
+#clockdiv {
+  width: 100%;
+    width-height: 80px;
+    width-background-color: black;
+    width-text-align: center;
+    width-font-size: 20px;
+    width-margin-top: 20px;
+    width-display: flex; }
+
+#clockdiv span {
+  border-radius: 3px;
+  display: inline-block; }
 
 .stat {
   width: 100%;
