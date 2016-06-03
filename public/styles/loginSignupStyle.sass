@@ -1,0 +1,59 @@
+@import "_colors"
+
+.overlay
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background-color: #000
+  opacity: 0.8
+  z-index: 2
+
+
+.dialog
+  position: fixed
+  display: inline-block
+  width: 90%
+  height: 500px
+  top: 50%
+  left: 50%
+  transform: translateY(-50%) translateX(-50%)
+  background-color: #fff
+  background-size: cover
+  border-radius: 10px
+  z-index: 3
+  border: 2px solid black
+
+
+.loginSection
+  margin-top: 30px
+  width: 100%
+  display: inline-block
+  text-align: center
+
+.signupSection
+  margin-top: 25px
+  width: 100%
+  display: inline-block
+  text-align: center
+
+.loginSection h2, .signupSection h2
+  margin-bottom: 20px
+
+.loginSection button, .signupSection button
+  width: 80%
+  height: 35px
+  background: $janetPurple
+  color: white
+  margin-top: 10px
+  font-size: 15px
+  border: none
+
+
+.loginSection input, .signupSection input
+  margin-bottom: 10px
+  width: 80%
+  height: 30px
+  border: 1px solid #f2f2f2
+  padding: 0 10px 0 10px
