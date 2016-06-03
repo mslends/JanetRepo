@@ -1,16 +1,23 @@
 <div class="info-setting">
   <div ng-hide="!user">
     <h2>Account Setting</h2>
-    <input type="text" ng-model="user.name" placeholder=" Full Name">
-    <input type="email" ng-model="user.email" placeholder=" Email Address">
+    <input type="text" ng-model="oneUser.name" placeholder="Full Name">
+    <input type="email" ng-model="oneUser.email" placeholder="Email Address">
     <h3>Shipping Address</h3>
-    <input type="text" ng-model="user.shippingAddress.street" placeholder=" Street">
-    <input type="text" ng-model="user.shippingAddress.city" placeholder=" City">
-    <input type="text" ng-model="user.shippingAddress.state" placeholder=" State">
-    <input type="text" ng-model="user.shippingAddress.zip" placeholder=" Zipcode">
+    <input type="text" ng-model="oneUser.shippingAddress.street" placeholder="Street">
+    <input type="text" ng-model="oneUser.shippingAddress.city" placeholder="City">
+    <input type="text" ng-model="oneUser.shippingAddress.state" placeholder="State">
+    <input type="text" ng-model="oneUser.shippingAddress.zip" placeholder="Zipcode">
     <h3>Phone Number</h3>
-    <input type="text" ng-model="user.phone" placeholder="Phone "><br>
-    <button type="button" ng-click="updateUser(user)">Update Information</button>
+    <input type="text" ng-model="oneUser.phone" placeholder="Phone "><br>
+    <button type="button" ng-click="updateUser(oneUser)">Update Information</button>
   </div>
     <h2 ng-hide="user">Please login to continue! :)</h2>
+</div>
+
+<div class="orderHistory">
+  <!-- {{oneUser.orderHistory[0].orderDate}}<br>
+  ${{oneUser.orderHistory[0].totalPrice}}<br>
+  {{oneUser.orderHistory[0].productsOrdered[0].product.name}}<br>
+  {{oneUser.orderHistory[0].productsOrdered[0].qty}}<br> -->
 </div>
