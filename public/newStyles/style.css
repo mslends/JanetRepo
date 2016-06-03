@@ -1,7 +1,347 @@
+.admin-exit-modal i {
+  margin-top: 5px;
+  margin-right: 12px;
+  float: right; }
+
+.admin-save-changes-button {
+  text-align: center;
+  margin-bottom: 15px; }
+
+.admin-edit-product-input {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center; }
+
+.admin-edit-product-input hr {
+  margin-top: 20px;
+  margin-bottom: 20px; }
+
+.admin-edit-product-input input {
+  margin-bottom: 10px; }
+
+.admin-edit-product-input p {
+  color: #999; }
+
+@media (min-width: 500px) {
+  .admin-edit-product-input hr {
+    width: 85px; } }
+
+input {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  padding: 3px;
+  font-family: 'Lato', sans-serif; }
+
+textarea {
+  margin-top: 5px;
+  padding: 3px;
+  border-radius: 5px;
+  border: 2px solid #73D1A6;
+  text-decoration: none;
+  font-family: 'Lato', sans-serif; }
+
+.dialog h3 {
+  text-align: center;
+  margin: 10px 0px 20px 0px; }
+
+.dialog button {
+  margin-top: 40px;
+  padding: 10px 20px 10px 20px;
+  text-align: center;
+  justify-content: center; }
+
+.modal {
+  height: 80%;
+  margin-top: 30px;
+  padding: 30px;
+  text-align: center; }
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.8;
+  z-index: 2; }
+
+.dialog {
+  text-align: center;
+  position: fixed;
+  overflow: auto;
+  width: 80%;
+  height: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  background-color: white;
+  border: 2px solid #DCE1E2;
+  border-radius: 10px;
+  z-index: 3; }
+
+.admin-new-product-input {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center; }
+
+.admin-new-product-input hr {
+  margin-top: 20px;
+  margin-bottom: 20px; }
+
+.admin-submit-button {
+  text-align: center;
+  margin-bottom: 10px; }
+
+@media (min-width: 500px) {
+  .admin-new-product-input hr {
+    width: 85px; } }
+
+body {
+  font-family: 'Lato', sans-serif;
+  margin: auto; }
+
+button {
+  border-radius: 5px;
+  background-color: #9751AD;
+  border: none;
+  color: white;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  text-align: center;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s; }
+
+button:hover {
+  background-color: #73D1A6;
+  color: white; }
+
+input {
+  border-radius: 5px;
+  border: 2px solid #73D1A6;
+  text-decoration: none; }
+
+.admin-page {
+  background-color: white;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; }
+
+.admin-profile-settings {
+  padding: 15px 10px 25px 10px;
+  text-align: center; }
+
+.admin-profile-settings h1 {
+  font-size: 18px;
+  font-weight: bolder;
+  margin-top: 25px;
+  margin-bottom: 25px; }
+
+.admin-profile-settings h3 {
+  margin-top: 10px; }
+
+.admin-product-list-top {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 15px 10px 5px 10px;
+  text-align: center; }
+
+.admin-product-list {
+  background-color: white; }
+
+.admin-add-new-product-button {
+  text-align: center; }
+
+.admin-product-list-title {
+  margin-top: 30px;
+  font-size: 16px;
+  font-weight: bold; }
+
+.admin-single-product {
+  display: flex;
+  justify-content: center; }
+
+.admin-product-image {
+  width: 90px;
+  height: 70px;
+  margin-left: 10px; }
+
+.admin-product-image img {
+  width: 100%;
+  height: 100%;
+  background-size: cover; }
+
+.admin-product-info {
+  margin-left: 10px;
+  margin-right: 20px; }
+
+.admin-product-info p {
+  margin-top: 3px; }
+
+.admin-product-options button {
+  padding: 5px 10px 5px 10px;
+  margin-top: 5px;
+  float: left;
+  vertical-align: middle; }
 
 
+body {
+  background: #f3f3f3; }
+
+.info-setting {
+  margin: auto;
+  width: 80%;
+  text-align: center;
+  background: #fff;
+  padding-top: 20px; }
+
+.info-setting h2 {
+  text-align: left;
+  font-size: 16px;
+  border-bottom: 1px solid #eee;
+  padding: 10px 10px 20px;
+  margin: 0 0 20px; }
+
+.info-setting h3, .order-history h3, .wish-list h3 {
+  text-align: left;
+  font-size: 14px;
+  margin: 10px 0 10px 10px; }
+
+.info-setting input {
+  width: 80%;
+  height: 35px;
+  border: 1px solid #DCE1E2;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  padding: 0 10px 0 10px; }
+
+.info-setting button {
+  width: 80%;
+  height: 45px;
+  border: none;
+  background: #73D1A6;
+  color: #fff;
+  font-size: 15px;
+  margin: 20px 0; }
+
+.order-history {
+  margin: auto;
+  width: 80%;
+  text-align: center;
+  background: #fff;
+  padding-top: 20px; }
+
+.wish-list {
+  margin: auto;
+  width: 80%;
+  text-align: center;
+  background: #fff;
+  padding-top: 20px; }
+
+.footerSocialmediaBox {
+  height: 75px;
+  width: 100%;
+  background: #DCE1E2;
+  text-align: center; }
+
+.footerBottom {
+  background: #73D1A6;
+  text-align: center; }
+
+.fa-facebook:hover {
+  color: #0064cd;
+  margin: 15px; }
+
+.fa-twitter:hover {
+  color: #95d2e9;
+  margin: 15px; }
+
+.fa-pinterest:hover {
+  color: #991c1c;
+  margin: 15px; }
+
+.fa-envelope-o:hover {
+  color: #9ae0d6;
+  margin: 15px; }
+
+.fa-google-plus:hover {
+  color: #ff8188;
+  margin: 15px; }
+
+.fa-facebook {
+  margin: 15px; }
+
+.fa-twitter {
+  margin: 15px; }
+
+.fa-pinterest {
+  margin: 15px; }
+
+.fa-envelope-o {
+  margin: 15px; }
+
+.fa-google-plus {
+  margin: 15px; }
 
 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.8;
+  z-index: 2; }
+
+.dialog {
+  position: fixed;
+  display: inline-block;
+  width: 90%;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  background-color: #fff;
+  background-size: cover;
+  border-radius: 10px;
+  z-index: 3;
+  border: 2px solid black; }
+
+.loginSection {
+  margin-top: 30px;
+  width: 100%;
+  display: inline-block;
+  text-align: center; }
+
+.signupSection {
+  margin-top: 25px;
+  width: 100%;
+  display: inline-block;
+  text-align: center; }
+
+.loginSection h2, .signupSection h2 {
+  margin-bottom: 20px; }
+
+.loginSection button, .signupSection button {
+  width: 80%;
+  height: 35px;
+  background: #9751AD;
+  color: white;
+  margin-top: 10px;
+  font-size: 15px;
+  border: none; }
+
+.loginSection input, .signupSection input {
+  margin-bottom: 10px;
+  width: 80%;
+  height: 30px;
+  border: 1px solid #f2f2f2;
+  padding: 0 10px 0 10px; }
 
 .topNavHeader {
   width: 100%;
@@ -9,7 +349,8 @@
   border-bottom: 2px solid #8a8a8b;
   font-size: .9em;
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  background: #fff; }
 
 .janetIcon {
   height: 40px;
@@ -17,6 +358,7 @@
   background-image: url("../janetLogo.png");
   background-repeat: no-repeat;
   background-size: contain;
+  margin-right: 10%;
   margin-top: 12px;
   cursor: pointer; }
 
@@ -56,7 +398,7 @@
 
 .navMenu {
   height: 600px;
-  width: 250px;
+  width: 100%;
   border: 1px solid lightgrey;
   border-radius: 3px;
   font-family: sans-serif;
@@ -94,6 +436,68 @@
   .navOption:active {
     background: #73D1A6;
     color: #DCE1E2; }
+
+.navXButton {
+  cursor: pointer;
+  width: 15px;
+  float: right;
+  margin-top: 35px;
+  margin-right: 35px;
+  font-size: 26px; }
+
+.searchSlideBox {
+  height: 100px;
+  width: 100%;
+  border: 1px solid lightgrey;
+  border-radius: 4px;
+  font-family: sans-serif;
+  color: gray;
+  margin-left: 0px;
+  transition: all linear 0.3s; }
+
+.ng-hide {
+  margin-left: -300px; }
+
+#searchBar {
+  background: #DCE1E2;
+  border: none;
+  border-radius: 2px;
+  color: gray;
+  height: 30px;
+  width: 260px;
+  font-size: 18px;
+  margin-top: 35px;
+  margin-left: 15px; }
+
+#topSearchBar {
+  background: #DCE1E2;
+  border: none;
+  border-radius: 2px;
+  color: gray;
+  height: 30px;
+  width: 200px;
+  font-size: 18px;
+  margin-top: -25px;
+  margin-left: 50px;
+  display: none; }
+
+@media (min-width: 700px) {
+  #topSearchBar {
+    display: block; }
+  .glass {
+    visibility: hidden; }
+  .janetIcon {
+    margin-right: 20%; }
+  .navMenu {
+    width: 250px; } }
+
+.cancelButton {
+  float: right;
+  margin-right: 15px;
+  margin-top: 42px;
+  cursor: pointer; }
+  .cancelButton:hover {
+    color: #73D1A6; }
 
 .product-details-main-container {
   width: 100%;
