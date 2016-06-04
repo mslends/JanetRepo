@@ -20,9 +20,15 @@ angular.module('janet', ['ui.router', 'ngAnimate'])
             })
 
             .state('productDetails', {
-                url: '/productDetails',
+                url: '/productDetails/:productId',
                 templateUrl: './customers/views/productDetailsView.html',
-                controller: 'productDetailsCtrl'
+                controller: 'productDetailsCtrl',
+                resolve: {
+                  productInfo: function(productsService, $stateParams){
+                    console.log('resolve', $stateParams.productId)
+                    return productsService.getSingleProduct($stateParams.productId);
+                  }
+                }
             })
 
             .state('cart', {

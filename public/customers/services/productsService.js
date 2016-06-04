@@ -9,4 +9,29 @@ this.getProducts = function(){
   });
 };
 
+this.getSingleProduct = function(productId){
+  console.log("service hit");
+  return $http({
+    method: "GET",
+    url: "/api/products/" + productId
+  }).then(function(response){
+    return response.data;
+  });
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 });

@@ -1,11 +1,11 @@
 
 
 
-      <nav-directive></nav-directive>
+
 
         <!-- <div id="mainCarousel" class="owl-carousel"> -->
             <div class="mainProduct" ng-repeat="product in products">
-              <img src="{{product.images}}" alt="" />
+            <a ui-sref="productDetails({productId:product._id})">  <img src="{{product.images}}" alt="" /></a>
               {{product.name}}
             </div>
         <!-- </div> -->

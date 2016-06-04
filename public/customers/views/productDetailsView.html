@@ -3,17 +3,17 @@
     <!-- <nav class="product-details-nav"></nav>
     <nav class="product-details-categories-menu"></nav> -->
 
- <section class="product-details-banner-img"></section>
+ <section class="product-details-banner-img"><img src="{{product.images}}" alt="" /></section>
 
 <section class="deal-info">
     <div class="deal-title">
-        Solid Light Tunics | Small-3XL
+      {{product.name}}
     </div>
 
     <div class="deal-info-price-row">
         <div class="prices">
-            <div class="price">$21.99</div>
-            <div class="retail-price">$41.99</div>
+            <div class="price">{{product.discountPrice}}</div>
+            <div class="retail-price">{{product.retailPrice}}</div>
         </div>
 
         <div class="favorites-icon">
@@ -96,7 +96,7 @@
     <div class="info-block">
     <h4 class="product-details-info-h4">PRODUCT DESCRIPTION</h4>
     <p class="product-details-info-paragraph">
-        A seriously soft knit tunic in timeless stripes. Cut long and loose in an easy fit, with a banded round neckline.
+      {{product.description}}
     </p>
 
     <p class="colors">

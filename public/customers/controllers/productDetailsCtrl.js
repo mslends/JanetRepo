@@ -1,13 +1,19 @@
-angular.module('janet').controller('productDetailsCtrl', function($scope){
+angular.module('janet').controller('productDetailsCtrl', function($scope, $stateParams, productsService, productInfo){
+
+$scope.product = productInfo;
+$scope.productId = $stateParams.productId;
+
+$scope.getSingleProduct = function(){
+  console.log("controller hit");
+  productsService.getSingleProduct($stateParams.productId).then(function(response){
+    $scope.products = response[0];
+  })
+}
 
 
 
 
-
-
-
-
-
+// js countdown clock
     function getTimeRemaining(endtime) {
       var t = Date.parse(endtime) - Date.parse(new Date());
       var seconds = Math.floor((t / 1000) % 60);
