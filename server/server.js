@@ -81,7 +81,7 @@ app.delete("/api/users/:id", userCtrl.deleteUser);
 //Orders//
 app.get("/api/orders", orderCtrl.getOrders);
 app.post("/api/orders", orderCtrl.createOrder);
-app.get("/api/orders/:id", orderCtrl.getOrder);
+app.get("/api/orders/:id", orderCtrl.getOneOrder);
 app.put("/api/orders/:id", orderCtrl.updateOrder);
 app.delete("/api/orders/:id", orderCtrl.deleteOrder);
 

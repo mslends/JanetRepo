@@ -1,0 +1,31 @@
+<div class="cart-container">
+  <div class="cart" ng-show="!product">
+    <h2>YOUR CART</h2>
+    <P>You don't have anything in your cart yet!</P>
+    <button type="button" ui-sref="home">SHOP TODAY'S DEAL!</button>
+  </div>
+
+  <div class="cart" ng-show="product">
+    <h2>YOUR CART</h2>
+    <h3>DESCRIPTION</h3>
+    <!-- <div ng-repeat=""> -->
+      <img src="" alt="" />
+      <p>$price | Product Name</p>
+      <p>seller:</p>
+    <!-- </div> -->
+    <p>QTY:</p>
+    <p>SHIPPING:</p>
+    <p>ORDER TOTAL: </p>
+    <h3>Sign Up</h3>
+    <input type="text" placeholder="Full Name">
+    <input type="email" placeholder="Email Address">
+    <input type="password" placeholder="Password">
+    <button type="button" ng-show="!user">SIGN UP</button>
+    <p>Already a member?</p>
+    <button type="button" ng-show="!user">LOGIN</button>
+
+
+    <button type="button" ng-show="user">CHECK OUT</button>
+  </div>
+
+</div>
