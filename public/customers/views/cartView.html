@@ -20,12 +20,12 @@
       <hr class="line"><br>
     </div>
 
-  <div class="total">
-    <p>Subtotal: {{subtotal | currency}}</p>
-    <p>Shipping: {{shipping | currency}}</p><br>
-    <p>ORDER TOTAL: {{total | currency}}</p><br>
-    <hr class="line">
-  </div>
+    <div class="total">
+      <p>Subtotal: {{subtotal | currency}}</p>
+      <p>Shipping: {{shipping | currency}}</p><br>
+      <p>ORDER TOTAL: {{total | currency}}</p><br>
+      <hr class="line">
+    </div>
 
     <div class="cartButton" ng-show="!user">
       <button type="button" ng-click="toggleModal()">LOGIN or SIGN UP to continue</button>
