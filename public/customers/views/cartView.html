@@ -1,0 +1,52 @@
+<div class="cart-container">
+  <div class="cart" ng-show="!cart[0]">
+    <h2>YOUR CART</h2>
+    <P>You don't have anything in your cart yet!</P>
+    <button type="button" ui-sref="home">SHOP TODAY'S DEAL!</button>
+  </div>
+
+  <div class="cart" ng-show="cart[0]">
+    <h2>YOUR CART</h2>
+    <h3>Order Summary</h3>
+    <div ng-repeat="item in cart">
+      <img src="{{item.product.images}}" alt="" />
+      <p>Product: {{item.product.name}}</p>
+      <p>Price ${{item.product.discountPrice}}</p>
+      <p>Seller: {{item.product.seller}}</p>
+      QTY:
+      <i class="fa fa-minus-square" aria-hidden="true" ng-click="removeQty(item)"></i>
+      {{item.productQty}}
+      <i class="fa fa-plus-square" aria-hidden="true" ng-click="addQty(item)"></i><br>
+      Remove this item: <i class="fa fa-trash-o" aria-hidden="true" ng-click="removeItem(item)"></i>
+    </div>
+    <p>SUBTOTAL: {{subtotal | currency}}</p>
+    <p>SHIPPING: {{shipping | currency}}</p>
+    <p>ORDER TOTAL: {{total | currency}}</p>
+
+    <div ng-show="!user">
+      <button type="button" ng-click="toggleModal()">LOGIN or SIGN UP to continue</button>
+    </div>
+
+    <div ng-show="user && cart[0]">
+      <h3>Shipping Information</h3>
+      <input type="text" ng-model="user.name" placeholder="Name"><br>
+      <input type="text" ng-model="user.shippingAddress.street" placeholder="Street">
+      <input type="text" ng-model="user.shippingAddress.city" placeholder="City">
+      <input type="text" ng-model="user.shippingAddress.state" placeholder="State">
+      <input type="text" ng-model="user.shippingAddress.zip" placeholder="Zipcode">
+    </div>
+
+    <div ng-show="user && cart[0]">
+      <h3>Payment Information</h3>
+      <input type="text" placeholder="Card number">
+      <input type="text" placeholder="Name on the card">
+      <input type="text" placeholder="Expire date">
+      <input type="text" placeholder="CVV code">
+    </div>
+
+
+    <button type="button" ng-show="user" ng-click="createOrder()">Submit</button>
+  </div>
+</div>
+
+<login-signup-directive></login-signup-directive>

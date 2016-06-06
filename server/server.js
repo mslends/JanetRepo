@@ -78,6 +78,15 @@ app.delete("/api/users/:id", userCtrl.deleteUser);
 // app.post("/api/users/login", userCtrl.login);
 
 
+//Orders//
+app.get("/api/orders", orderCtrl.getOrders);
+app.post("/api/orders", orderCtrl.createOrder);
+app.get("/api/orders/:id", orderCtrl.getOneOrder);
+app.put("/api/orders/:id", orderCtrl.updateOrder);
+app.delete("/api/orders/:id", orderCtrl.deleteOrder);
+
+
+
 
 //CONNECTIONS//
 const mongoURI = config.MONGO_URI;
