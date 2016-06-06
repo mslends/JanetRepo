@@ -6,7 +6,10 @@
         <!-- <div id="mainCarousel" class="owl-carousel"> -->
             <div class="mainProduct" ng-repeat="product in products">
             <a ui-sref="productDetails({productId:product._id})">  <img src="{{product.images}}" alt="" /></a>
-              {{product.name}}
+              <div class="homeProductDetails">
+                {{product.name}}
+                
+              </div>
             </div>
         <!-- </div> -->
         <div id="secondCarousel" class="owl-carousel">
