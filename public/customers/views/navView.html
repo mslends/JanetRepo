@@ -1,4 +1,4 @@
-<main>
+
     <section class="topNavHeader">
 
         <div class="leftNav">
@@ -24,7 +24,7 @@
             X
         </div>
 
-        <div class="loginButton" ng-click=toggleModal() ng-hide="user">
+        <div class="loginButton" ng-click="toggleModal(); isVisible = !isVisible" ng-hide="user">
             Login
         </div>
         <div class="loginButton" ng-click=logout() ng-hide="!user">
@@ -55,6 +55,5 @@
 
 
     </div>
-</main>
 
 <login-signup-directive></login-signup-directive>

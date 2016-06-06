@@ -1,9 +1,29 @@
 
-<main>
-  
-    <section>
-
-    </section>
 
 
-</main>
+
+
+        <!-- <div id="mainCarousel" class="owl-carousel"> -->
+            <div class="mainProduct" ng-repeat="product in products">
+            <a ui-sref="productDetails({productId:product._id})">  <img src="{{product.images}}" alt="" /></a>
+              <div class="homeProductDetails">
+                {{product.name}}
+                
+              </div>
+            </div>
+        <!-- </div> -->
+        <div id="secondCarousel" class="owl-carousel">
+            <!-- <div class="" ng-repeat="">
+
+            </div> -->
+        </div>
+        <div id="thirdCarousel" class="owl-carousel">
+            <!-- <div class="" ng-repeat="">
+
+            </div> -->
+        </div>
+        <div id="fourthCarousel" class="owl-carousel">
+            <!-- <div class="" ng-repeat="">
+
+            </div> -->
+        </div>
