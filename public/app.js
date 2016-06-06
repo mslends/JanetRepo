@@ -25,7 +25,7 @@ angular.module('janet', ['ui.router', 'ngAnimate'])
                 controller: 'productDetailsCtrl',
                 resolve: {
                   productInfo: function(productsService, $stateParams){
-                    console.log('resolve', $stateParams.productId)
+                    // console.log('resolve', $stateParams.productId)
                     return productsService.getSingleProduct($stateParams.productId);
                   }
                 }

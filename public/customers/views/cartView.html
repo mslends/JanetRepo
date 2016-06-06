@@ -1,31 +1,50 @@
 <div class="cart-container">
-  <div class="cart" ng-show="!product">
+  <div class="cart" ng-show="!cart[0]">
     <h2>YOUR CART</h2>
     <P>You don't have anything in your cart yet!</P>
     <button type="button" ui-sref="home">SHOP TODAY'S DEAL!</button>
   </div>
 
-  <div class="cart" ng-show="product">
+  <div class="cart" ng-show="cart[0]">
     <h2>YOUR CART</h2>
     <h3>DESCRIPTION</h3>
-    <!-- <div ng-repeat=""> -->
-      <img src="" alt="" />
-      <p>$price | Product Name</p>
-      <p>seller:</p>
-    <!-- </div> -->
-    <p>QTY:</p>
+    <div ng-repeat="item in cart">
+      <img src="{{item.product.images}}" alt="" />
+      <p>Product: {{item.product.name}}</p>
+      <p>Price {{item.product.discountPrice}}</p>
+      <p>QTY: {{item.productQty}}</p>
+      <p>seller: {{item.product.seller}}</p>
+      <button type="button">Edit</button>
+      <button type="button">Delete</button>
+    </div>
+
     <p>SHIPPING:</p>
     <p>ORDER TOTAL: </p>
-    <h3>Sign Up</h3>
-    <input type="text" placeholder="Full Name">
-    <input type="email" placeholder="Email Address">
-    <input type="password" placeholder="Password">
-    <button type="button" ng-show="!user">SIGN UP</button>
-    <p>Already a member?</p>
-    <button type="button" ng-show="!user">LOGIN</button>
+
+    <div ng-show="!user">
+      <button type="button" ng-click="toggleModal()">LOGIN or SIGN UP to continue</button>
+    </div>
+
+    <div ng-show="user && cart[0]">
+      <h3>Shipping Address</h3>
+      <input type="text" ng-model="user.name" placeholder="Name"><br>
+      <input type="text" ng-model="user.shippingAddress.street" placeholder="Street">
+      <input type="text" ng-model="user.shippingAddress.city" placeholder="City">
+      <input type="text" ng-model="user.shippingAddress.state" placeholder="State">
+      <input type="text" ng-model="user.shippingAddress.zip" placeholder="Zipcode">
+    </div>
+
+    <div ng-show="user && cart[0]">
+      <h3>Credit Card Information</h3>
+      <input type="text" placeholder="Card number">
+      <input type="text" placeholder="Name on the card">
+      <input type="text" placeholder="Expire date">
+      <input type="text" placeholder="CVV code">
+    </div>
 
 
     <button type="button" ng-show="user">CHECK OUT</button>
   </div>
-
 </div>
+
+<login-signup-directive></login-signup-directive>

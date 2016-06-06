@@ -45,10 +45,10 @@
     <div class="product-details-qty-row">
         <div class="product-details-qty">Quantity</div>
 
-        <input class="Product-details-qty-input" type="text" name="name" value="1">
+        <input class="Product-details-qty-input" type="text" name="name" value="1" ng-model="productQty">
     </div>
 
-    <button class="add-to-bag-btn" type="button" name="button">ADD TO BAG</button>
+    <button class="add-to-bag-btn" type="button" name="button" ng-click="addToCart(product, productQty)">ADD TO BAG</button>
 </section>
 
 <section class="product-details-social-media-icons">
