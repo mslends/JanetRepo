@@ -1,11 +1,12 @@
 @import "_colors"
 
-body
+.admin-page body
   font-family: 'Lato', sans-serif
   margin: auto
 
-button
+.admin-page button
   border-radius: 5px
+  font-family: 'Lato', sans-serif
   background-color: $janetPurple
   border: none
   color: white
@@ -15,11 +16,11 @@ button
   -webkit-transition-duration: .2s
   transition-duration: .2s
 
-button:hover
+.admin-page button:hover
   background-color: $janetGreen
   color: white
 
-input
+.admin-page input
   border-radius: 5px
   border: 2px solid $janetGreen
   text-decoration: none
@@ -63,12 +64,15 @@ input
   font-weight: bold
 
 .admin-single-product
+  margin: 0 auto
   display: flex
-  justify-content: center
+  justify-content: space-between
+  text-align: left
+  vertical-align: middle
 
 .admin-product-image
   width: 90px
-  height: 70px
+  height: 100%
   margin-left: 10px
 
 .admin-product-image img
@@ -81,12 +85,25 @@ input
   margin-right: 20px
 
 .admin-product-info p
-  margin-top: 3px
+  margin-top: 5px
+
+.admin-product-info h4
+  margin-top: 6px
+
+.admin-product-options
+  vertical-align: middle
 
 .admin-product-options button
   padding: 5px 10px 5px 10px
-  margin-top: 5px
+  margin-right: 10px
+  margin-bottom: 10px
   float: left
   vertical-align: middle
+
+@media (min-width: 500px)
+  .admin-page hr
+    width: 402px
+  .admin-product-info hr
+    width: 90%
 
 //////////////////////////////////////////

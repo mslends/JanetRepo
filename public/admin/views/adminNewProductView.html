@@ -56,18 +56,33 @@
             <hr width="20%"></hr>
 
             <div class="admin-new-product-single-input">
+              <p>Start of Sale</p>
+                <input id="admin-datetime-input" type="datetime-local" ng-model="newProduct.startDate">
+            </div>
+
+            <div class="admin-new-product-single-input">
+              <p>End of Sale</p>
+                <input id="admin-datetime-input" type="datetime-local" ng-model="newProduct.endDate">
+            </div>
+
+            <hr width="20%"></hr>
+
+            <div class="admin-new-product-single-input">
                 <input type="text" ng-model="newProduct.parent" placeholder="Parent Product">
             </div>
             <br>
 
             <div class="admin-new-product-single-input">
-                <input type="url" ng-model="newProduct.images" placeholder="Image">
+                <input type="url" ng-model="newProduct.images" placeholder="Image URL">
             </div>
             <br>
 
             <div class="admin-new-product-single-input">
                 <textarea type="text" ng-model="newProduct.description" placeholder="Brief Description" rows="4"></textarea>
             </div>
+
+
+
         </div>
         <div class="admin-submit-button">
             <button type="button" ng-click="addNewProduct(newProduct)">Submit</button>

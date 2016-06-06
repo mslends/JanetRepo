@@ -16,7 +16,9 @@ var productSchema = new Schema({
   category: {type: String},
   favorites: {type: Number},
   amntSold: {type: Number},
-  parent: {type: String}
+  parent: {type: String},
+  startDate: {type: Date},
+  endDate: {type: Date}
 });
 
 module.exports = mongoose.model("Product", productSchema);
