@@ -41,6 +41,7 @@ $scope.addNewProduct = function(newProduct){
     $scope.showProducts();
     $scope.newProduct = response;
     $scope.newProduct = {};
+    $scope.newProductModalShown = !$scope.newProductModalShown;
   });
 };
 
