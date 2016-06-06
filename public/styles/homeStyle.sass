@@ -1,13 +1,40 @@
 @import "_colors"
 
 .mainProduct
-  height: 300px
+  // height: 300px
   width: 370px
-  background: $janetPurple
-  margin: 5px
-  z-index: 0
+  background: $janetGray
   margin: auto
-.mainProduct img
-  width: 75%
-#mainCarousel
-  height: 450px
+  display: flex
+  justify-content: center
+  flex-direction: column
+
+#homeProductImage
+  width: 100%
+
+.homeProductDetails
+  width: 100%
+  height: 70px
+  margin-top: -70px
+  background: $janetGray
+  opacity: 0.7
+  cursor: pointer
+  padding-top: 5px
+
+.homePriceBox
+  display: flex
+  flex-direction: row
+  margin-top: 10px
+  margin-left: 10px
+
+#homeProductName
+  margin-left: 10px
+
+#homeRetailPrice
+  width: auto
+  color: $janetPurple
+
+#homeDiscountPrice
+  width: auto
+  text-decoration: line-through
+  margin-left: 10px
