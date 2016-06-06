@@ -20,7 +20,7 @@ angular.module('janet').service('cartService', function($http, $stateParams){
   };
 
   this.addQty = (product)=>{
-    for(var i = 0; i < this.cart.lenght; i++){
+    for(var i = 0; i < this.cart.length; i++){
       if(this.cart[i] === product){
       this.cart[i].productQty++;
       return this.cart;
@@ -29,10 +29,10 @@ angular.module('janet').service('cartService', function($http, $stateParams){
   };
 
   this.removeQty = (product)=>{
-    for(var i = 0; i < this.cart.lenght; i++){
+    for(var i = 0; i < this.cart.length; i++){
       if(this.cart[i] === product){
         if(this.cart[i].productQty !== 1){
-          this.cart[i]--;
+          this.cart[i].productQty--;
           return this.cart;
         }
       }

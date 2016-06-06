@@ -7,9 +7,9 @@
     <input type="text" ng-model="oneUser.shippingAddress.street" placeholder="Street">
     <input type="text" ng-model="oneUser.shippingAddress.city" placeholder="City">
     <input type="text" ng-model="oneUser.shippingAddress.state" placeholder="State">
-    <input type="text" ng-model="oneUser.shippingAddress.zip" placeholder="Zipcode">
+    <input type="text" ng-model="oneUser.shippingAddress.zip" placeholder="Zip">
     <h3>Phone Number</h3>
-    <input type="text" ng-model="oneUser.phone" placeholder="Phone ]"><br>
+    <input type="text" ng-model="oneUser.phone" placeholder="Phone"><br>
     <button type="button" ng-click="updateUser(oneUser)">Update Information</button>
   </div>
     <h2 ng-hide="user">Please login to continue! :)</h2>
@@ -19,7 +19,7 @@
 <div class="orderHistory" ng-hide="!user">
   <h2>Order History</h2>
   <div ng-repeat="order in orders">
-    <p>Order Date: {{order.orderDate | date: MM/dd/yyyy}}</p><br>
+    <h3>Order Date: {{order.orderDate | date: MM/dd/yyyy}}</h3><br>
     <div ng-repeat="history in order.productsOrdered">
       <img src="{{history.product.images}}" alt="" />
       <p>Product Name: {{history.product.name}}</p>

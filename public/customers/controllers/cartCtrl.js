@@ -1,13 +1,17 @@
-angular.module('janet').controller('cartCtrl', function($scope, cartService, orderService){
-  
+angular.module('janet').controller('cartCtrl', function($scope, cartService, orderService, user, $state){
+
 
   $scope.modalShown = false;
   $scope.toggleModal = ()=>{
     $scope.modalShown = !$scope.modalShown;
   };
 
-  $scope.cart = cartService.cart
-  console.log($scope.cart)
+  $scope.cart = cartService.cart;
+
+  if(user !== "no user found"){
+    $scope.user = user;
+  }
+
 
   $scope.getOneUser = ()=>{
     customerService.getOneUser($scope.user._id).then((response)=>{
@@ -19,20 +23,27 @@ angular.module('janet').controller('cartCtrl', function($scope, cartService, ord
 
   $scope.removeItem = (item)=>{
     cartService.removeItem(item);
+    $scope.totalCost();
   };
 
   $scope.addQty = (item)=>{
     cartService.addQty(item);
+    $scope.cart = cartService.cart
+    $scope.totalCost();
+
   };
 
   $scope.removeQty = (item)=>{
     cartService.removeQty(item);
+    $scope.cart = cartService.cart
+    $scope.totalCost();
   };
 
 
   $scope.shipping = 0;
   $scope.subtotal = 0;
   $scope.total = 0;
+
   $scope.totalCost = ()=>{
     $scope.shipping = 0;
     $scope.subtotal = 0;
@@ -45,11 +56,26 @@ angular.module('janet').controller('cartCtrl', function($scope, cartService, ord
   };
   $scope.totalCost();
 
+
+
   $scope.createOrder =()=>{
-    orderService.createOrder().then((response)=>{
+    $scope.items = [];
+    for(var i = 0; i < $scope.cart.length; i++){
+      $scope.items.push({product: $scope.cart[i].product._id, qty:$scope.cart[i].productQty} );
+    };
+
+    $scope.order = {
+      user: $scope.user._id,
+      totalPrice: $scope.total,
+      productsOrdered: $scope.items
+    };
+
+    orderService.createOrder($scope.order, $scope.user).then((response)=>{
       $scope.newOrder = response;
+      alert('Your order has been placed!');
+      $state.go('home');
     })
-  }
+  };
 
 
 })

@@ -1,11 +1,17 @@
 angular.module('janet').service('orderService', function($http){
 
-  this.createOrder = (order)=>{
+  this.createOrder = (order, user)=>{
     return $http({
       method: 'POST',
       url: '/api/orders',
       data: order
     }).then((response)=>{
+      user.orderHistory.push(response.data._id)
+      return $http({
+        method: 'PUT',
+        url: '/api/users/' + user._id,
+        data: user
+      })
       return response.data;
     });
   };

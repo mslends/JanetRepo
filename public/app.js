@@ -34,7 +34,17 @@ angular.module('janet', ['ui.router', 'ngAnimate'])
             .state('cart', {
                 url: '/cart',
                 templateUrl: './customers/views/cartView.html',
-                controller: 'cartCtrl'
+                controller: 'cartCtrl',
+                resolve: {
+                  user: function(customerService, $state){
+                          return customerService.currentUser().then(function(response){
+                            return response;
+                          }).catch(function(err) {
+                            console.log(err);
+                            return "no user found";
+                          })
+                        }
+                  }
             })
 
             .state('settings', {

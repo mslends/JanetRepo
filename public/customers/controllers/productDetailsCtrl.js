@@ -1,21 +1,22 @@
 angular.module('janet').controller('productDetailsCtrl', function($scope, $stateParams, productsService, productInfo, cartService){
 
-$scope.product = productInfo;
-$scope.productId = $stateParams.productId;
+  $scope.product = productInfo;
+  $scope.productId = $stateParams.productId;
 
 
-$scope.getSingleProduct = function(){
-  productsService.getSingleProduct($stateParams.productId).then(function(response){
-    $scope.products = response[0];
-  })
-}
+  $scope.getSingleProduct = function(){
+    productsService.getSingleProduct($stateParams.productId).then(function(response){
+      $scope.products = response[0];
+    })
+  }
 
+  $scope.productQty = 1;
 
-// add to cart function
-$scope.addToCart = (product, productQty)=>{
-  cartService.addToCart(product, productQty);
-  alert('Item has been added to your cart!')
-};
+  // add to cart function
+  $scope.addToCart = (product, productQty)=>{
+    cartService.addToCart(product, productQty);
+    alert('Item has been added to your cart!')
+  };
 
 
 
