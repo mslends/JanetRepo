@@ -5,20 +5,21 @@ angular.module('janet').controller('settingsCtrl', function($scope, customerServ
   $scope.updateUser = (user)=>{
     customerService.updateUser(user._id, user).then((response)=>{
     $scope.updatedUser = response;
+    alert('Your information has been updated!')
     });
   };
 
   $scope.getOneUser = ()=>{
-    customerService.getOneUser($scope.user._id).then((response)=>{
-      $scope.user = response;
-    });
-  };
+    if($scope.user){
+      customerService.getOneUser($scope.user._id).then((response)=>{
+          console.log(response);
+        $scope.oneUser = response;
+        $scope.orders = $scope.oneUser.orderHistory;
+      });
+    }
+  }();
 
-  // $scope.logout = function(){
-  //   customerService.logout().then(function(response){
-  //     alert('you are logged out!')
-  //     location.reload();
-  //   });
-  // };
+
+
 
 });

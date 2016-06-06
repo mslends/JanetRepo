@@ -21,18 +21,13 @@ var userSchema = new Schema({
         state: {type: String},
         zip: {type: Number}
     },
-    wishlist: [{
-        type: Schema.Types.ObjectId, ref: 'Product'
-    }],
+    wishlist: [{type: Schema.Types.ObjectId, ref: 'Product'}],
     // myReviews: [{
     //     ratings: {type: Number, min:1, max: 5},
     //     comments: {type: String},
     //     product: {type: Schema.Types.ObjectId, ref: 'Product'}
     // }],
-    purchaseHistory: [{
-        purchasedProduct: {type: Schema.Types.ObjectId, ref: 'Product'},
-        purchaseDate: {type: Date}
-    }]
+    orderHistory: [{type: Schema.Types.ObjectId, ref: 'Order'}]
     // gender: {type: String}
 
 });

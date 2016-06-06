@@ -49,6 +49,16 @@
             <hr width="20%"></hr>
 
             <div class="admin-edit-product-input-group-4">
+                <p>Start of Sale</p>
+                <input id="admin-datetime-input" type="datetime-local" ng-model="productData.startDate">
+
+                <p>End of Sale</p>
+                <input id="admin-datetime-input" type="datetime-local" ng-model="productData.endDate">
+            </div>
+
+            <hr width="20%"></hr>
+
+            <div class="admin-edit-product-input-group-5">
                 <p>Parent Product</p>
                 <input type="text" ng-model="productData.parent" placeholder="Parent Product">
                 <br>

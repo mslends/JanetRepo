@@ -16,8 +16,8 @@ $scope.createUser = function(user){
   })
 }
 
-  $scope.getUser = ()=>{
-    customerService.getUser().then((response)=>{
+  $scope.getUsers = ()=>{
+    customerService.getUsers().then((response)=>{
       $scope.users = response;
     });
   };

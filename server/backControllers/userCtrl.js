@@ -12,7 +12,10 @@ module.exports = {
     },
 
     getUser: (req, res, next)=>{
-      User.findById(req.params.id).exec((err, response)=>{
+      User.findById(req.params.id)
+      .populate('wishlist')
+      .populate({path:'orderHistory', populate:{path:'productsOrdered.product'}})
+      .exec((err, response)=>{
         if(err){
           res.status(500).json(err);
         } else{
