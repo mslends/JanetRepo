@@ -1,6 +1,6 @@
 <div class="modal" ng-show='modalShown'>
-  <div class="overlay" ng-click='toggleModal()'></div>
-  <div class="dialog">
+  <div class="login-overlay" ng-click='toggleModal()'></div>
+  <div class="login-dialog">
         <div class='loginSection'>
           <h2>Login</h2>
           <input type="email" placeholder=" Email Address" ng-model="info.email"><br>
@@ -10,9 +10,9 @@
 
         <div class='signupSection'>
           <h2>Sign Up</h2>
-          <input type="text" placeholder="  Full Name" ng-model="signUp.name"><br>
-          <input type="email" placeholder="  Email Address" ng-model="signUp.email"><br>
-          <input type="password" placeholder="  Choose a password" ng-model="signUp.password"><br>
+          <input type="text" placeholder="Full Name" ng-model="signUp.name"><br>
+          <input type="email" placeholder="Email Address" ng-model="signUp.email"><br>
+          <input type="password" placeholder="Choose a password" ng-model="signUp.password"><br>
           <button type="button" ng-click="createUser(signUp)">Sign Up</button>
         </div>
   </div>
