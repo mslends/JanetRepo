@@ -7,10 +7,9 @@
 
   <div class="cart" ng-show="cart[0]">
     <h2 class="yourCart">YOUR CART</h2>
-    <h3 class="orderSummary">Order Summary</h3>
     <div ng-repeat="item in cart">
       <img src="{{item.product.images}}" alt="" />
-      <h2>{{item.product.name}}</h2>
+      <h3>{{item.product.name}}</h3>
       <p>Price: ${{item.product.discountPrice}}</p>
       <p>Seller: {{item.product.seller}}</p><br>
       <p>QTY:
