@@ -17,7 +17,7 @@ $scope.getSingleProduct = function(){
 
 function countdown(){
 	var now = new Date();
-	var eventDate = new Date(2016, 11, 25);
+	var eventDate = new Date($scope.product.endDate);
 
 	var currentTiime = now.getTime();
 	var eventTime = eventDate.getTime();
@@ -57,15 +57,15 @@ function countdown(){
   $scope.getSingleProduct = function(){
     productsService.getSingleProduct($stateParams.productId).then(function(response){
       $scope.products = response[0];
-    })
-  }
+  });
+  };
 
   $scope.productQty = 1;
 
   // add to cart function
   $scope.addToCart = (product, productQty)=>{
     cartService.addToCart(product, productQty);
-    alert('Item has been added to your cart!')
+    alert('Item has been added to your cart!');
   };
 
 
