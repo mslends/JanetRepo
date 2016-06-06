@@ -73,7 +73,7 @@ angular.module('janet').controller('cartCtrl', function($scope, cartService, ord
     orderService.createOrder($scope.order, $scope.user).then((response)=>{
       $scope.newOrder = response;
       alert('Your order has been placed!');
-      $state.go('home');
+      location.reload();
     })
   };
 
