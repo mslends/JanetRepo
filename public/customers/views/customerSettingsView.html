@@ -16,9 +16,9 @@
 </div>
 
 
-<div class="orderHistory" ng-hide="!user">
+<div class="order-history" ng-hide="!user">
   <h2>Order History</h2>
-  <div ng-repeat="order in orders">
+  <div class="orderList" ng-repeat="order in orders">
     <h3>Order Date: {{order.orderDate | date: MM/dd/yyyy}}</h3><br>
     <div ng-repeat="history in order.productsOrdered">
       <img src="{{history.product.images}}" alt="" />
@@ -26,7 +26,5 @@
       <p>Qty: {{history.qty}}<br></p>
     </div>
     <p>Total Price: ${{order.totalPrice}}</p><br>
-
-
   </div>
 </div>

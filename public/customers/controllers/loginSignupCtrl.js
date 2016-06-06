@@ -40,7 +40,7 @@ $scope.createUser = function(user){
         customerService.getOneUser(response.user._id).then((response)=>{
           $scope.user = response;
           $scope.toggleModal();
-          location.reload();
+          // location.reload();
         });
       };
     });
