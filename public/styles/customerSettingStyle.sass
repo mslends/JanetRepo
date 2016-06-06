@@ -1,7 +1,7 @@
 @import "_colors"
 
 body
-  background: #f3f3f3
+  background: $janetGray
 
 .info-setting
   margin: auto
@@ -9,15 +9,16 @@ body
   text-align: center
   background: #fff
   padding-top: 20px
+  margin-bottom: 20px
 
-.info-setting h2
+.info-setting h2, .orderHistory h2
   text-align: left
   font-size: 16px
   border-bottom: 1px solid #eee
   padding: 10px 10px 20px
   margin: 0 0 20px
 
-.info-setting h3, .order-history h3, .wish-list h3
+.info-setting h3
   text-align: left
   font-size: 14px
   margin: 10px 0 10px 10px
@@ -40,17 +41,14 @@ body
   margin: 20px 0
 
 
-.order-history
+.orderHistory
   margin: auto
   width: 80%
-  text-align: center
+  text-align: left
   background: #fff
   padding-top: 20px
 
-
-.wish-list
-  margin: auto
-  width: 80%
-  text-align: center
-  background: #fff
-  padding-top: 20px
+.orderHistory p
+  padding: 0 10px
+  font-size: 12px
+  
