@@ -62,16 +62,17 @@
   width: 375px
   border: 1px solid lightgrey
   border-radius: 3px
-  font-family: sans-serif
+  font-family: lato
   color: gray
   font-size: 24px
   margin-left: 0px
   position: absolute !important
   background: $janetGray
+  z-index: 8
 
   transition: all linear 0.3s
 
-  position: absolute !important
+  position: fixed !important
   background-color: $janetGray
 
 .ng-hide
@@ -120,11 +121,14 @@
   width: 100%
   border: 1px solid lightgrey
   border-radius: 4px
-  font-family: sans-serif
+  font-family: lato
   color: gray
   margin-left: 0px
+  margin-top: 50px
   transition: all linear 0.3s
+  background: white
   position: absolute
+  z-index: 7
 .ng-hide
   margin-left: -300px
 
