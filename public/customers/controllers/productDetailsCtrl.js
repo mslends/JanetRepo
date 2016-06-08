@@ -36,13 +36,20 @@ function countdown(){
 	h = (h < 10) ? "0" + h : h;
 	m = (m < 10) ? "0" + m : m;
 	s = (s < 10) ? "0" + s : s;
+    console.log(document.getElementsByClassName("days"));
+	document.getElementsByClassName("days")[0].textContent = d;
+    document.getElementsByClassName("days")[1].textContent = d;
+	document.getElementsByClassName("days")[0].innerText = d;
+    document.getElementsByClassName("days")[1].innerText = d;
 
-	document.getElementById("days").textContent = d;
-	document.getElementById("days").innerText = d;
+	document.getElementsByClassName("hours")[0].textContent = h;
+    document.getElementsByClassName("hours")[1].textContent = h;
 
-	document.getElementById("hours").textContent = h;
-	document.getElementById("minutes").textContent = m;
-	document.getElementById("seconds").textContent = s;
+	document.getElementsByClassName("minutes")[0].textContent = m;
+    document.getElementsByClassName("minutes")[1].textContent = m;
+
+	document.getElementsByClassName("seconds")[0].textContent = s;
+    document.getElementsByClassName("seconds")[1].textContent = s;
 
 		setTimeout(countdown, 1000);
 	}

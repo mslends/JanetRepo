@@ -8,11 +8,38 @@
 
 <section class="product-details-desktop-view">
 
+<section class="product-details-desktop-content">
+
 
  <section class="product-details-banner-img"><img src="{{product.images}}" alt="" /></section>
 
+ <section class="product-details-desktop-stats">
 
+     <div class="product-details-percentage-saved">
+         <div class="stat">57%</div>
+         <div class="stat-description">YOU SAVE</div>
+     </div>
 
+     <div class="product-details-countdown">
+         <div id="clockdiv">
+
+             <span class="hours"></span>:<span class="minutes"></span>:<span class="seconds"></span>
+
+         </div>
+         <section class="product-details-days-section">
+             <div class="days"></div>
+             <div class="stat-description day-countdown">DAYS</div>
+         </section>
+
+     </div>
+
+     <div class="product-details-amount-sold">
+         <div class="stat">329</div>
+         <div class="stat-description">AMT SOLD</div>
+     </div>
+ </section>
+
+</section>
 <section class="product-details-desktop-info">
 
 
@@ -31,8 +58,10 @@
             <i class="heart-icon fa fa-heart-o" aria-hidden="true"> 376</i>
         </div>
     </div>
-</section>
 
+
+</section>
+<hr class="divider-line-desktop">
 <section class="product-details-options">
     <select class="size-form" form="size-form">
         <option selected disabled>Size</option>
@@ -62,6 +91,7 @@
     <button class="add-to-bag-btn" type="button" name="button" ng-click="addToCart(product, productQty)">ADD TO BAG</button>
 </section>
 
+<hr class="divider-line-desktop">
 
 <section class="product-details-social-media-icons">
 <i class="fa fa-facebook social" aria-hidden="true"></i>
@@ -91,11 +121,11 @@
     <div class="product-details-countdown">
         <div id="clockdiv">
 
-            <span id="hours"></span>:<span id="minutes"></span>:<span id="seconds"></span>
+            <span class="hours"></span>:<span class="minutes"></span>:<span class="seconds"></span>
 
         </div>
         <section class="product-details-days-section">
-            <div id="days">Days</div>
+            <div class="days"></div>
             <div class="stat-description day-countdown">DAYS</div>
         </section>
 
