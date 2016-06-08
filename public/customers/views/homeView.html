@@ -1,25 +1,29 @@
+<div class="homeBox">
+    <div class="expandyBox">
 
+        <div class="mainProduct" ng-repeat="product in products">
 
-<div class="mainProduct" ng-repeat="product in products">
+            <a ui-sref="productDetails({productId:product._id})"> <img id="homeProductImage" src="{{product.images}}" alt="{{product.name}}" />
+            </a>
 
-    <a ui-sref="productDetails({productId:product._id})"> <img id="homeProductImage" src="{{product.images}}" alt="{{product.name}}" />
-    </a>
+            <div class="homeProductDetails" ui-sref="productDetails({productId:product._id})">
 
-    <div class="homeProductDetails" ui-sref="productDetails({productId:product._id})">
+                <h1 id="homeProductName">  {{product.name}}</h1>
 
-        <h1 id="homeProductName">  {{product.name}}</h1>
+                <div class="homePriceBox">
 
-        <div class="homePriceBox">
-
-            <h1 id="homeDiscountPrice">
+                    <h1 id="homeDiscountPrice">
               ${{product.discountPrice}}</h1>
 
-            <h1 id="homeRetailPrice">
+                    <h1 id="homeRetailPrice">
               ${{product.retailPrice}}</h1>
 
-        </div>
-        <div class="homeFavoriteDiv">
-          <i class="fa fa-heart-o" aria-hidden="true"></i>
+                </div>
+
+            </div>
         </div>
     </div>
+
 </div>
+
+<footer-directive></footer-directive>
