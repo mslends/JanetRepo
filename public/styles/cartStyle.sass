@@ -14,13 +14,16 @@
 .cart img
   width: 100px
 
-.yourCart, .orderHistory, .cart h2
+.yourCart, .orderHistory
   text-align: left
   font-size: 16px
   border-bottom: 1px solid #eee
   padding: 20px 10px 20px
   margin: 0 0 20px
   color: #999
+
+.cart h2
+    text-align: center
 
 .cart p
   color: #999
@@ -32,9 +35,11 @@
 
 .fa-minus-square:before, .fa-plus-square:before
   color: $janetGreen
+  font-size: 20px
 
 .fa-trash-o:before
   color: $janetPurple
+  font-size: 20px
 
 .line
   border: 0.5px solid #eee
@@ -115,7 +120,11 @@
   .total p
     padding-right: 50px
 
+  .fa-minus-square:before, .fa-plus-square:before
+    font-size: 25px
 
+  .fa-trash-o:before
+    font-size: 25px
 
 
 @media (min-width: 1020px)

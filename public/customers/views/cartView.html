@@ -16,11 +16,12 @@
           <h3>{{item.product.name}}</h3>
           <p>Seller: {{item.product.seller}}</p><br>
           <p>Price: ${{item.product.discountPrice}}</p>
-          <p>QTY:
+          <p>QTY:&nbsp;
           <i class="fa fa-minus-square" aria-hidden="true" ng-click="removeQty(item)"></i>
-          {{item.productQty}}
-          <i class="fa fa-plus-square" aria-hidden="true" ng-click="addQty(item)"></i><br>
-          Remove: <i class="fa fa-trash-o" aria-hidden="true" ng-click="removeItem(item)"></i></p><br>
+          &nbsp; &nbsp;{{item.productQty}}&nbsp; &nbsp;
+          <i class="fa fa-plus-square" aria-hidden="true" ng-click="addQty(item)"></i><br><br>
+          Remove:&nbsp; <i class="fa fa-trash-o" aria-hidden="true" ng-click="removeItem(item)"></i></p><br>
+            <hr class="line">
         </div>
       </div>
     </div>
