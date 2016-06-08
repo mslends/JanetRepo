@@ -8,18 +8,20 @@
   <div class="cart" ng-show="cart[0]">
     <h2 class="yourCart">YOUR CART</h2>
     <div class="itemList">
-      <div class="itemListPhoto" ng-repeat="item in cart">
-        <img src="{{item.product.images}}" alt="" />
-      </div>
-      <div class="itemInfo" ng-repeat="item in cart">
-        <h3>{{item.product.name}}</h3>
-        <p>Price: ${{item.product.discountPrice}}</p>
-        <p>Seller: {{item.product.seller}}</p><br>
-        <p>QTY:
-        <i class="fa fa-minus-square" aria-hidden="true" ng-click="removeQty(item)"></i>
-        {{item.productQty}}
-        <i class="fa fa-plus-square" aria-hidden="true" ng-click="addQty(item)"></i><br>
-        Remove this item: <i class="fa fa-trash-o" aria-hidden="true" ng-click="removeItem(item)"></i></p><br>
+      <div class="itemContainer" ng-repeat="item in cart">
+        <div class="itemListPhoto">
+          <img src="{{item.product.images}}" alt="" />
+        </div>
+        <div class="itemInfo">
+          <h3>{{item.product.name}}</h3>
+          <p>Seller: {{item.product.seller}}</p><br>
+          <p>Price: ${{item.product.discountPrice}}</p>
+          <p>QTY:
+          <i class="fa fa-minus-square" aria-hidden="true" ng-click="removeQty(item)"></i>
+          {{item.productQty}}
+          <i class="fa fa-plus-square" aria-hidden="true" ng-click="addQty(item)"></i><br>
+          Remove: <i class="fa fa-trash-o" aria-hidden="true" ng-click="removeItem(item)"></i></p><br>
+        </div>
       </div>
     </div>
     <div class="total">

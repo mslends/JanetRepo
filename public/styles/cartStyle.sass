@@ -1,5 +1,9 @@
 @import "_colors"
 
+.cart-container
+  width: 95%
+  height: 100%
+  margin: auto
 
 .cart
   width: 95%
@@ -13,7 +17,7 @@
 
 .yourCart, .orderHistory, .cart h2
   text-align: left
-  font-size: 18px
+  font-size: 16px
   border-bottom: 1px solid #eee
   padding: 20px 10px 20px
   margin: 0 0 20px
@@ -39,18 +43,29 @@
 .cartButton button, .cart button
   width: 82%
   height: 45px
-  font-size: 14px
+  font-size: 13px
   margin-top: 15px
   margin-bottom: 20px
   border-radius: 0
   background: $janetBlue
 
-.itemList
-    display: flex
-    justify-content: space-around
+.itemContainer
+  display: flex
+  justify-content: space-around
+  margin-bottom: 10px
+
+.itemListPhoto
+  width: 100px
+
+.itemInfo
+  width: 150px
+  word-wrap: normal
+  text-align: left
+  line-height: 125%
 
 .total p
   font-size: 15px
+  line-height: 120%
 
 .cartInfo h3
   margin-top: 45px
@@ -60,3 +75,53 @@
   height: 25px
   border-radius: 0
   border: 1px solid $janetGray
+
+
+
+
+
+@media (min-width: 700px)
+
+  .cart-container
+    width: 80%
+    margin: auto
+
+  .cart p
+    font-size: 20px
+
+  .yourCart, .orderHistory, .cart h3, .cart h2
+    font-size: 20px
+
+  .itemInfo
+    width: 200px
+
+  .total
+    font-size: 20px
+
+  .cartButton
+    padding: 10px 20px
+    font-size: 20px
+
+  .cart button
+    height: 55px
+    font-size: 20px
+
+  .cartInfo input
+    height: 35px
+    font-size: 16px
+
+  .total
+    text-align: right
+
+  .total p
+    padding-right: 50px
+
+
+
+
+@media (min-width: 1020px)
+  .cart
+    width: 63%
+
+  .cart img
+    width: 125px

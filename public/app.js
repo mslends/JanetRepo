@@ -54,9 +54,14 @@ angular.module('janet', ['ui.router', 'ngAnimate'])
                 resolve: {
                   user: function(customerService, $state){
                           return customerService.currentUser().then(function(response){
+                            console.log(response);
+                            if (!response) {
+                              $state.go('home');
+                            }
                             return response;
                           }).catch(function(err) {
                             console.log(err);
+                            $state.go('home');
                           })
                         }
                   }

@@ -1,30 +1,38 @@
 <div class="info-setting">
-  <div ng-hide="!user">
-    <h2>Account Setting</h2>
-    <input type="text" ng-model="oneUser.name" placeholder="Full Name">
-    <input type="email" ng-model="oneUser.email" placeholder="Email Address">
+  <div ng-show="user">
+    <h2>MY ACCOUNT</h2>
+    <h3>Your Information</h3>
+    <input type="text" ng-model="user.name" placeholder="Full Name">
+    <input type="email" ng-model="user.email" placeholder="Email Address">
     <h3>Shipping Address</h3>
-    <input type="text" ng-model="oneUser.shippingAddress.street" placeholder="Street">
-    <input type="text" ng-model="oneUser.shippingAddress.city" placeholder="City">
-    <input type="text" ng-model="oneUser.shippingAddress.state" placeholder="State">
-    <input type="text" ng-model="oneUser.shippingAddress.zip" placeholder="Zip">
+    <input type="text" ng-model="user.shippingAddress.street" placeholder="Street">
+    <input type="text" ng-model="user.shippingAddress.city" placeholder="City">
+    <input type="text" ng-model="user.shippingAddress.state" placeholder="State">
+    <input type="text" ng-model="user.shippingAddress.zip" placeholder="Zip">
     <h3>Phone Number</h3>
-    <input type="text" ng-model="oneUser.phone" placeholder="Phone"><br>
-    <button type="button" ng-click="updateUser(oneUser)">Update Information</button>
+    <input type="text" ng-model="user.phone" placeholder="Phone"><br>
+    <button type="button" ng-click="updateUser(user)">Update Information</button>
   </div>
-    <h2 ng-hide="user">Please login to continue! :)</h2>
+    <h2 ng-show="!user">Please login to continue! :)</h2>
 </div>
 
 
-<div class="order-history" ng-hide="!user">
-  <h2>Order History</h2>
+<div class="order-history" ng-show="user">
+  <h2>ORDER HISTORY</h2>
   <div class="orderList" ng-repeat="order in orders | orderBy: '-orderDate'">
     <h3>Order Date: {{order.orderDate | date: MM/dd/yyyy}}</h3><br>
-    <div ng-repeat="history in order.productsOrdered">
-      <img src="{{history.product.images}}" alt="" />
-      <p>Product Name: {{history.product.name}}</p>
-      <p>Qty: {{history.qty}}<br></p>
+    <div class="orderItem" ng-repeat="history in order.productsOrdered">
+      <div class="orderHistoryPhoto">
+        <img src="{{history.product.images}}" alt="" />
+      </div>
+      <div class="orderHistoryInfo">
+        <p>{{history.product.name}}</p>
+        <p>Qty: {{history.qty}}<br></p>
+      </div>
     </div>
-    <p>Total Price: {{order.totalPrice | currency}}</p><br>
+    <br>
+    <div class="orderHistoryTotal">
+      <p>Total Price: {{order.totalPrice | currency}}</p><br>
+    </div>
   </div>
 </div>

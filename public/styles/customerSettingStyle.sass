@@ -19,6 +19,7 @@ body
   padding: 10px 10px 20px
   margin: 0 0 20px
   color: #999
+  font-size: 16px
 
 .info-setting h3
   text-align: left
@@ -33,15 +34,17 @@ body
   margin-top: 3px
   margin-bottom: 3px
   padding: 0 10px 0 10px
+  border-radius: 0
 
 .info-setting button
-  width: 85%
+  width: 87%
   height: 45px
   border: none
   background: $janetGreen
   color: #fff
   font-size: 15px
   margin: 20px 0
+  border-radius: 0
 
 
 .order-history
@@ -53,7 +56,7 @@ body
 
 .order-history img
   margin-left: 10px
-  width: 50px
+  width: 70px
 
 .order-history p
   padding: 0 10px
@@ -72,3 +75,60 @@ body
   margin: 10px 0 10px 10px
   font-size: 14px
   color: #999
+
+.orderItem
+  display: flex
+  justify-content: space-around
+
+.orderHistoryInfo
+  width: 150px
+  word-wrap: normal
+  text-align: left
+
+
+.orderHistoryTotal
+  text-align: right
+  margin-right: 20px
+
+
+
+
+
+
+@media (min-width: 700px)
+
+  .info-setting, .order-history
+    width: 75%
+
+  .info-setting button
+    width: 84%
+    height: 50px
+    font-size: 20px
+
+  .info-setting h2, .order-history h2
+    font-size: 20px
+
+  .orderList h3, .info-setting h3
+    margin: 20px 0 20px 20px
+    font-size: 20px
+
+  .info-setting input
+    height: 40px
+    font-size: 16px
+
+  .order-history img
+    width: 90px
+
+  .order-history p
+    font-size: 20px
+
+  .orderHistoryInfo
+    width: 225px
+
+  .orderHistoryInfo p
+    font-size: 18px
+
+
+@media (min-width: 1020px)
+  .info-setting, .order-history
+    width: 50%
