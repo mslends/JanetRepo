@@ -1,9 +1,20 @@
 <main class="product-details-main-container">
 
+<section class="product-details-content-wrapper">
+
+
     <!-- <nav class="product-details-nav"></nav>
     <nav class="product-details-categories-menu"></nav> -->
 
+<section class="product-details-desktop-view">
+
+
  <section class="product-details-banner-img"><img src="{{product.images}}" alt="" /></section>
+
+
+
+<section class="product-details-desktop-info">
+
 
 <section class="deal-info">
     <div class="deal-title">
@@ -51,6 +62,7 @@
     <button class="add-to-bag-btn" type="button" name="button" ng-click="addToCart(product, productQty)">ADD TO BAG</button>
 </section>
 
+
 <section class="product-details-social-media-icons">
 <i class="fa fa-facebook social" aria-hidden="true"></i>
 <i class="fa fa-twitter social" aria-hidden="true"></i>
@@ -58,7 +70,8 @@
 <i class="fa fa-envelope-o social" aria-hidden="true"></i>
 <i class="fa fa-google-plus social" aria-hidden="true"></i>
 </section>
-
+</section>
+</section>
 <!-- <section class="product-details-section">
     <h4 class="product-details-header">PRODUCT DETAILS</h4>
     <ul class="details">
@@ -81,8 +94,11 @@
             <span id="hours"></span>:<span id="minutes"></span>:<span id="seconds"></span>
 
         </div>
-        <div id="days">Days</div>
-        <div class="stat-description">DAYS</div>
+        <section class="product-details-days-section">
+            <div id="days">Days</div>
+            <div class="stat-description day-countdown">DAYS</div>
+        </section>
+
     </div>
 
     <div class="product-details-amount-sold">
@@ -139,28 +155,5 @@
     </p>
     </div>
 </section>
-
-<section class="momentjs-test-section">
-    <table class="countdownContainer">
-    			<tr class="info">
-    				<td colspan="4">Christmas Countdown</td>
-    			</tr>
-    			<tr class="info">
-    				<td id="days"></td>
-    				<td id="hours"></td>
-    				<td id="minutes"></td>
-    				<td id="seconds"></td>
-    			</tr>
-    			<tr>
-    				<td>Days</td>
-    				<td>Hours</td>
-    				<td>Minutes</td>
-    				<td>Seconds</td>
-    			</tr>
-    		</table>
 </section>
-
-
-
-
 </main>

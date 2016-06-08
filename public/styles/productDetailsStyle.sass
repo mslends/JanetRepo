@@ -11,10 +11,16 @@
     background: #f3f3f3
 
 
+.product-details-content-wrapper
+    max-width: 600px
+    margin: 0 auto
+
 .product-details-nav
     width: 100%
     height: 45px
     background-color: gray
+
+
 
 .product-details-categories-menu
     width: 100%
@@ -22,14 +28,17 @@
     background-color: lightgrey
 
 .product-details-banner-img
-    width: 100%
-    height: 164px
+    width: 85%
+    // height: 164px
+    margin: 0 auto
     background-position: center
     background-repeat: no-repeat
     background-size: contain
+    text-align: center
     img
-
       height: 100%
+      width: 100%
+
 .deal-info
     width: 100%
     background-color: white
@@ -102,6 +111,7 @@
     -webkit-appearance: none
     -webkit-border-radius: 0px
     outline: none
+    max-width: 600px
 
 .color-form
     width: 90%
@@ -121,6 +131,7 @@
     -webkit-appearance: none
     -webkit-border-radius: 0px
     outline: none
+    max-width: 600px
 
 
 .product-details-qty-row
@@ -128,8 +139,8 @@
     height: 45px
     background-color: white
     margin: 0 auto
-    display: flex
-    justify-content: space-between
+    display: inline-block
+    max-width: 600px
 
 .product-details-qty
     height: 30px
@@ -138,6 +149,7 @@
     padding-top: 15px
     font-size: 16px
     color: black
+    float: left
 
 .Product-details-qty-input
     height: 23px
@@ -147,6 +159,7 @@
     background-color: #fff
     border: 1px solid #ccc
     color: black
+    float: right
 
 .Product-details-qty-input:focus
     textarea:focus, input:focus
@@ -168,6 +181,7 @@
     textarea:focus, input:focus
     outline: none
     border-radius: 3px
+    max-width: 600px
 
 .product-details-social-media-icons
     width: 100%
@@ -232,7 +246,22 @@
     padding-top: 20px
     font-size: 20px
 
+.product-details-days-section
+    width: 100%
+    display: flex
+    background-color: none
+    justify-content: space-around
 
+#days
+    width: 50%
+    background-color: orange
+    float: right
+    font-size: 14px
+
+.day-countdown
+    width: 50% !important
+    background-color: blue
+    float: left !important
 
 .product-details-amount-sold
     width: 33%
@@ -294,10 +323,10 @@
 
 .info-block
     width: 90%
-    max-height: 528px
     margin: 0 auto
     background-color: none
     padding-top: 10px
+    padding-bottom: 30px
 
 .product-details-info-h4
     width: 100%
@@ -347,7 +376,59 @@
 .fine-print
     margin-bottom: 20px
 
-.momentjs-test-section
-    width: 100%
-    height: 300px
-    background-color: blue
+@media (min-width: 600px)
+
+    .content-wrapper
+        margin: 0 auto
+        max-width: 800px
+
+    .deal-info
+        width: 85%
+        margin: auto
+
+    // .deal-title
+    //     margin-left: 110px
+
+    .add-to-bag-btn
+        width: 85%
+
+    .product-details-social-media-icons
+        width: 85%
+        margin: 0 auto
+
+    .product-details-options
+        width: 85%
+        margin: 0 auto
+
+    .product-details-stats
+        width: 85%
+        margin: 0 auto
+
+    .product-details-info-section
+        width: 85%
+        margin-top: 20px
+        margin: auto
+
+    .product-details-social-media-icons
+        width: 85%
+
+@media (min-width: 1020px)
+    .product-details-content-wrapper
+        max-width: 1020px
+        background-color: white
+
+    .product-details-desktop-view
+        display: flex
+        background-color: none
+        padding-top: 40px
+        padding-left: 20px
+
+    .product-details-banner-img
+        width: 66%
+        height: 100%
+
+    .product-details-desktop-info
+        width: 33%
+
+    .product-details-info-section
+        width: 100%
