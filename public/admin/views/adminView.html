@@ -1,6 +1,9 @@
 <section class="admin-page">
+  <!-- <div class ng-hide="!user"> -->
     <div class="admin-profile-settings">
         <h1>Admin Profile Settings</h1>
+        <h3>Name</h3>
+        <input type="text" ng-model="user.name"><br>
         <h3>Email</h3>
         <input type="text" ng-model="user.email"><br>
         <h3>Password</h3>
@@ -22,7 +25,7 @@
         </div>
 
         <div class="admin-product-info">
-            <h4>{{product.name}}</h4><hr width="90%"></hr>
+            <h4>{{product.name}}</h4>
             <h4>{{product.seller}}</h4>
             <p>{{product.category}} | Qty: {{product.qty}}</p>
         </div>
@@ -34,6 +37,8 @@
       </div>
       <hr width="80%"></hr>
     </div>
+  <!-- </div> -->
+  <!-- <h2 ng-hide="user">You must be logged in as an administrator to continue.</h2> -->
 </section>
 <new-product-modal-directive></new-product-modal-directive>
 <edit-product-modal-directive></edit-product-modal-directive>

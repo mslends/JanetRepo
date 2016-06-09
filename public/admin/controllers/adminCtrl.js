@@ -41,12 +41,35 @@ $scope.addNewProduct = function(newProduct){
     $scope.showProducts();
     $scope.newProduct = response;
     $scope.newProduct = {};
+    $scope.newProductModalShown = !$scope.newProductModalShown;
   });
 };
 
 $scope.deleteProduct = function(product){
   adminService.deleteSingleProduct(product).then(function(){
     $scope.showProducts();
+  });
+};
+
+$scope.editProductModalShown = false;
+
+$scope.toggleEditProductModal = function(product){
+    console.log("toggle modal");
+    if(product.startDate) {
+        product.startDate = new Date(product.startDate);
+    }if(product.endDate){
+        product.endDate = new Date(product.endDate);
+    }
+    
+  $scope.productData = product;
+  $scope.editProductModalShown = !$scope.editProductModalShown;
+};
+
+$scope.editProduct = function(product){
+    console.log("edit product hit!");
+  adminService.updateSingleProduct(product).then(function(){
+    $scope.showProducts();
+    $scope.editProductModalShown = !$scope.editProductModalShown;
   });
 };
 

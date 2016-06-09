@@ -5,43 +5,57 @@
   height: 50px
   border-bottom: 1px solid #eeeeee
   font-size: .9em
-
-  display: flex
-  justify-content: space-between
+  margin: auto
+  margin-top: -10px
   background: #fff
 
 
 .janetIcon
-  height: 40px
+  height: 30px
   width: 150px
   background-image: url("../janetLogo.png")
   background-repeat: no-repeat
   background-size: contain
-  margin-right: 10%
-
-  margin-top: 12px
+  margin: auto
+  margin-top: -25px
   cursor: pointer
+
+
+.janetIconWrapper
+  margin: auto
+  width: 300px
+  height: 50px
+
 
 .leftNav
   margin-left: 20px
   margin-top: 10px
   font-size: .75em
   padding-top: 5px
+  width: 300px
 
 .shopping
-  margin-top: 10px
-  margin-right: 20px
+  margin-top: 0px
+  margin-right: 10px
   color: gray
   cursor: pointer
+  position: absolute
+  right: 10px
+  top: 10px
   &:hover
     color: $janetGreen
   &:active
     color: $janetPurple
 
+.shoppingSpacerDiv
+  width: 300px
+  height: 40px
+  right: 0px
+
 .hamburger
   color: gray
-  size: 1px
   cursor: pointer
+  margin-top: 10px
   &:hover
     color: $janetGreen
   &:active
@@ -56,20 +70,22 @@
     color: $janetPurple
 
 .navMenu
-  position:absolute
   background:black
   height: 600px
   width: 375px
   border: 1px solid lightgrey
   border-radius: 3px
-  font-family: sans-serif
+  font-family: lato
   color: gray
   font-size: 24px
   margin-left: 0px
   position: absolute !important
   background: $janetGray
+  z-index: 8
+
   transition: all linear 0.3s
-  position: absolute !important
+
+  position: fixed !important
   background-color: $janetGray
 
 .ng-hide
@@ -118,11 +134,14 @@
   width: 100%
   border: 1px solid lightgrey
   border-radius: 4px
-  font-family: sans-serif
+  font-family: lato
   color: gray
   margin-left: 0px
+  margin-top: 50px
   transition: all linear 0.3s
+  background: white
   position: absolute
+  z-index: 7
 .ng-hide
   margin-left: -300px
 
@@ -145,7 +164,7 @@
   height: 30px
   width: 200px
   font-size: 18px
-  margin-top: -25px
+  margin-top: -27px
   margin-left: 50px
   display: none
 
