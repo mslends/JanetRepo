@@ -1,4 +1,4 @@
-angular.module('janet').controller('settingsCtrl', function($scope, customerService, user, $state, $rootScope) {
+angular.module('janet').controller('settingsCtrl', function($scope, customerService, user, $state) {
 
 
   $scope.user = user;
