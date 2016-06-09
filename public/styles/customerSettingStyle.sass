@@ -5,23 +5,27 @@ body
 
 .info-setting
   margin: auto
-  width: 80%
+  width: 90%
   text-align: center
   background: #fff
   padding-top: 20px
   margin-bottom: 20px
+  margin-top: 10px
+  color: #999
 
-.info-setting h2, .orderHistory h2
-  text-align: left
-  font-size: 16px
+.info-setting h2, .order-history h2
+  text-align: center
   border-bottom: 1px solid #eee
   padding: 10px 10px 20px
   margin: 0 0 20px
+  color: #999
+  font-size: 16px
 
 .info-setting h3
   text-align: left
   font-size: 14px
   margin: 10px 0 10px 10px
+  color: #999
 
 .info-setting input
   width: 80%
@@ -30,25 +34,101 @@ body
   margin-top: 3px
   margin-bottom: 3px
   padding: 0 10px 0 10px
+  border-radius: 0
 
 .info-setting button
-  width: 80%
+  width: 87%
   height: 45px
   border: none
   background: $janetGreen
   color: #fff
   font-size: 15px
   margin: 20px 0
+  border-radius: 0
 
 
-.orderHistory
+.order-history
   margin: auto
-  width: 80%
+  width: 90%
   text-align: left
   background: #fff
   padding-top: 20px
 
-.orderHistory p
+.order-history img
+  margin-left: 10px
+  width: 70px
+
+.order-history p
   padding: 0 10px
   font-size: 12px
-  
+  color: #999
+
+.order-history h2
+  padding: 10px 10px 20px
+  margin-bottom: 20px
+  border-bottom: 1px solid #eee
+
+.orderList
+  border-bottom: 1px solid #eee
+
+.orderList h3
+  margin: 10px 0 10px 10px
+  font-size: 14px
+  color: #999
+
+.orderItem
+  display: flex
+  justify-content: space-around
+
+.orderHistoryInfo
+  width: 150px
+  word-wrap: normal
+  text-align: left
+
+
+.orderHistoryTotal
+  text-align: right
+  margin-right: 20px
+
+
+
+
+
+
+@media (min-width: 700px)
+
+  .info-setting, .order-history
+    width: 75%
+
+  .info-setting button
+    width: 84%
+    height: 50px
+    font-size: 20px
+
+  .info-setting h2, .order-history h2
+    font-size: 20px
+
+  .orderList h3, .info-setting h3
+    margin: 20px 0 20px 45px
+    font-size: 20px
+
+  .info-setting input
+    height: 40px
+    font-size: 16px
+
+  .order-history img
+    width: 90px
+
+  .order-history p
+    font-size: 20px
+
+  .orderHistoryInfo
+    width: 225px
+
+  .orderHistoryInfo p
+    font-size: 18px
+
+
+@media (min-width: 1020px)
+  .info-setting, .order-history
+    width: 50%
