@@ -13,7 +13,7 @@
 
     <div class="janetIcon" ui-sref="home"></div>
   </div>
-    
+
     <div class="shoppingSPacerDiv">
 
     <i class="shopping fa fa-2x fa-shopping-bag" aria-hidden="true" ui-sref="cart"></i>
@@ -37,13 +37,13 @@
 
     <div class="optionBox">
 
-        <div class="navOption" ng-click="isVisible = !isVisible">All Deals</div>
+        <div class="navOption" ng-click="isVisible = !isVisible" ui-sref="home">All Deals</div>
         <div class="navOption" ng-click="isVisible = !isVisible">
             </i>Shop By Category</div>
 
 
 
-        <div class="navOption" ng-click="isVisible = !isVisible" ui-sref="settings"><i class="fa fa-cog" aria-hidden="true"></i> Account Settings</div>
+        <div class="navOption" ng-click="isVisible = !isVisible" ui-sref="settings">   My Account</div>
         <div class="navOption" ng-click="isVisible = !isVisible" ui-sref="cart"> Bag</div>
 
 
@@ -56,7 +56,7 @@
         Cancel
     </div>
 
-    <input id="searchBar" type="text" name="name" placeholder="   Search...">
+    <input ng-model="searchText" id="searchBar" type="text"  placeholder="   Search...">
 
 
 

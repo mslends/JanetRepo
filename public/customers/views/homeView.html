@@ -1,7 +1,7 @@
 <div class="homeBox">
     <div class="expandyBox">
 
-        <div class="mainProduct" ng-repeat="product in products">
+        <div class="mainProduct" ng-repeat="product in products | filter:searchText">
 
             <a ui-sref="productDetails({productId:product._id})"> <img id="homeProductImage" src="{{product.images}}" alt="{{product.name}}" />
             </a>
