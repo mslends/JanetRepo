@@ -5,32 +5,59 @@
   margin: auto
 
 .admin-new-product-input input
-  margin-top: 2px
-  margin-bottom: 2px
-  padding: 3px
+  width: 90%
+  height: 20px
+  border: 1px solid $janetGreen
   font-family: 'Lato', sans-serif
-  border-radius: 5px
-  border: 2px solid $janetGreen
-  text-decoration: none
+  border-radius: none
+  font-size: 10px
+  font-weight: 200
+  text-align: left
+  background-color: white
+  margin: 0 auto
+  margin-top: 10px
+  margin-bottom: 10px
+  padding: 5px 3px 5px 3px
+  font-size: 16px
+  outline: none
+  -webkit-appearance: none
+  webkit-border-radius: 0px
 
 .admin-new-product-input textarea
-  margin-top: 5px
-  padding: 3px
-  border-radius: 5px
-  border: 2px solid $janetGreen
-  text-decoration: none
+  width: 90%
+  border: 1px solid $janetGreen
   font-family: 'Lato', sans-serif
+  border-radius: none
+  font-size: 10px
+  font-weight: 200
+  text-align: left
+  background-color: white
+  margin: 0 auto
+  margin-top: 10px
+  margin-bottom: 10px
+  font-size: 16px
+  outline: none
+  -webkit-appearance: none
+  webkit-border-radius: 0px
 
 .admin-submit-button button
-  margin-bottom: 10px
-  border-radius: 5px
+  width: 90%
+  height: 50px
+  font-size: 15px
+  margin: 0 auto
+  margin-top: 20px
+  margin-bottom: 5px
+  border-radius: 3px
   font-family: 'Lato', sans-serif
   background-color: $janetPurple
-  border: none
+  border: solid
+  border-width: 1px
   color: white
   padding: 10px 20px 10px 20px
   text-decoration: none
   text-align: center
+  textarea:focus, input:focus
+  outline: none
   -webkit-transition-duration: .2s
   transition-duration: .2s
 
@@ -42,11 +69,11 @@
   text-align: center
   margin: 10px 0px 20px 0px
 
-.dialog button
-  margin-top: 40px
-  padding: 10px 20px 10px 20px
-  text-align: center
-  justify-content: center
+// .dialog button
+//   margin-top: 40px
+//   padding: 10px 20px 10px 20px
+//   text-align: center
+//   justify-content: center
 
 .modal
   height: 80%
@@ -75,7 +102,7 @@
   transform: translateY(-50%) translateX(-50%)
   background-color: white
   border: 2px solid $janetGray
-  border-radius: 10px
+  border-radius: 3px
   z-index: 3
 
 
@@ -106,3 +133,7 @@
     width: 85px
   .admin-single-product
     max-width: 500px
+
+@media (min-width: 800px)
+  .dialog
+    max-width: 650px

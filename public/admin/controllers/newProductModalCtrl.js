@@ -5,6 +5,7 @@ angular.module('janet')
 
     $scope.newProductModalShown = false;
     $scope.toggleNewProductModal = function(){
+      console.log("new prod modal hit!");
       $scope.newProductModalShown = !$scope.newProductModalShown;
     };
 

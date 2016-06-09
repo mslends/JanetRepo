@@ -6,9 +6,13 @@ angular.module('janet')
   $scope.editProductModalShown = false;
 
   $scope.toggleEditProductModal = function(product){
-      console.log("toggle modal");
-    //   product.startDate = new Date(product.startDate);
-    //   product.endDate = new Date(product.endDate);
+    console.log("edit prod modal hit!");
+    if(product.startDate){
+      $scope.startDate = new Date(product.startDate);
+    } if(product.endDate){
+      $scope.endDate = new Date(product.endDate);
+    }
+    
     $scope.productData = product;
     $scope.editProductModalShown = !$scope.editProductModalShown;
   };

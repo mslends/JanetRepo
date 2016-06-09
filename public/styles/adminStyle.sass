@@ -5,14 +5,23 @@
   margin: auto
 
 .admin-page button
-  border-radius: 5px
+  width: 90%
+  height: 50px
+  font-size: 15px
+  margin: 0 auto
+  margin-top: 20px
+  margin-bottom: 5px
+  border-radius: 3px
   font-family: 'Lato', sans-serif
   background-color: $janetPurple
-  border: none
+  border: solid
+  border-width: 1px
   color: white
   padding: 10px 20px 10px 20px
   text-decoration: none
   text-align: center
+  textarea:focus, input:focus
+  outline: none
   -webkit-transition-duration: .2s
   transition-duration: .2s
 
@@ -21,20 +30,45 @@
   color: white
 
 .admin-page input
-  border-radius: 5px
-  border: 2px solid $janetGreen
-  text-decoration: none
+   width: 90%
+   height: 20px
+   border: 1px solid $janetGreen
+   font-family: 'Lato', sans-serif
+   color: $janetGreen
+   border-radius: none
+   font-size: 10px
+   font-weight: 200
+   text-align: left
+   background-color: white
+   margin: 0 auto
+   margin-top: 10px
+   margin-bottom: 10px
+   padding: 5px 3px 5px 3px
+   font-size: 16px
+   outline: none
+   -webkit-appearance: none
+   webkit-border-radius: 0px
+
+.admin-content-wrapper
+  text-align: center
+  max-width: 500px
+  margin: 0 auto
 
 .admin-page
-  background-color: white
+  margin: 0 auto
+  max-width: 600px
   height: 100%
   display: flex
   flex-direction: column
   justify-content: space-around
 
+/////////////////////////////////////////////
+
 .admin-profile-settings
-  padding: 15px 10px 25px 10px
+  padding: 15px 0px 25px 0px
   text-align: center
+  background-color: white
+  margin-bottom: 20px
 
 .admin-profile-settings h1
   font-size: 18px
@@ -45,15 +79,19 @@
 .admin-profile-settings h3
   margin-top: 10px
 
+///////////////////////////////////////////
+
 .admin-product-list-top
+  background-color: white
+  margin-bottom: 20px
   display: flex
   justify-content: center
   flex-direction: column
-  padding: 15px 10px 5px 10px
+  padding: 15px 0px 25px 0px
   text-align: center
 
-.admin-product-list
-  background-color: white
+.admin-product-list-top h4
+  font-size: 18px
 
 .admin-add-new-product-button
   text-align: center
@@ -63,47 +101,81 @@
   font-size: 16px
   font-weight: bold
 
+////////////////////////////////////////////////
+
 .admin-single-product
   margin: 0 auto
+  margin-bottom: 20px
+  background-color: white
   display: flex
   justify-content: space-between
+  flex-direction: column
   text-align: left
   vertical-align: middle
 
+//////////////////////////
+
 .admin-product-image
-  width: 90px
+  width: 100%
   height: 100%
-  margin-left: 10px
+  margin: 0 auto
+  padding: 0px
 
 .admin-product-image img
+  margin: 0 auto
   width: 100%
   height: 100%
   background-size: cover
+  padding: 0px
+
+////////////////////////////////////
 
 .admin-product-info
-  margin-left: 10px
-  margin-right: 20px
+  margin-left: 6px
+  float: left
 
 .admin-product-info p
   margin-top: 5px
+  font-size: 14px
 
 .admin-product-info h4
+  font-size: 18px
   margin-top: 6px
 
+////////////////////////////////////////
+
 .admin-product-options
+  width: 100%
+  display: flex
+  justify-content: space-around
+  margin-top: 20px
+  margin-bottom: 20px
+  text-align: center
   vertical-align: middle
 
 .admin-product-options button
-  padding: 5px 10px 5px 10px
-  margin-right: 10px
-  margin-bottom: 10px
-  float: left
+  width: 45%
+  height: 25px
+  padding: 5px 10px 25px 10px
   vertical-align: middle
 
-@media (min-width: 500px)
+//////////////////////////////////////////
+
+@media (min-width: 600px)
+  .admin-page
+    max-width: 800px
+    margin: 0 auto
   .admin-page hr
     width: 402px
   .admin-product-info hr
     width: 90%
-
-//////////////////////////////////////////
+  .admin-page button
+    width: 100%
+  .admin-page input
+    width: 100%
+  .admin-profile-settings
+    padding: 20px
+  .admin-product-list-top
+    padding: 20px
+  .admin-single-product
+    padding: 20px

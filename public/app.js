@@ -36,8 +36,8 @@ angular.module('janet', ['ui.router', 'ngAnimate'])
                 templateUrl: './customers/views/cartView.html',
                 controller: 'cartCtrl',
                 resolve: {
-                  user: function(customerService, $state){
-                          return customerService.currentUser().then(function(response){
+                  user: (customerService, $state)=>{
+                          return customerService.currentUser().then((response)=>{
                             return response;
                           }).catch(function(err) {
                             console.log(err);
@@ -59,7 +59,7 @@ angular.module('janet', ['ui.router', 'ngAnimate'])
                               $state.go('home');
                             }
                             return response;
-                          }).catch(function(err) {
+                          }).catch((err)=>{
                             console.log(err);
                             $state.go('home');
                           })
@@ -71,7 +71,22 @@ angular.module('janet', ['ui.router', 'ngAnimate'])
             .state('admin', {
                 url: '/admin',
                 templateUrl: './admin/views/adminView.html',
-                controller: 'adminCtrl'
+                controller: 'adminCtrl',
+                resolve: {
+                  checkForAdmin: (customerService, $state)=>{
+                    return customerService.currentUser().then((response)=>{
+                      if(response.user.admin === "true"){
+                        return response;
+                      } else {
+                        alert('You must be an administrator to access this page.');
+                        $state.go('home');
+                      }
+                    }).catch((err)=>{
+                      console.log(err);
+                    })
+                  }
+
+                }
             });
 
   });
