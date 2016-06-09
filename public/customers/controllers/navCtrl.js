@@ -1,4 +1,4 @@
-angular.module('janet').controller('navCtrl', function($scope, customerService, $state){
+angular.module('janet').controller('navCtrl', function($scope, customerService, $state, $rootScope){
 
   $scope.currentUser = function(){
     customerService.currentUser().then(function(response){
@@ -19,7 +19,9 @@ angular.module('janet').controller('navCtrl', function($scope, customerService, 
       location.reload();
     });
   };
-
+$scope.updateFilter = function(searchTerm){
+  $rootScope.searchTerm = searchTerm;
+}
 
 
 });

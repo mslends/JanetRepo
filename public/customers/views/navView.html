@@ -6,7 +6,7 @@
 
         <i class="glass fa fa-2x fa-search" aria-hidden="true" ng-click="searchIsVisible = !searchIsVisible"></i>
 
-        <input id="topSearchBar" type="text" name="name" placeholder="   Search...">
+        <input id="topSearchBar" type="text" name="name" placeholder="   Search..." ng-change="updateFilter(searchText)" ng-model="searchText">
 
     </div>
     <div class="janetIconWrapper">
