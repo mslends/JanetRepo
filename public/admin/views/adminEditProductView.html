@@ -1,9 +1,9 @@
 <div class="modal" ng-show="editProductModalShown">
-    <div class="overlay" ng-click="toggleEditProductModal()"></div>
+    <div class="overlay" ng-click="toggleEditProductModal(productData)"></div>
 
     <div class="dialog">
         <div class="admin-exit-modal">
-            <i class="fa fa-times" ng-click="toggleEditProductModal()"></i>
+            <i class="fa fa-times" ng-click="toggleEditProductModal(productData)"></i>
         </div>
         <br>
         <h3>Edit Product</h3>
@@ -50,10 +50,10 @@
 
             <div class="admin-edit-product-input-group-4">
                 <p>Start of Sale</p>
-                <input id="admin-datetime-input" type="datetime-local" ng-model="productData.startDate">
+                <input id="admin-datetime-input" type="date" ng-model="productData.startDate">
 
                 <p>End of Sale</p>
-                <input id="admin-datetime-input" type="datetime-local" ng-model="productData.endDate">
+                <input id="admin-datetime-input" type="date" ng-model="productData.endDate">
             </div>
 
             <hr width="20%"></hr>

@@ -6,7 +6,7 @@ angular.module('janet')
       // scope: {
       //   productData: "="
       // },
-      controller: "editProductModalCtrl"
-    }
+    //   controller: "editProductModalCtrl"
+};
 
   });
