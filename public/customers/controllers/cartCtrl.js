@@ -70,6 +70,26 @@ angular.module('janet').controller('cartCtrl', function($scope, cartService, ord
       productsOrdered: $scope.items
     };
 
+    console.log($scope.user, 'user info')
+
+    if(!$scope.user.shippingAddress.street){
+      return alert("Street address is required.")
+    };
+    if(!$scope.user.shippingAddress.city){
+      return alert("City is required.")
+    };
+    if(!$scope.user.shippingAddress.state){
+      return alert("State is required.")
+    };
+    if(!$scope.user.shippingAddress.zip){
+      return alert("Zipcode is required.")
+    };
+    if(!$scope.user.name){
+      return alert("Name is required.")
+    };
+
+
+
     orderService.createOrder($scope.order, $scope.user).then((response)=>{
       $scope.newOrder = response;
       alert('Your order has been placed!');

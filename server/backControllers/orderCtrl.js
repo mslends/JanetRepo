@@ -13,7 +13,9 @@ module.exports = {
 
   getOneOrder: (req, res, next)=>{
     Order.findById(req.params.id).populate('user')
-    .populate({path:'productsOrdered.product'}).exec((err, response)=>{
+    .populate({path:'productsOrdered.product'})
+    .populate('shippingAddress')
+    .exec((err, response)=>{
       if(err){
         res.status(500).json(err);
       } else{
