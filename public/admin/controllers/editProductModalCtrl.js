@@ -4,6 +4,7 @@ angular.module('janet')
   console.log("editProductModalCtrl working");
 
   $scope.editProductModalShown = false;
+
   $scope.toggleEditProductModal = function(product){
     console.log("edit prod modal hit!");
     if(product.startDate){
@@ -17,6 +18,7 @@ angular.module('janet')
   };
 
   $scope.editProduct = function(product){
+      console.log("edit product hit!");
     adminService.updateSingleProduct(product).then(function(){
       $scope.showProducts();
       $scope.editProductModalShown = !$scope.editProductModalShown;
