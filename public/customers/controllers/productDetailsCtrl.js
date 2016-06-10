@@ -72,7 +72,7 @@ function countdown(){
   // add to cart function
   $scope.addToCart = (product, productQty)=>{
     cartService.addToCart(product, productQty);
-    alert('Item has been added to your cart!');
+    swal('Item has been added to your cart!');
   };
 
 
