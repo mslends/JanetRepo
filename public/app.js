@@ -26,7 +26,11 @@ angular.module('janet', ['ui.router', 'ngAnimate'])
                 resolve: {
                   productInfo: function(productsService, $stateParams){
                     // console.log('resolve', $stateParams.productId)
-                    return productsService.getSingleProduct($stateParams.productId);
+                    return productsService.getSingleProduct($stateParams.productId).then(function(response) {
+                        response.savings = ((response.retailPrice - response.discountPrice) / response.retailPrice) * 100;
+                        console.log(response.savings);
+                        return response;
+                    });
                   }
                 }
             })
