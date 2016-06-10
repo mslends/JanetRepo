@@ -14,7 +14,7 @@ var productSchema = new Schema({
   material: {type: String},
   // userReviews: [{type: Schema.Types.ObjectId, ref: 'User'}],
   category: {type: String},
-  favorites: {type: Number},
+  favorites: {type: Number, default: 0},
   amntSold: {type: Number, default: 0},
   parent: {type: String},
   startDate: {type: Date},

@@ -26,7 +26,11 @@ angular.module('janet', ['ui.router', 'ngAnimate'])
                 resolve: {
                   productInfo: function(productsService, $stateParams){
                     // console.log('resolve', $stateParams.productId)
-                    return productsService.getSingleProduct($stateParams.productId);
+                    return productsService.getSingleProduct($stateParams.productId).then(function(response) {
+                        response.savings = ((response.retailPrice - response.discountPrice) / response.retailPrice) * 100;
+                        console.log(response.savings);
+                        return response;
+                    });
                   }
                 }
             })
@@ -75,7 +79,7 @@ angular.module('janet', ['ui.router', 'ngAnimate'])
                 resolve: {
                   checkForAdmin: (customerService, $state)=>{
                     return customerService.currentUser().then((response)=>{
-                      if(response.user.admin === "true"){
+                      if(response.admin === true){
                         return response;
                       } else {
                         alert('You must be an administrator to access this page.');

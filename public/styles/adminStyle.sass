@@ -30,7 +30,7 @@
   color: white
 
 .admin-page input
-   width: 90%
+   width: 85%
    height: 20px
    border: 1px solid $janetGreen
    font-family: 'Lato', sans-serif
@@ -68,6 +68,7 @@
   padding: 15px 0px 25px 0px
   text-align: center
   background-color: white
+  margin-top: 5px
   margin-bottom: 20px
 
 .admin-profile-settings h1
@@ -153,6 +154,21 @@
   text-align: center
   vertical-align: middle
 
+.admin-product-options-mobile-view
+  width: 90%
+  display: flex
+  justify-content: space-around
+
+.admin-product-options-mobile-view i
+  color: $janetPurple
+  font-size: 32px
+
+.admin-product-options-mobile-view i:hover
+  color: $janetGreen
+
+.admin-product-options-desktop-view
+  display: none
+
 .admin-product-options button
   width: 45%
   height: 25px
@@ -163,19 +179,61 @@
 
 @media (min-width: 600px)
   .admin-page
+    display: flex
+    justify-content: space-between
     max-width: 800px
     margin: 0 auto
-  .admin-page hr
-    width: 402px
-  .admin-product-info hr
-    width: 90%
+  .admin-content-wrapper
+    max-width: 700px
   .admin-page button
-    width: 100%
+    width: 60%
+    margin-left: 5px
+    margin-right: 5px
   .admin-page input
-    width: 100%
+    width: 60%
   .admin-profile-settings
+    margin-top: 5px
     padding: 20px
+    max-width: 600px
   .admin-product-list-top
     padding: 20px
+  .admin-product-options-mobile-view
+    display: none
+  .admin-product-options-desktop-view
+    width: 90%
+    display: flex
+    justify-content: space-around
   .admin-single-product
     padding: 20px
+
+@media (min-width: 1020px)
+  .admin-product-card
+    display: flex
+    justify-content: space-around
+    flex-wrap: wrap
+    width: 100%
+  .admin-page
+    max-width: 100%
+    margin: 0 auto
+  .admin-content-wrapper
+    max-width: 100%
+  .admin-profile-settings
+    max-width: 60%
+    margin: 0 auto
+    margin-top: 5px
+    margin-bottom: 20px
+  .admin-product-options-mobile-view
+    display: none
+  .admin-product-options-desktop-view
+    display: flex
+    justify-content: space-around
+  .admin-page button
+    width: 60%
+    max-width: 500px
+  .admin-page input
+    width: 60%
+    max-width: 500px
+  .admin-product-list-top
+    max-width: 60%
+    margin: 0 auto
+    margin-bottom: 20px
