@@ -12,7 +12,7 @@ angular.module('janet').service('adminService', function($http){
   this.getSingleProduct = () => {
     return $http({
       method: "GET",
-      url: "/api/products/:id",
+      url: "/api/products/" + product._id,
     }).then(function(response){
       return response.data;
     });

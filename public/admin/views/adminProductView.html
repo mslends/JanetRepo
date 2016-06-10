@@ -1,0 +1,56 @@
+<div class="modal" ng-show="viewProductModalShown">
+    <div class="overlay" ng-click="toggleViewProductModal(product)"></div>
+
+    <div class="dialog">
+        <div class="admin-exit-modal">
+            <i class="fa fa-times" ng-click="toggleViewProductModal(product)"></i>
+        </div>
+        <br>
+        <h3>{{product.name}}</h3>
+        <section class="admin-view-product">
+
+            <div class="admin-view-product-img">
+                <img src="{{product.images}}">
+            </div>
+
+            <div class="admin-view-product-main-info">
+
+                <div class="admin-main-info-prices">
+                    <h4>${{product.discountPrice}}</h4>|
+                    <p>${{product.retailPrice}}</p>
+                </div>
+
+                <div class="admin-main-info-seller-category">
+                    <p>{{product.seller}}</p>
+                    <p>{{product.category}}</p>
+                    <p>Qty left: {{product.qty}}</p>
+                </div>
+
+            </div>
+
+            <div class="admin-view-product-sale-info">
+                <p><i class="fa fa-heart"></i>{{product.favorites}}</p>
+                <p>{{product.amntSold}} Sold</p>
+            </div>
+
+            <div class="admin-view-product-describe-info">
+
+                <div class="admin-describe-info-scm">
+                    <p>{{product.size}}</p>
+                    <p>{{product.color}}</p>
+                    <p>{{product.material}}</p>
+                </div>
+
+                <div class="admin-describe-info-description">
+                    <p>{{product.description}}
+                        <p>
+                </div>
+
+            </div>
+
+
+
+
+
+        </section>
+    </div>

@@ -6,12 +6,12 @@ angular.module('janet')
   $scope.editProductModalShown = false;
 
   $scope.toggleEditProductModal = function(product){
-    console.log("edit prod modal hit!");
-    if(product.startDate){
-      $scope.startDate = new Date(product.startDate);
-    } if(product.endDate){
-      $scope.endDate = new Date(product.endDate);
-    }
+      console.log("edit prod modal hit!");
+      if(product.startDate) {
+          product.startDate = new Date(product.startDate);
+      } if(product.endDate){
+          product.endDate = new Date(product.endDate);
+      }
 
     $scope.productData = product;
     $scope.editProductModalShown = !$scope.editProductModalShown;
@@ -21,7 +21,8 @@ angular.module('janet')
       console.log("edit product hit!");
     adminService.updateSingleProduct(product).then(function(){
       $scope.showProducts();
-      // $scope.editProductModalShown = !$scope.editProductModalShown;
+      $scope.editProductModalShown = !$scope.editProductModalShown;
+      alert("Your changes have been saved!");
     });
   };
 
