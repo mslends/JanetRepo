@@ -13,13 +13,17 @@
     </div>
     <!-- <hr width="80%"></hr> -->
     <div class="admin-product-list-top">
+      <div class="admin-search-bar">
+          <input type="text" ng-model="adminSearchText" placeholder="Search a product...">
+      </div>
       <div class="admin-add-new-product-button">
         <button type="button" ng-click="toggleNewProductModal()" >Add New Product</button>
       </div>
         <h4 class="admin-product-list-title">Current Products:</h4>
     </div>
     <!-- <hr width="80%"></hr> -->
-    <div class="admin-product-list" ng-repeat="product in products track by $index">
+    <section class="admin-product-card">
+    <div class="admin-product-list" ng-repeat="product in products | filter:adminSearchText">
       <div class="admin-single-product">
         <div class="admin-product-image">
             <img src="{{product.images}}">
@@ -31,12 +35,24 @@
         </div>
 
         <div class="admin-product-options">
+
+          <div class="admin-product-options-mobile-view">
+            <i class="fa fa-info-circle" ng-click="toggleViewProductModal(product)"></i>
+            <i class="fa fa-pencil" ng-click="toggleEditProductModal(product)"></i>
+            <i class="fa fa-trash" ng-click="deleteProduct(product)"></i>
+          </div>
+
+          <div class="admin-product-options-desktop-view">
+            <button type="button" ng-click="toggleViewProductModal(product)">Info</button>
             <button type="button" ng-click="toggleEditProductModal(product)">Edit</button>
             <button type="button" ng-click="deleteProduct(product)">Delete</button>
+          </div>
+
         </div>
       </div>
       <!-- <hr width="80%"></hr> -->
     </div>
+  </section>
   <!-- </div> -->
   <!-- <h2 ng-hide="user">You must be logged in as an administrator to continue.</h2> -->
 </section>
