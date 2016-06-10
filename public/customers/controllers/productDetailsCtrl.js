@@ -36,7 +36,7 @@ function countdown(){
 	h = (h < 10) ? "0" + h : h;
 	m = (m < 10) ? "0" + m : m;
 	s = (s < 10) ? "0" + s : s;
-    console.log(document.getElementsByClassName("days"));
+    // console.log(document.getElementsByClassName("days"));
 	document.getElementsByClassName("days")[0].textContent = d;
     document.getElementsByClassName("days")[1].textContent = d;
 	document.getElementsByClassName("days")[0].innerText = d;
@@ -72,7 +72,7 @@ function countdown(){
   // add to cart function
   $scope.addToCart = (product, productQty)=>{
     cartService.addToCart(product, productQty);
-    alert('Item has been added to your cart!');
+    swal('Item has been added to your cart!');
   };
 
 
