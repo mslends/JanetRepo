@@ -56,7 +56,7 @@
         Cancel
     </div>
 
-    <input ng-model="searchText" id="searchBar" type="text"  placeholder="   Search...">
+    <input ng-model="searchText" id="searchBar" type="text"  placeholder="   Search..." ng-change="updateFilter(searchText)" ng-model="searchText">
 
 
 
