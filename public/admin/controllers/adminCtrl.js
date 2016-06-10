@@ -32,7 +32,7 @@ $scope.addNewProduct = function(newProduct){
 
 $scope.deleteProduct = function(product){
   $scope.confirmDelete = confirm(product.name + " will be removed from inventory. Click OK to confirm.");
-  if(confirmDelete == "true"){
+  if($scope.confirmDelete === true){
   adminService.deleteSingleProduct(product).then(function(){
     $scope.showProducts();
   });

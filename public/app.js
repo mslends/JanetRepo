@@ -79,7 +79,7 @@ angular.module('janet', ['ui.router', 'ngAnimate'])
                 resolve: {
                   checkForAdmin: (customerService, $state)=>{
                     return customerService.currentUser().then((response)=>{
-                      if(response.user.admin === "true"){
+                      if(response.admin === true){
                         return response;
                       } else {
                         alert('You must be an administrator to access this page.');
