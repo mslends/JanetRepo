@@ -11,7 +11,7 @@ angular.module('janet').service('orderService', function($http){
         method: 'PUT',
         url: '/api/users/' + user._id,
         data: user
-      })
+      });
       return response.data;
     });
   };

@@ -15,7 +15,7 @@ var productSchema = new Schema({
   // userReviews: [{type: Schema.Types.ObjectId, ref: 'User'}],
   category: {type: String},
   favorites: {type: Number},
-  amntSold: {type: Number},
+  amntSold: {type: Number, default: 0},
   parent: {type: String},
   startDate: {type: Date},
   endDate: {type: Date}

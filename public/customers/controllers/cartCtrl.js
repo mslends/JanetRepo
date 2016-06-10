@@ -1,4 +1,4 @@
-angular.module('janet').controller('cartCtrl', function($scope, cartService, orderService, user, $state){
+angular.module('janet').controller('cartCtrl', function($scope, cartService, orderService, user, $state, productsService){
 
 
   $scope.modalShown = false;
@@ -10,8 +10,7 @@ angular.module('janet').controller('cartCtrl', function($scope, cartService, ord
 
   if(user !== "no user found"){
     $scope.user = user;
-  }
-
+  };
 
   $scope.getOneUser = ()=>{
     customerService.getOneUser($scope.user._id).then((response)=>{
@@ -57,7 +56,6 @@ angular.module('janet').controller('cartCtrl', function($scope, cartService, ord
   $scope.totalCost();
 
 
-
   $scope.createOrder =()=>{
     $scope.items = [];
     for(var i = 0; i < $scope.cart.length; i++){
@@ -70,7 +68,6 @@ angular.module('janet').controller('cartCtrl', function($scope, cartService, ord
       productsOrdered: $scope.items
     };
 
-    console.log($scope.user, 'user info')
 
     if(!$scope.user.shippingAddress.street){
       return swal("Street address is required.")
@@ -91,10 +88,13 @@ angular.module('janet').controller('cartCtrl', function($scope, cartService, ord
 
 
     orderService.createOrder($scope.order, $scope.user).then((response)=>{
+      for(var i = 0; i < $scope.cart.length; i++){
+        productsService.updateProductById($scope.cart[i]);
+      }
       $scope.newOrder = response;
       swal('Your order has been placed!');
       location.reload();
-    })
+    });
   };
 
 

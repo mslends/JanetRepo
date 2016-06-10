@@ -66,7 +66,7 @@ app.post("/api/products", productsCtrl.createProduct);
 app.get("/api/products/:id", productsCtrl.getSingleProduct);
 app.put("/api/products/:id", productsCtrl.updateSingleProduct);
 app.delete("/api/products/:id", productsCtrl.deleteSingleProduct);
-
+app.put("/api/products/:id", productsCtrl.updateProductById);
 
 //USERS//
 app.get("/api/users", userCtrl.getUsers);

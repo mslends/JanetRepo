@@ -8,12 +8,6 @@ var orderSchema = new Schema({
     product: {type: Schema.Types.ObjectId, ref: 'Product'},
     qty: {type: Number, min: 1}
   }],
-  // shippingAddress: {
-  //     street: {type: String, required: true},
-  //     city: {type: String, required: true},
-  //     state: {type: String, required: true},
-  //     zip: {type: Number, required: true}
-  // },
   shippingAddress: {type: Schema.Types.ObjectId, ref: 'User'},
   totalPrice: {type: Number}
 });

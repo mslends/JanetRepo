@@ -8,13 +8,13 @@ angular.module('janet').controller('loginSignupCtrl', function($scope, customerS
 ////////////////////////////
 
 
-$scope.createUser = function(user){
-  customerService.createUser(user).then(function(response){
-    $scope.newUser = response;
-    swal('You are successfully signed up!');
-    location.reload();
-  })
-}
+  $scope.createUser = function(user){
+    customerService.createUser(user).then(function(response){
+      $scope.newUser = response;
+      swal('You are successfully signed up!');
+      location.reload();
+    });
+  };
 
   $scope.getUsers = ()=>{
     customerService.getUsers().then((response)=>{
@@ -31,7 +31,7 @@ $scope.createUser = function(user){
   $scope.updateUser = (user)=>{
     customerService.updateUser(user._id, user).then((response)=>{
     $scope.updatedUser = response;
-  });
+    });
   };
 
   $scope.login = (user)=>{
@@ -47,4 +47,4 @@ $scope.createUser = function(user){
 
 
 
-})
+});

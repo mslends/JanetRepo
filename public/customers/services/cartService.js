@@ -1,4 +1,5 @@
 angular.module('janet').service('cartService', function($http, $stateParams){
+
   this.productId = $stateParams.productId;
 
   this.cart = [];
@@ -15,8 +16,8 @@ angular.module('janet').service('cartService', function($http, $stateParams){
       if(this.cart[i] === product){
         this.cart.splice(this.cart[i], 1);
         return this.cart;
-      }
-    }
+      };
+    };
   };
 
   this.addQty = (product)=>{
@@ -24,8 +25,8 @@ angular.module('janet').service('cartService', function($http, $stateParams){
       if(this.cart[i] === product){
       this.cart[i].productQty++;
       return this.cart;
-      }
-    }
+    };
+    };
   };
 
   this.removeQty = (product)=>{
@@ -34,9 +35,9 @@ angular.module('janet').service('cartService', function($http, $stateParams){
         if(this.cart[i].productQty !== 1){
           this.cart[i].productQty--;
           return this.cart;
-        }
-      }
-    }
+        };
+      };
+    };
   };
 
 

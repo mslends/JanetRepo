@@ -17,7 +17,7 @@ angular.module('janet').controller('settingsCtrl', function($scope, customerServ
         $scope.user = response;
         $scope.orders = $scope.user.orderHistory;
       });
-    }
+    };
   };
   $scope.getOneUser();
 
