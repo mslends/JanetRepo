@@ -41,6 +41,7 @@ function countdown(){
 	s = (s < 10) ? "0" + s : s;
 
 
+
     if(d < 0) {
         $scope.disabled = true;
         $scope.buttonText = "YOU MISSED IT !";
@@ -54,6 +55,7 @@ function countdown(){
         $scope.buttonText = "ADD TO BAG";
         // $('.product-details-countdown').show();
     }
+
 
 
 

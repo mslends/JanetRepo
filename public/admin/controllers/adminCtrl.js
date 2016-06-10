@@ -22,11 +22,11 @@ $scope.addNewProduct = function(newProduct){
 };
 
 $scope.deleteProduct = function(product){
-  $scope.confirmDelete = confirm(product.name + "will be removed from inventory. Click OK to confirm.");
+  $scope.confirmDelete = confirm(product.name + " will be removed from inventory. Click OK to confirm.");
+  if($scope.confirmDelete === true){
   adminService.deleteSingleProduct(product).then(function(){
     $scope.showProducts();
   });
-  alert(product.name + "has been removed from inventory.");
 };
 
 

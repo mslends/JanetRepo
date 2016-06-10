@@ -112,12 +112,13 @@
   margin-top: 50px
 
 .navOption
-  margin: 20px
+  width: 84%
+  // margin: 20px
+  padding: 20px
   cursor: pointer
-  border-radius: 5px
   &:hover
-    color: $janetGreen
-
+    color: white
+    background: $janetPurple
   &:active
     background: $janetGreen
     color: $janetGray
@@ -138,7 +139,7 @@
   font-family: lato
   color: gray
   margin-left: 0px
-  margin-top: 50px
+  // margin-top: 20px
   transition: all linear 0.3s
   background: white
   position: absolute
@@ -169,6 +170,20 @@
   margin-left: 50px
   display: none
 
+.navSocialmediaBox
+  width: 80%
+  font-size: 18px
+  margin-top: 170px
+  margin-left: 20px
+
+.navBottom
+  font-size: 12px
+  position: absolute
+  bottom: 15px
+  left: 0
+  width: 100%
+  background: $janetGreen
+
 @media (min-width: 800px)
   #topSearchBar
     display: block
@@ -182,7 +197,15 @@
   .navMenu
     width: 250px
 
+  .loginButton
+    margin-top: 25px
 
+
+@media (max-width: 375px)
+  .navXButton
+    margin-right: 70px
+  #searchBar
+    width: 200px
 .cancelButton
   float: right
   margin-right: 15px
