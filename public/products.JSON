@@ -1,0 +1,154 @@
+[
+  {
+
+    "name": "Floral Sneakers for Ladies",
+    "seller": "Hawt Steps",
+    "retailPrice": 49.99,
+    "discountPrice": 29.99,
+    "qty": 50,
+    "size": "11",
+    "color": "Red",
+    "category": "Shoes",
+    "parent": "none",
+    "images": "https://jane.com/cdn.jane/img/deals/207484.jpg",
+    "description": "Very comfy. No but seriously.  If you haven't experienced these shoes then you haven't experienced what comfy really is.  THIS IS COMFY",
+    "userReviews": [],
+
+    "material": "baby seal skin"
+  },
+  {
+
+    "name": "Cute Lacy Flats",
+    "seller": "Comfy Shoes For U",
+    "category": "shoes",
+    "retailPrice": 25,
+    "discountPrice": 19.99,
+    "qty": 22,
+    "size": "10",
+    "color": "brown",
+    "material": "Vegan Leather",
+    "parent": "Loafers",
+    "description": "comfy as balls",
+    "userReviews": [],
+
+    "images": "https://jane.com/cdn.jane/img/deals/207529.jpg"
+  },
+  {
+
+    "images": "https://jane.com/cdn.jane/img/deals/205663.jpg",
+    "name": "The Perfect Spring Dress",
+    "seller": "Jace's Fashionable Fashions",
+    "category": "lady dresses",
+    "retailPrice": 500,
+    "discountPrice": 5,
+    "qty": 22,
+    "size": "S",
+    "color": "white",
+    "material": "fabric.  soft fabric",
+    "description": "these dresses are perfect for spring because they are made in a sweatshop where we require nothing but perfection or the workers making it are placed in a hole ten feet underground for a day.  This process happens every time there is an error in the dress construction.  We haven't had any issues in two weeks.  See? perfect.",
+    "userReviews": [],
+
+  },
+  {
+
+    "name": "Crochet Trim Tank Tunic",
+    "seller": "Chrochet Tanks INC",
+    "retailPrice": 49.99,
+    "discountPrice": 19.99,
+    "qty": 50,
+    "size": "small",
+    "color": "white",
+    "category": "Tops",
+    "parent": "none",
+    "images": "https://jane.com/cdn.jane/img/deals/200412.jpg",
+    "description": "Perfect for the person who needs a tank top and crocheted materials in their life",
+
+  },
+  {
+
+    "name": "Flamingo Tee",
+    "seller": "Clothes To Decorate Your Garden.com",
+    "retailPrice": 39.99,
+    "discountPrice": 14.99,
+    "qty": 50,
+    "size": "small",
+    "color": "white",
+    "category": "Tops",
+    "parent": "none",
+    "images": "https://jane.com/cdn.jane/img/deals/208749.jpg",
+    "description": "Perfect for the person who needs a flamingo on their shirt",
+
+  },
+  {
+
+    "name": "Modal Tunic",
+    "seller": "modales for your home inc",
+    "retailPrice": 25.99,
+    "discountPrice": 14.99,
+    "qty": 50,
+    "size": "small",
+    "color": "gray",
+    "category": "Tops",
+    "parent": "none",
+    "images": "https://jane.com/cdn.jane/img/deals/206183.jpg",
+    "description": "The tunic when all your other tunics just aren't modal enough",
+
+  },
+  {
+
+    "name": "Blue Denim Backpack",
+    "seller": "jeans2backpackz",
+    "retailPrice": 29.99,
+    "discountPrice": 11.99,
+    "qty": 50,
+    "size": "fits-all",
+    "color": "denim",
+    "category": "bags and totes",
+    "parent": "none",
+    "images": "https://jane.com/cdn.jane/img/deals/208560.jpg",
+    "description": "It is like jeans for your homework!",
+
+  },
+  {
+
+    "name": "Pineapple and Feather Tops",
+    "seller": "feathery pinapple inc",
+    "retailPrice": 29.99,
+    "discountPrice": 12.99,
+    "qty": 50,
+    "size": "Medium",
+    "color": "pink",
+    "category": "tops",
+    "parent": "none",
+    "images": "https://jane.com/cdn.jane/img/deals/208555.jpg",
+    "description": "a must for every pineapple or feather fan!",
+  },
+  {
+    "name": "Bicycle Tank",
+    "seller": "Tanksnotthearmykind inc",
+    "retailPrice": 19.99,
+    "discountPrice": 14.99,
+    "qty": 50,
+    "size": "Medium",
+    "color": "gray",
+    "category": "tops",
+    "parent": "none",
+    "images": "https://jane.com/cdn.jane/img/deals/206372.jpg",
+    "description": "When you love bikes so much you need a tank top with one on it!",
+  },
+  {
+
+    "name": "Classic Pearl Necklace Set",
+    "seller": "accessories from the ocean inc",
+    "retailPrice": 20.99,
+    "discountPrice": 7.99,
+    "qty": 50,
+    "size": "fits-all",
+    "color": "pearl",
+    "category": "accessories",
+    "parent": "none",
+    "images": "https://jane.com/cdn.jane/img/deals/208938.jpg",
+    "description": "Pearls! Perfect for that special someone that needs it!",
+
+  }
+]
