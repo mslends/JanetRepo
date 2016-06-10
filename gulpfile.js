@@ -1,7 +1,6 @@
 'use strict';
 const gulp = require('gulp');
 const sass = require('gulp-sass');
-const watch = require('gulp-watch');
 const concat = require('gulp-concat');
 const to5 = require('gulp-6to5');
 
@@ -29,4 +28,4 @@ gulp.task('watch', function() {
     gulp.watch(paths.jsSource, ['js']);
 })
 
-gulp.task('default', ['sass', 'watch', 'js']);
+gulp.task('default', ['watch', 'js', 'sass']);

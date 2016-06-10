@@ -9,17 +9,17 @@ var userSchema = new Schema({
     password: {type: String, required: true},
     admin: {type: Boolean, default: false},
     phone: {type: String},
-    billingAddress: {
-        street: {type: String},
-        city: {type: String},
-        state: {type: String},
-        zip: {type: Number}
-    },
+    // billingAddress: {
+    //     street: {type: String},
+    //     city: {type: String},
+    //     state: {type: String},
+    //     zip: {type: Number}
+    // },
     shippingAddress: {
-        street: {type: String},
-        city: {type: String},
-        state: {type: String},
-        zip: {type: Number}
+        street: {type: String, default: null},
+        city: {type: String, default: null},
+        state: {type: String, default: null},
+        zip: {type: Number, default: null}
     },
     wishlist: [{type: Schema.Types.ObjectId, ref: 'Product'}],
     // myReviews: [{

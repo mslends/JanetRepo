@@ -6,7 +6,7 @@ angular.module('janet').controller('settingsCtrl', function($scope, customerServ
   $scope.updateUser = (user)=>{
     customerService.updateUser(user._id, user).then((response)=>{
     $scope.updatedUser = response;
-    alert('Your information has been updated!')
+    swal('Your information has been updated!')
     $scope.getOneUser();
     });
   };

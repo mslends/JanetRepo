@@ -11,7 +11,7 @@ angular.module('janet').controller('loginSignupCtrl', function($scope, customerS
 $scope.createUser = function(user){
   customerService.createUser(user).then(function(response){
     $scope.newUser = response;
-    alert('You are successfully signed up! Please login to continue.');
+    swal('You are successfully signed up!');
     location.reload();
   })
 }
