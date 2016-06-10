@@ -11,15 +11,6 @@ angular.module('janet').controller('adminCtrl', function($scope, $stateParams, a
 
   $scope.showProducts();
 
-$scope.showSingleProduct = ()=>{
-  adminService.getSingleProduct().then((response)=>{
-    console.log(response);
-    $scope.product = response;
-  });
-};
-
-// showSingleProduct();
-
 $scope.addNewProduct = function(newProduct){
   adminService.createProduct(newProduct).then(function(response){
     $scope.showProducts();
@@ -31,42 +22,13 @@ $scope.addNewProduct = function(newProduct){
 };
 
 $scope.deleteProduct = function(product){
-  $scope.confirmDelete = confirm(product.name + " will be removed from inventory. Click OK to confirm.");
-  if(confirmDelete == "true"){
+  $scope.confirmDelete = confirm(product.name + "will be removed from inventory. Click OK to confirm.");
   adminService.deleteSingleProduct(product).then(function(){
     $scope.showProducts();
   });
-} else {
-  return;
-}
+  alert(product.name + "has been removed from inventory.");
 };
 
-
-
-/////////EDIT PRODUCT MODAL////////////////
-
-// $scope.editProductModalShown = false;
-//
-// $scope.toggleEditProductModal = function(product){
-//     console.log("edit prod modal hit!");
-//     if(product.startDate) {
-//         product.startDate = new Date(product.startDate);
-//     }if(product.endDate){
-//         product.endDate = new Date(product.endDate);
-//     }
-//
-//   $scope.productData = product;
-//   $scope.editProductModalShown = !$scope.editProductModalShown;
-// };
-//
-// $scope.editProduct = function(product){
-//     console.log("edit product hit!");
-//   adminService.updateSingleProduct(product).then(function(){
-//     $scope.showProducts();
-//     $scope.editProductModalShown = !$scope.editProductModalShown;
-//     alert("Your changes have been saved!");
-//   });
-// };
 
 
 
