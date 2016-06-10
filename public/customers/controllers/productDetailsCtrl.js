@@ -1,20 +1,23 @@
 angular.module('janet').controller('productDetailsCtrl', function($scope, $stateParams, productsService, productInfo, cartService){
 
-  $scope.product = productInfo;
-  $scope.productId = $stateParams.productId;
+
+$scope.product = productInfo;
 
 
-$scope.getSingleProduct = function(){
-  console.log("controller hit");
-  productsService.getSingleProduct($stateParams.productId).then(function(response){
-    $scope.products = response[0];
-});
-};
+$scope.productId = $stateParams.productId;
 
 
-// console.log(countdown( new Date(2016, 0, 1) ).toString());
-// $scope.time = countdown( new Date(2016, 0, 1) ).toString();
+// $scope.getSingleProduct = function(){
+//   console.log("controller hit");
+//   productsService.getSingleProduct($stateParams.productId).then(function(response){
+//     $scope.products = response[0];
+//
+//
+// });
+// };
 
+
+// COUNTDOWN CLOCK
 function countdown(){
 	var now = new Date();
 	var eventDate = new Date($scope.product.endDate);
@@ -36,6 +39,26 @@ function countdown(){
 	h = (h < 10) ? "0" + h : h;
 	m = (m < 10) ? "0" + m : m;
 	s = (s < 10) ? "0" + s : s;
+
+
+
+    if(d < 0) {
+        $scope.disabled = true;
+        $scope.buttonText = "YOU MISSED IT !";
+        // $('.product-details-countdown').hide();
+        h = '00';
+        m = '00';
+        s = '00';
+        d = '0';
+    }else {
+        $scope.disabled = false;
+        $scope.buttonText = "ADD TO BAG";
+        // $('.product-details-countdown').show();
+    }
+
+
+
+
     // console.log(document.getElementsByClassName("days"));
 	document.getElementsByClassName("days")[0].textContent = d;
     document.getElementsByClassName("days")[1].textContent = d;
@@ -52,20 +75,13 @@ function countdown(){
     document.getElementsByClassName("seconds")[1].textContent = s;
 
 		setTimeout(countdown, 1000);
+
+
 	}
 
 		countdown();
 // FAVORITES COUNTER
 
-
-
-
-
-  $scope.getSingleProduct = function(){
-    productsService.getSingleProduct($stateParams.productId).then(function(response){
-      $scope.products = response[0];
-  });
-  };
 
   $scope.productQty = 1;
 
@@ -74,55 +90,6 @@ function countdown(){
     cartService.addToCart(product, productQty);
     swal('Item has been added to your cart!');
   };
-
-
-
-// js countdown clock
-//     function getTimeRemaining(endtime) {
-//       var t = Date.parse(endtime) - Date.parse(new Date());
-//       var seconds = Math.floor((t / 1000) % 60);
-//       var minutes = Math.floor((t / 1000 / 60) % 60);
-//       var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
-//       var days = Math.floor(t / (1000 * 60 * 60 * 24));
-//       return {
-//         'total': t,
-//         'days': days,
-//         'hours': hours,
-//         'minutes': minutes,
-//         'seconds': seconds
-//       };
-//     }
-//
-//     function initializeClock(id, endtime) {
-//       var clock = document.getElementById(id);
-//       var daysSpan = clock.querySelector('.days');
-//       var hoursSpan = clock.querySelector('.hours');
-//       var minutesSpan = clock.querySelector('.minutes');
-//       var secondsSpan = clock.querySelector('.seconds');
-//
-//       function updateClock() {
-//         var t = getTimeRemaining(endtime);
-//
-//         daysSpan.innerHTML = t.days;
-//         hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
-//         minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
-//         secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
-//
-//         if (t.total <= 0) {
-//           clearInterval(timeinterval);
-//         }
-//       }
-//
-//       updateClock();
-//       var timeinterval = setInterval(updateClock, 1000);
-//     }
-//
-//     var deadline = new Date(Date.parse(new Date()) + 24 * 60 * 60 * 1000);
-//     initializeClock('clockdiv', deadline);
-
-
-
-
 
 
 
