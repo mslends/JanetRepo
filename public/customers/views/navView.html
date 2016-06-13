@@ -2,7 +2,7 @@
 
     <div class="leftNav">
 
-        <i class="hamburger fa fa-2x fa-bars" aria-hidden="true" ng-click="isVisible = !isVisible"></i>
+        <i class="hamburger fa fa-2x fa-bars" aria-hidden="true" ng-click="navIsVisible = !navIsVisible"></i>
 
         <i class="glass fa fa-2x fa-search" aria-hidden="true" ng-click="searchIsVisible = !searchIsVisible"></i>
 
@@ -22,13 +22,13 @@
 </section>
 
 
-<div class="navMenu" ng-hide="!isVisible">
+<div class="navMenu" ng-hide="!navIsVisible">
 
-    <div class="navXButton" ng-click="isVisible = !isVisible">
+    <div class="navXButton" ng-click="navIsVisible = !navIsVisible">
         X
     </div>
 
-    <div class="loginButton" ng-click="toggleModal(); isVisible = !isVisible" ng-hide="user">
+    <div class="loginButton" ng-click="toggleModal()" ng-hide="user">
         Login
     </div>
     <div class="loginButton" ng-click=logout() ng-hide="!user">
@@ -37,14 +37,14 @@
 
     <div class="optionBox">
 
-        <div class="navOption" ng-click="isVisible = !isVisible" ui-sref="home">All Deals</div>
-        <div class="navOption" ng-click="isVisible = !isVisible">
+        <div class="navOption" ng-click="navIsVisible = !navIsVisible" ui-sref="home">All Deals</div>
+        <div class="navOption" ng-click="navIsVisible = !navIsVisible">
             </i>Shop By Category</div>
 
 
 
-        <div class="navOption" ng-click="isVisible = !isVisible" ui-sref="settings">   My Account</div>
-        <div class="navOption" ng-click="isVisible = !isVisible" ui-sref="cart"> Bag</div>
+        <div class="navOption" ng-click="navIsVisible = !navIsVisible" ui-sref="settings">   My Account</div>
+        <div class="navOption" ng-click="navIsVisible = !navIsVisible" ui-sref="cart"> Bag</div>
 
         <div class="navSocialmediaBox">
             <i class="fa fa fa-facebook social" aria-hidden="true"></i>
