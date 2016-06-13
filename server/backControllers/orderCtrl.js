@@ -1,4 +1,5 @@
 const Order = require("../models/orderModel.js");
+const Product = require("../models/productsModel.js");
 
 module.exports = {
   getOrders: (req, res, next)=>{
@@ -29,9 +30,20 @@ module.exports = {
       if(err){
         res.status(500).json(err);
       } else{
+        req.body.productsOrdered.forEach(p => {
+          Product.findByIdAndUpdate(p.product
+            , {$inc : {'amntSold' : p.qty}}
+            , (e, r) => {
+              if (e) {
+                console.trace(e)
+              }
+            })
+          })
+
         res.status(200).json(response);
       }
     });
+
   },
 
   updateOrder: (req, res, next)=>{

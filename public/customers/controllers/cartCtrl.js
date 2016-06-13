@@ -84,13 +84,9 @@ angular.module('janet').controller('cartCtrl', function($scope, cartService, ord
     if(!$scope.user.name){
       return swal("Name is required.")
     };
-
-
+    
 
     orderService.createOrder($scope.order, $scope.user).then((response)=>{
-      // for(var i = 0; i < $scope.cart.length; i++){
-      //   productsService.updateProductById($scope.cart[i]);
-      // }
       $scope.newOrder = response;
       swal('Your order has been placed!');
       $state.go('home');

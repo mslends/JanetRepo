@@ -18,17 +18,17 @@ angular.module('janet').service('productsService', function($http){
     });
   };
 
-  this.updateProductById = function(product, order){
-    return $http({
-      method: "PUT",
-      url: "/api/products/" + product._id,
-      data: {
-        amntSold: order.qty
-      }
-    }).then(function(response){
-      return response.data;
-    });
-  };
+  // this.updateProductById = function(product, order){
+  //   return $http({
+  //     method: "PUT",
+  //     url: "/api/products/" + product._id,
+  //     data: {
+  //       amntSold: order.qty
+  //     }
+  //   }).then(function(response){
+  //     return response.data;
+  //   });
+  // };
 
 
 
