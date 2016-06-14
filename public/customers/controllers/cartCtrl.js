@@ -29,7 +29,6 @@ angular.module('janet').controller('cartCtrl', function($scope, cartService, ord
     cartService.addQty(item);
     $scope.cart = cartService.cart
     $scope.totalCost();
-
   };
 
   $scope.removeQty = (item)=>{
@@ -84,7 +83,7 @@ angular.module('janet').controller('cartCtrl', function($scope, cartService, ord
     if(!$scope.user.name){
       return swal("Name is required.")
     };
-    
+
 
     orderService.createOrder($scope.order, $scope.user).then((response)=>{
       $scope.newOrder = response;
