@@ -18,15 +18,5 @@ $scope.viewProductModalShown = !$scope.viewProductModalShown;
 
 };
 
-// $scope.showSingleProduct = ()=>{
-//   console.log("showing a product!");
-//   adminService.getSingleProduct().then((response)=>{
-//     console.log(response);
-//     $scope.product = response;
-//   });
-// };
-//
-// showSingleProduct();
-
 
   });
