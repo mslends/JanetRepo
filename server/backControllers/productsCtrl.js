@@ -1,4 +1,5 @@
 const Product = require("../models/productsModel.js");
+const Order = require("../models/orderModel.js");
 
 module.exports = {
   getProducts: function(req, res, next){
@@ -33,7 +34,6 @@ module.exports = {
   },
 
   updateSingleProduct: function(req, res, next){
-    console.log("backend controller working");
     Product.findByIdAndUpdate(req.params.id, req.body, function(err, response){
       if(err){
         res.status(500).json(err);
@@ -43,17 +43,25 @@ module.exports = {
     });
   },
 
-deleteSingleProduct: function(req, res, next){
-  Product.findByIdAndRemove(req.params.id, function(err, response){
-    if(err){
-      res.status(500).json(err);
-    } else{
-      res.status(200).json(response);
-    }
-  });
-}
+  deleteSingleProduct: function(req, res, next){
+    Product.findByIdAndRemove(req.params.id, function(err, response){
+      if(err){
+        res.status(500).json(err);
+      } else{
+        res.status(200).json(response);
+      }
+    });
+  },
 
-
+  updateProductById: function(req, res, next){
+    Product.findByIdAndUpdate(req.params.id, req.body, function(err, response){
+      if(err){
+        res.status(500).json(err);
+      }else{
+        res.status(200).json(response);
+      }
+    });
+  }
 
 
 

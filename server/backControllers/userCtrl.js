@@ -79,7 +79,7 @@ module.exports = {
       req.logout();
       console.log("logout", req.user)
       return res.status(200).send('logged out');
-  }
+    }
 
 
 
