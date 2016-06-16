@@ -46,6 +46,18 @@ this.deleteSingleProduct = function(product){
   });
 };
 
+///////////Admin Settings//////////
+
+this.updateUser = function(user){
+  console.log("service working");
+  return $http({
+    method: "PUT",
+    url: "/api/users/" + user._id,
+    data: user
+  }).then((response)=>{
+    return response.data;
+  });
+};
 
 
 });
