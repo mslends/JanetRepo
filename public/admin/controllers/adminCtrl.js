@@ -31,6 +31,13 @@ angular.module('janet').controller('adminCtrl', function($scope, $stateParams, a
     };
 
 
+//////////////////Admin Profile Settings/////////////
 
+$scope.updateAdminProfileSettings = (user) => {
+    console.log("edit admin settings hit!");
+    adminService.updateUser(user).then(function(){
+        alert("Changes to your admin profile information have been saved.");
+    });
+};
 
 });

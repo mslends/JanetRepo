@@ -6,9 +6,7 @@
         <h3>Name</h3>
         <input type="text" ng-model="user.name"><br>
         <h3>Email</h3>
-        <input type="text" ng-model="user.email"><br>
-        <h3>Password</h3>
-        <input type="password" ng-model="user.password"><br><br>
+        <input type="text" ng-model="user.email"><br><br>
         <button type="button" ng-click="updateAdminProfileSettings(user)">Save Changes</button>
     </div>
     <!-- <hr width="80%"></hr> -->
@@ -30,20 +28,26 @@
         </div>
 
         <div class="admin-product-info">
+
+          <div class="admin-product-main-info">
             <h4>{{product.name}}</h4>
             <p>{{product.category}} | Qty: {{product.qty}}</p>
+          </div>
+
+          <div class="admin-product-side-info">
+            <p><i class="fa fa-heart"></i> {{product.favorites}}</p>
+          </div>
+
         </div>
 
         <div class="admin-product-options">
 
           <div class="admin-product-options-mobile-view">
-            <i class="fa fa-info-circle" ng-click="toggleViewProductModal(product)"></i>
             <i class="fa fa-pencil" ng-click="toggleEditProductModal(product)"></i>
             <i class="fa fa-trash" ng-click="deleteProduct(product)"></i>
           </div>
 
           <div class="admin-product-options-desktop-view">
-            <button type="button" ng-click="toggleViewProductModal(product)">Info</button>
             <button type="button" ng-click="toggleEditProductModal(product)">Edit</button>
             <button type="button" ng-click="deleteProduct(product)">Delete</button>
           </div>
@@ -54,9 +58,8 @@
     </div>
   </section>
   </div>
-  <h2 ng-hide="user">You must be logged in as an administrator to continue.</h2>
+  <h2 class="admin-login-restriction-message" ng-hide="user">You must be logged in as an administrator to continue.</h2>
 </section>
 </section>
 <new-product-modal-directive></new-product-modal-directive>
 <edit-product-modal-directive></edit-product-modal-directive>
-<view-product-modal-directive></view-product-modal-directive>
