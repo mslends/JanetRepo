@@ -22,10 +22,10 @@ function countdown(){
 	var now = new Date();
 	var eventDate = new Date($scope.product.endDate);
 
-	var currentTiime = now.getTime();
+	var currentTime = now.getTime();
 	var eventTime = eventDate.getTime();
 
-    var remTime = eventTime - currentTiime;
+    var remTime = eventTime - currentTime;
 
 	var s = Math.floor(remTime / 1000);
 	var m = Math.floor(s / 60);
